@@ -2,3 +2,7 @@ generated/
 __pycache__/
 *.pyc
 .DS_Store
+manuscript.pdf
+manuscript.docx
+manuscript.tex
+manuscript_revised*.docx
