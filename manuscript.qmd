@@ -39,6 +39,11 @@ format:
     fig-pos: "htbp"
     tbl-cap-location: top
     fig-cap-location: bottom
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{siunitx}
+        \sisetup{group-separator={,}, group-minimum-digits=4}
   docx:
     number-sections: true
     tbl-cap-location: top
@@ -99,13 +104,23 @@ The registry was compiled through systematic historical source review with cross
 
 Across 1968–2025 (58 calendar years), the export contains 113 fatal incidents resulting in 145 deaths (mean: 1.28 deaths per incident). Most incidents involve a single fatality (93/113, 82%) (@tbl-burden).
 
-| Category | Incidents (*n*) | Deaths (*n*) | Deaths per incident (mean) |
-|---|---:|---:|---:|
-| Structure fires | 93 | 116 | 1.25 |
-| Other fire-related deaths | 20 | 29 | 1.45 |
-| **Total** | **113** | **145** | **1.28** |
-
-: Overall burden of fatal fire incidents in Iceland (1968–2025) {#tbl-burden}
+```{=latex}
+\begin{table}[htbp]
+\centering
+\caption{Overall burden of fatal fire incidents in Iceland (1968--2025).}
+\label{tbl-burden}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Category & Incidents (\textit{n}) & Deaths (\textit{n}) & Deaths/incident (mean) \\
+\midrule
+Structure fires           & 93  & 116 & 1.25 \\
+Other fire-related deaths & 20  &  29 & 1.45 \\
+\midrule
+\textbf{Total}            & \textbf{113} & \textbf{145} & \textbf{1.28} \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
 
 ## Long-Run Trends
 
@@ -113,17 +128,29 @@ Decade aggregation shows the highest burden in the 1970s (35 incidents, 47 death
 
 The apparent uptick in 2020–2025 reflects a six-year observation window and rare-event variability. An exact Poisson 95% confidence interval for the 2020–2025 crude annualized rate is approximately 3.8–11.1 deaths per million population per year, overlapping a corresponding interval for the 2010s (approximately 2.6–7.6).
 
-| Period | Incidents (*n*) | Deaths (*n*) | Mean population (1 Jan) | Annualized deaths per million population |
-|---|---:|---:|---:|---:|
-| 1968–1969^a^ | 6 | 13 | 201,488 | 32.3 |
-| 1970–1979 | 35 | 47 | 214,495 | 21.9 |
-| 1980–1989 | 19 | 24 | 238,886 | 10.1 |
-| 1990–1999 | 13 | 14 | 264,973 | 5.3 |
-| 2000–2009 | 14 | 17 | 296,399 | 5.7 |
-| 2010–2019 | 14 | 15 | 325,140 | 4.6 |
-| 2020–2025 | 12 | 15 | 370,941 | 6.7 |
+```{=latex}
+\begin{table}[htbp]
+\centering
+\caption{Period totals and crude mortality rates for fatal fire incidents in Iceland.}
+\label{tbl-periods}
+\begin{tabular}{@{}lrrS[table-format=6.0]S[table-format=2.1]@{}}
+\toprule
+Period & {Incidents (\textit{n})} & {Deaths (\textit{n})} & {Mean pop.\ (1\,Jan)} & {Deaths/million/yr} \\
+\midrule
+1968--1969\textsuperscript{a} &  6 & 13 & 201488 & 32.3 \\
+1970--1979 & 35 & 47 & 214495 & 21.9 \\
+1980--1989 & 19 & 24 & 238886 & 10.1 \\
+1990--1999 & 13 & 14 & 264973 &  5.3 \\
+2000--2009 & 14 & 17 & 296399 &  5.7 \\
+2010--2019 & 14 & 15 & 325140 &  4.6 \\
+2020--2025 & 12 & 15 & 370941 &  6.7 \\
+\bottomrule
+\end{tabular}
 
-: Period totals and crude mortality rates for fatal fire incidents in Iceland. ^a^The 1968–1969 bin covers 2 years; the rate is unstable due to the short observation window. {#tbl-periods}
+\smallskip
+\footnotesize \textsuperscript{a}The 1968--1969 bin covers 2 years; the rate is unstable due to the short observation window.
+\end{table}
+```
 
 ![Annual fire-related deaths in Iceland (1968–2025) from the Gjöll registry export. The rolling mean illustrates the long-run decline despite substantial year-to-year variability.](figures/fig1_annual_deaths.png){#fig-annual}
 
@@ -131,17 +158,29 @@ The apparent uptick in 2020–2025 reflects a six-year observation window and ra
 
 Construction year is recorded for 45 of 93 structure-fire incidents (48%). Missingness is concentrated in earlier decades; among structure-fire incidents from 1996 onward, construction year is complete (0 missing). Among incidents with known construction year, no fatal structure-fire incidents occurred in buildings constructed after 1998 (@tbl-construction; @fig-construction). In the 1996–2025 subset where construction year is complete, the mean construction year of buildings involved in fatal structure fires is 1957, whereas the mean construction year of the Icelandic building stock overall is 1992, according to data from the Housing and Construction Authority (Húsnæðis- og mannvirkjastofnun) [@HMS2024buildingAge].
 
-| Construction year band | Incidents, full (*n* = 93) | Deaths, full | Incidents, 1996–2025 (*n* = 35) | Deaths, 1996–2025 |
-|---|---:|---:|---:|---:|
-| 1900–1919 | 7 | 13 | 4 | 6 |
-| 1920–1939 | 3 | 3 | 1 | 1 |
-| 1940–1959 | 18 | 19 | 13 | 14 |
-| 1960–1979 | 11 | 12 | 11 | 12 |
-| 1980–1997 | 6 | 8 | 6 | 8 |
-| Unknown | 48 | 61 | 0 | 0 |
-| **Total** | **93** | **116** | **35** | **41** |
-
-: Fatal structure fires by building construction year. The 1996–2025 subset is reported because construction year is complete from 1996 onward. In both datasets, there are zero fatal structure-fire incidents in buildings constructed after 1998. {#tbl-construction}
+```{=latex}
+\begin{table}[htbp]
+\centering
+\caption{Fatal structure fires by building construction year. The 1996--2025 subset is reported because construction year is complete from 1996 onward. In both datasets, zero fatal incidents occurred in buildings constructed after 1998.}
+\label{tbl-construction}
+\begin{tabular}{@{}l rr rr@{}}
+\toprule
+ & \multicolumn{2}{c}{Full dataset (\textit{n}\,=\,93)} & \multicolumn{2}{c}{1996--2025 subset (\textit{n}\,=\,35)} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Construction year & Incidents & Deaths & Incidents & Deaths \\
+\midrule
+1900--1919 &  7 & 13 &  4 &  6 \\
+1920--1939 &  3 &  3 &  1 &  1 \\
+1940--1959 & 18 & 19 & 13 & 14 \\
+1960--1979 & 11 & 12 & 11 & 12 \\
+1980--1997 &  6 &  8 &  6 &  8 \\
+Unknown    & 48 & 61 &  0 &  0 \\
+\midrule
+\textbf{Total} & \textbf{93} & \textbf{116} & \textbf{35} & \textbf{41} \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
 
 ![Fatal structure-fire incidents and deaths by building construction-year band, showing concentration of fatalities in older building stock.](figures/fig3_structure_deaths_by_construction_year.png){#fig-construction}
 
