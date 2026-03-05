@@ -1,0 +1,21 @@
+incident_date,year,deaths,municipality,notes,postal_code,incident_type,source_link,type_of_fire,created_at,updated_at,id
+2016-02-06,2016,1,Stokkseyri,,825,Other fire related deaths,https://www.logreglan.is/nafn-drengsins-sem-lest-i-bruna-a-stokkseyri/,Motorhome fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,9f5e49d1-d3ad-4d5f-9631-ac09c6da52b2
+1971-10-10,1971,2,Álftanes,,,Other fire related deaths,https://timarit.is/page/3240211#page/n0/mode/2up,Shed fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,5aa4a86f-f398-46e4-872f-cc84def2bb88
+2013-08-17,2013,1,Þjórsárdalur,,804,Other fire related deaths,https://www.mbl.is/frettir/innlent/2013/08/17/lest_i_eldsvoda_i_thjorsardal/,Other fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,db41a2c5-8a7b-498b-84b8-f2f3fa44cafb
+2010-06-29,2010,1,Grundartangi,,301,Other fire related deaths,https://timarit.is/page/6178385,Factory fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,bdab9550-4f06-45e9-8c9c-544535bdf79b
+1997-12-27,1997,1,Böðvarsdalur,,691,Other fire related deaths,https://timarit.is/page/2963789,Other fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,790e38a2-09f3-448a-9f4b-cf77aa858a99
+1973-12-01,1973,1,Reykjavík,,106,Other fire related deaths,https://issuu.com/landsbjorg/docs/_rb_k_1974/130,Explosion,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,6d82b8c3-f1f8-4a0c-a541-dde49c3beac4
+2006-12-16,2006,1,Álftanes,,225,Other fire related deaths,https://www.rnsa.is/media/2040/alftanesvegur-12-desember-2006.pdf,Vehicle fire,2025-06-08T19:29:32.809871,2025-06-08T19:29:32.809871,51490a40-dfc8-4ddc-8dd0-4795530c0173
+1983-06-21,1983,3,Á sjó,Gunnjón GK 506,,Other fire related deaths,https://timarit.is/page/4883150#page/n30/mode/2up,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,78c6511c-3b30-4aef-8402-f166345ffade
+2014-04-12,2014,1,Reykjavík,,101,Other fire related deaths,https://timarit.is/page/6082250,Other fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,9db745a6-bb9d-4f90-a57d-a383303a50c2
+2022-11-17,2022,1,Hafnarfjörður,,220,Other fire related deaths,https://www.visir.is/g/20222340256d,Vehicle fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,2d0e2d11-4e2f-464c-995c-3d6f8e79c951
+1969-08-23,1969,1,Reykjavík,Guðrún Lára RE 200,,Other fire related deaths,https://issuu.com/landsbjorg/docs/_rb_k_1970,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,e5dab4df-f232-4712-821f-818d113fcee9
+1972-06-28,1972,1,Snæfellsnes,,,Other fire related deaths,https://issuu.com/landsbjorg/docs/_rb_k_1973/154,Tent fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,032af275-9b54-4636-82c9-c31ea3ccc5a9
+2006-05-27,2006,2,Á sjó ,Akureyri EA,,Other fire related deaths,https://www.samherji.is/is/frettir/eldsvodi_um_bord_i_akureyrinni,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,6832ef4e-1727-499a-93ac-b8b706823a9b
+1969-06-03,1969,6,Á sjó,Hallveig Fróðadóttir,,Other fire related deaths,https://velstyran.blogspot.com/2009/03/6-mars-2009-tveir-storbrunar.html,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,6981e98e-47c2-481d-baef-0de066527527
+1969-09-19,1969,1,Höfn,,,Other fire related deaths,https://issuu.com/landsbjorg/docs/_rb_k_1970/171,Vehicle fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,d53934cd-983c-45a2-8693-b5d509f73333
+1969-10-28,1969,1,Ólafsvik,Lárus Sveinsson,,Other fire related deaths,https://timarit.is/page/1406458,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,d32a9f87-a4df-4b46-b2e3-edd73416ce64
+2023-04-25,2023,1,Njarðvík,GK-555 ship,260,Other fire related deaths,https://www.visir.is/t/3526,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,87796691-9853-49fd-ab2d-e07200a79d1f
+1970-07-19,1970,1,Hafnarfjörður,,220,Other fire related deaths,https://timarit.is/page/1413432,Explosion,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,74356326-f77c-49f4-93b7-c41f21f0a011
+1971-08-02,1971,1,Seyðisfjörður,,690,Other fire related deaths,https://issuu.com/landsbjorg/docs/_rb_k_1972/86,Ship fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,e3450219-300c-4099-838e-fe9e2223d350
+2020-10-10,2020,1,Grafningur,,805,Other fire related deaths,https://www.logreglan.is/bruni-i-husbil-i-grafningi/,Motorhome fire,2025-06-03T08:35:43.45967,2025-06-03T08:35:43.45967,882a3662-1989-4576-996e-a0e958ab70a7
