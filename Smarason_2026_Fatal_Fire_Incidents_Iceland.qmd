@@ -20,7 +20,7 @@ keywords:
   - Iceland
   - Nordic countries
   - fire prevention
-date: 2026-03-05
+date: 2026-03-06
 bibliography: references.bib
 csl: springer-fire-technology.csl
 link-citations: true

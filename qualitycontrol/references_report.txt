@@ -1,0 +1,67 @@
+======================================================================
+  Reference Verification: references.bib
+  Manuscript: manuscript.qmd
+======================================================================
+
+CROSS-REFERENCE CHECK
+  Bib entries:       22
+  Manuscript cites:  22
+  OK: Perfect match between .bib and manuscript citations.
+
+FIELD COMPLETENESS
+  Key                       Type            DOI   URL   Year  Author
+  ------------------------- --------------- ----- ----- ----- -----
+  EFSA2018                  techreport      -     Y     Y     Y    
+  Holborn2003               article         Y     -     Y     Y    
+  Iceland1969               misc            -     -     Y     Y    
+  Iceland1982               misc            -     -     Y     Y    
+  Iceland1998               misc            -     Y     Y     Y    
+  Iceland2000               misc            -     -     Y     Y    
+  MSB2023                   misc            -     Y     Y     Y    
+  Smarason2025data          misc            Y     Y     Y     Y    
+  Timarit                   misc            -     Y     Y     Y    
+  Smarason2025practitioner  article         -     -     Y     Y    
+  HMS2020                   techreport      -     Y     Y     Y    
+  StatisticsIceland2025     misc            -     Y     Y     Y    
+  HMS2024buildingAge        misc            -     -     Y     Y    
+  SSB2024                   misc            -     Y     Y     Y    
+  HMS2025completions        misc            -     Y     Y     Y    
+  Marshall1998              article         Y     -     Y     Y    
+  Doyle2019                 article         Y     -     Y     Y    
+  Loney2014                 article         Y     -     Y     Y    
+  Cunningham2018            article         Y     -     Y     Y    
+  Wagner2002                article         Y     -     Y     Y    
+  Bernal2017                article         Y     -     Y     Y    
+  Seabold2010               inproceedings   Y     -     Y     Y    
+
+COMPLETENESS ISSUES
+  WARN: Smarason2025practitioner (article) has neither DOI nor URL
+
+DOI VERIFICATION (9 entries)
+  FAIL Holborn2003               doi:10.1016/S0379-7112(02)00034-8  -> status=404 url=https://doi.org/10.1016/S0379-7112(02)00034-8
+  OK   Smarason2025data          doi:10.34881/I5WGJU
+  FAIL Marshall1998              doi:10.1001/jama.279.20.1633  -> status=403 url=https://jamanetwork.com/article.aspx?doi=10.1001/jama.279.20.1633
+  OK   Doyle2019                 doi:10.1016/j.firesaf.2019.102892
+  OK   Loney2014                 doi:10.1186/1742-7622-11-18
+  FAIL Cunningham2018            doi:10.1056/NEJMsr1804754  -> status=403 url=https://www.nejm.org/doi/10.1056/NEJMsr1804754
+  FAIL Wagner2002                doi:10.1046/j.1365-2710.2002.00430.x  -> status=403 url=http://doi.wiley.com/10.1046/j.1365-2710.2002.00430.x
+  FAIL Bernal2017                doi:10.1093/ije/dyw098  -> status=403 url=https://academic.oup.com/ije/article-lookup/doi/10.1093/ije/dyw098
+  OK   Seabold2010               doi:10.25080/Majora-92bf1922-011
+
+  5 DOI(s) failed to resolve!
+
+URL VERIFICATION (8 entries without DOI)
+  OK   EFSA2018                  https://www.europeanfiresafetyalliance.org/wp-content/uploads/2018/11/20181120-Fatal-residential-fires-in-Europe.pdf
+  OK   Iceland1998               https://www.reglugerd.is/reglugerdir/allar/nr/441-1998
+  OK   MSB2023                   https://www.mcf.se/en/about-us/research-and-statistics/nordic-fire-statistics/
+  OK   Timarit                   https://timarit.is
+  OK   HMS2020                   https://fundur.reykjavik.is/sites/default/files/agenda-items/20_skyrsla_hms_-_braedraborgarstigur_0.pdf
+  FAIL StatisticsIceland2025     https://px.hagstofa.is/pxis/api/v1/is/Ibuar/mannfjoldi/1_yfirlit/Yfirlit_mannfjolda/MAN00000.px  -> status=400
+  OK   SSB2024                   https://www.ssb.no/en/bygg-bolig-og-eiendom/bolig-og-boforhold/statistikk/boliger
+  FAIL HMS2025completions        https://hms.is  -> status=429
+
+  2 URL(s) failed!
+
+======================================================================
+  RESULT: 1 issue(s) found. Review above.
+======================================================================
