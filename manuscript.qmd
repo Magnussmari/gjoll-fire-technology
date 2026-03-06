@@ -296,7 +296,7 @@ The Gjöll fatal incident registry for 1968–2025 documents a substantial long-
 
 # Acknowledgments {.unnumbered}
 
-The author acknowledges the use of generative AI tools for assistance with analytical code development; all code outputs and results were independently verified by the author.
+The author acknowledges the use of Claude Code (Anthropic) for assistance with Python script development for statistical analysis. All code, model specifications, and outputs were independently verified by the author.
 
 # Funding {.unnumbered}
 
@@ -308,7 +308,7 @@ This research received no specific grant from any funding agency in the public, 
 
 **Ethics:** The analyzed export contains no direct personal identifiers. Address-level fields are present for some incidents as part of the historical record but were not analyzed at the individual-household level.
 
-**Data Availability:** The analyzed data tables are deposited at GAGNÍS – Gagnaþjónusta félagsvísinda (DOI: 10.34881/I5WGJU) and are also available through the public Gjöll interface at <https://www.gjoll.is>. Reproducibility scripts and generated outputs are available in the accompanying repository [@Smarason2025data].
+**Data Availability:** The analyzed data tables are deposited at GAGNÍS – Gagnaþjónusta félagsvísinda (DOI: 10.34881/I5WGJU) and are also available through the public Gjöll interface at <https://www.gjoll.is>. Reproducibility scripts (Python) and generated outputs for all statistical models (including ITSA) are openly available on GitHub at <https://github.com/Magnussmari/gjoll-fire-technology> and archived in the accompanying data repository [@Smarason2025data].
 
 # References {.unnumbered}
 
