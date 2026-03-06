@@ -14,6 +14,8 @@ Reproducibility package for:
 
 This section explains how to work with this repository as a collaborator. No prior Git experience is assumed. If you get stuck at any point, just message Magnus.
 
+**You cannot break anything.** Seriously. Git records every version of every file forever. If you accidentally delete the entire manuscript, rename everything, or push something weird -- it can all be undone in seconds. The whole point of version control is that nothing is permanent and nothing is lost. So experiment freely, click things, try commands, make mistakes. That is how you learn Git. The worst that can happen is Magnus fixes it with one command.
+
 ### What you need to install (one-time setup)
 
 1. **Git** (version control)
