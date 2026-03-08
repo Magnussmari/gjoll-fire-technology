@@ -58,7 +58,7 @@ Iceland provides a useful case for studying the long-term effectiveness of fire 
 
 The Gjöll [A FOOTNOTE REFERENCE TO SAY WHAT THE WORD GJÖLL MEANS WOULD BE INTERESTING] Database on Fire and Fire Prevention (www.gjoll.is) was created to address the lack of a national incident-level dataset for fatal fires in Iceland. Covering 1968-2025 Gjöll was compiled through mining newspaper archives (e.g. timarit.is), yearbooks [FROM WHERE - Brunamálastofnun?], and official GOVERNMENT? reports, with source references for each record [@Smarason2025data; @Timarit]. 113 fatal fire incidents were identified  and verified against at least two independent sources. The registry and its preliminary descriptive results have also been disseminated to practitioner audiences (fire and EMS [SPELL OUT ACRONYMS]) in Iceland [@Smarason2025practitioner].
 
-This study uses Gjöll to describe (i) long-term trends in fatal fire incidents and deaths, (ii) seasonal patterns and trends?, and (iii) the distribution of fatal structure fires [ARE THESE WHERE SOMEONE DIED? BUILDINGS WERE TOTALLY DESTROYED?] by building construction year, with particular attention paid to the role of building age and regulatory change in fire fatalities.
+This study uses Gjöll to describe (i) long-term trends in fatal fire incidents and deaths, (ii) seasonal patterns and trends?, and (iii) the distribution of fire fatalities? fatal structure fires [ARE THESE WHERE SOMEONE DIED? BUILDINGS WERE TOTALLY DESTROYED?] by construction year, with particular attention paid to the role of building age and regulatory change in fire fatalities.
 
 # Data and Methods {#sec-methods}
 
