@@ -2,11 +2,15 @@
 
 Reproducibility package for:
 
-> **Fatal Fire Incidents in Iceland, 1968-2025: Long-Run Trends, Building Age, and the Effectiveness of Fire Safety Regulation**
+> **Fatal Fire Incidents in Iceland, 1968–2025: Long-Term Trends, Building Age, and the Effectiveness of Fire Safety Regulation**
 >
-> Magnus Smari Smarason (ORCID: 0009-0008-2050-021X)
+> Magnús Smári Smárason (ORCID: 0009-0008-2050-021X) & Thomas Barry (ORCID: 0000-0002-0633-3602)
 >
 > Target journal: *Fire Technology* (Springer Nature)
+
+## Edit Log
+
+A detailed record of all manuscript edits, including co-author review integration, structural changes, and tone calibration, is maintained in [`edits/edits.md`](edits/edits.md).
 
 ---
 

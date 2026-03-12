@@ -507,7 +507,7 @@ if primary_model is not None:
 
     fig.tight_layout()
     fig_path = os.path.join(OUT, "analysis3_itsa.png")
-    fig.savefig(fig_path, dpi=150)
+    fig.savefig(fig_path, dpi=300)
     plt.close()
     print(f"  Saved analysis3_itsa.png")
 
