@@ -1,0 +1,20 @@
+Dear Editors,
+
+We submit the manuscript "Fatal Fire Mortality as a Long-Term Urban Hazard in Iceland (1968–2025): Seasonality, Building Stock Age, and Regulatory Effectiveness" for consideration in Natural Hazards.
+
+The paper presents a national longitudinal hazard dataset and examines fire mortality through risk assessment and mitigation lenses. We quantify long-term change, heating-season concentration, and building-age vulnerability, and apply interrupted time series analysis around a major regulatory transition. The analysis extends beyond statistical description to evaluate the institutional effectiveness of Iceland's fire safety framework, including the sustainability of documented gains under conditions of organizational restructuring.
+
+The manuscript aligns with Natural Hazards by combining empirical hazard characterization, risk-relevant stratification, and mitigation-oriented interpretation. It offers transferable lessons on how regulatory and infrastructural transitions affect rare but high-consequence mortality outcomes in cold-climate urban systems.
+
+This manuscript is original, not under review elsewhere, and approved by all authors. Data and reproducibility materials are publicly available (DOI: 10.34881/I5WGJU).
+
+Sincerely,
+
+Magnús Smári Smárason (corresponding author)
+Independent Researcher, affiliated with Háskólinn á Akureyri
+ORCID: 0009-0008-2050-021X
+Email: magnus@smarason.is
+
+Thomas Barry
+Háskólinn á Akureyri / University of Akureyri
+ORCID: 0000-0002-0633-3602

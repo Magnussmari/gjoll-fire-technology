@@ -1,0 +1,20 @@
+Dear Editor-in-Chief,
+
+Please consider our manuscript, "Fatal Fire Incidents in Iceland, 1968–2025: A Population-Level Injury Prevention Analysis of Seasonality, Housing Age, and Regulation," for publication in the Journal of Public Health.
+
+This manuscript provides a long-term national injury epidemiology analysis of fire mortality using incident-level data linked to population denominators. It integrates descriptive epidemiology, seasonal risk analysis, housing-age stratification, and interrupted time-series modeling to evaluate population-level change and prevention-relevant patterns. The analysis is enriched by a practitioner perspective and an institutional effectiveness framework that examines whether documented gains are sustainable.
+
+The main contribution is practical public-health evidence: declining long-term mortality with persistent concentration in heating-season months and older housing contexts, plus policy-relevant interpretation for prevention targeting, retrofit incentives, and intersectoral governance.
+
+The paper is original, not under review elsewhere, and approved by all authors. Data and reproducibility materials are publicly available (DOI: 10.34881/I5WGJU).
+
+Sincerely,
+
+Magnús Smári Smárason (corresponding author)
+Independent Researcher, affiliated with Háskólinn á Akureyri
+ORCID: 0009-0008-2050-021X
+Email: magnus@smarason.is
+
+Thomas Barry
+Háskólinn á Akureyri / University of Akureyri
+ORCID: 0000-0002-0633-3602
