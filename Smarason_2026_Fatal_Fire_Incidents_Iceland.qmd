@@ -98,9 +98,11 @@ This study follows the STROBE guidelines for cross-sectional studies; a complete
 
 **Reproducibility:** The analyzed tables, scripts, and generated outputs are available in the accompanying repository [@Smarason2025data]. The package regenerates all tables, figures, and supplementary analyses from the exported data.
 
-## Practitioner Context
+## Practitioner and Policy Context
 
 The lead author served as a firefighter and paramedic in Iceland for over a decade, subsequently held elected leadership of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna), and served at the institution responsible for national fire safety oversight (Húsnæðis- og mannvirkjastofnun). This progression—from operational response through practitioner advocacy to regulatory administration—informs the interpretation of statistical patterns in this study, particularly the distinction between regulatory intent and on-the-ground implementation that aggregate data alone cannot capture.
+
+The analysis was further informed by the co-author's professional experience within the Arctic Council, which provided perspective on institutional dynamics and policy processes that are not fully recoverable from documentary sources alone. Together, these complementary perspectives—operational and governance—ensure that the interpretation of Iceland's regulatory trajectory accounts for both the formal frameworks recorded in legislation and the institutional realities that shape implementation.
 
 ## Ascertainment and Completeness
 
