@@ -28,6 +28,28 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+
+# ── Publication style ─────────────────────────────────────────────────────
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
+    "font.size": 9,
+    "axes.titlesize": 10,
+    "axes.labelsize": 9,
+    "xtick.labelsize": 8,
+    "ytick.labelsize": 8,
+    "legend.fontsize": 8,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.grid": True,
+    "grid.alpha": 0.3,
+    "grid.linewidth": 0.5,
+    "axes.axisbelow": True,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "savefig.bbox": "tight",
+    "savefig.pad_inches": 0.1,
+})
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from scipy import stats
@@ -460,9 +482,9 @@ if primary_model is not None:
 
     observed_rate = annual_deaths["deaths"] / annual_deaths["population_1jan"] * 100_000
 
-    fig, axes = plt.subplots(2, 1, figsize=(12, 9))
+    fig, axes = plt.subplots(2, 1, figsize=(7, 7))
 
-    # Panel A: Raw counts + fitted
+    # Panel (a): Raw counts + fitted
     ax = axes[0]
     ax.bar(annual_deaths["year"], annual_deaths["deaths"],
            color="#4682B4", alpha=0.55, label="Observed deaths (annual)")
@@ -473,18 +495,19 @@ if primary_model is not None:
                 (cf_rate * annual_deaths["population_1jan"] / 100_000)[
                     annual_deaths["year"] >= INTERVENTION_YEAR_MAIN
                 ],
-                color="#2ECC71", linewidth=2, linestyle="--",
+                color="#1B7340", linewidth=2, linestyle="--",
                 label="Counterfactual (no 1999 intervention)")
-    ax.axvline(INTERVENTION_YEAR_MAIN, color="black", linestyle=":", linewidth=1.5,
-               label="1999 building regulations")
-    ax.axvline(INTERVENTION_YEAR_2, color="gray", linestyle=":", linewidth=1.2,
+    ax.axvline(INTERVENTION_YEAR_MAIN, color="#333333", linestyle=":", linewidth=1.2,
+               label="1999 building regulation")
+    ax.axvline(INTERVENTION_YEAR_2, color="#333333", linestyle=":", linewidth=1.0, alpha=0.6,
                label="1982 fire prevention act")
     ax.set_ylabel("Deaths (count)")
-    ax.set_title("Annual Fire-Related Deaths in Iceland — ITSA Model Fit")
-    ax.legend(fontsize=8)
+    ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+    ax.legend(loc="upper right", framealpha=0.9)
     ax.set_xlim(1967, 2026)
+    ax.text(0.02, 0.93, "(a)", transform=ax.transAxes, fontsize=10, fontweight="bold", va="top")
 
-    # Panel B: Rate per 100,000 + fitted rate
+    # Panel (b): Rate per 100,000 + fitted rate
     ax = axes[1]
     ax.bar(annual_deaths["year"], observed_rate,
            color="#4682B4", alpha=0.55, label="Observed rate per 100,000")
@@ -493,17 +516,17 @@ if primary_model is not None:
     if cf_rate is not None:
         ax.plot(annual_deaths["year"][annual_deaths["year"] >= INTERVENTION_YEAR_MAIN],
                 cf_rate[annual_deaths["year"] >= INTERVENTION_YEAR_MAIN],
-                color="#2ECC71", linewidth=2, linestyle="--",
+                color="#1B7340", linewidth=2, linestyle="--",
                 label="Counterfactual (no 1999 intervention)")
-    ax.axvline(INTERVENTION_YEAR_MAIN, color="black", linestyle=":", linewidth=1.5,
-               label="1999 building regulations")
-    ax.axvline(INTERVENTION_YEAR_2, color="gray", linestyle=":", linewidth=1.2,
+    ax.axvline(INTERVENTION_YEAR_MAIN, color="#333333", linestyle=":", linewidth=1.2,
+               label="1999 building regulation")
+    ax.axvline(INTERVENTION_YEAR_2, color="#333333", linestyle=":", linewidth=1.0, alpha=0.6,
                label="1982 fire prevention act")
     ax.set_ylabel("Deaths per 100,000 population")
     ax.set_xlabel("Year")
-    ax.set_title("Fire-Related Mortality Rate — Fitted vs Counterfactual")
-    ax.legend(fontsize=8)
+    ax.legend(loc="upper right", framealpha=0.9)
     ax.set_xlim(1967, 2026)
+    ax.text(0.02, 0.93, "(b)", transform=ax.transAxes, fontsize=10, fontweight="bold", va="top")
 
     fig.tight_layout()
     fig_path = os.path.join(OUT, "analysis3_itsa.png")

@@ -27,6 +27,28 @@ import numpy as np
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+# ── Publication style ─────────────────────────────────────────────────────
+plt.rcParams.update({
+    "font.family": "serif",
+    "font.serif": ["Times New Roman", "Times", "DejaVu Serif"],
+    "font.size": 9,
+    "axes.titlesize": 10,
+    "axes.labelsize": 9,
+    "xtick.labelsize": 8,
+    "ytick.labelsize": 8,
+    "legend.fontsize": 8,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.grid": True,
+    "grid.alpha": 0.3,
+    "grid.linewidth": 0.5,
+    "axes.axisbelow": True,
+    "figure.dpi": 300,
+    "savefig.dpi": 300,
+    "savefig.bbox": "tight",
+    "savefig.pad_inches": 0.1,
+})
+
 # ── Paths ────────────────────────────────────────────────────────────────
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "data")
@@ -135,16 +157,19 @@ print("\n═══ Generating Figure 1: Annual deaths ═══")
 annual = all_incidents.groupby("year")["deaths"].sum().reindex(range(1968, 2026), fill_value=0)
 rolling = annual.rolling(5, center=True, min_periods=1).mean()
 
-fig, ax = plt.subplots(figsize=(10, 5))
+fig, ax = plt.subplots(figsize=(7, 3.5))
 ax.bar(annual.index, annual.values, color="#4682B4", alpha=0.7, label="Annual deaths")
 ax.plot(rolling.index, rolling.values, color="#C0392B", linewidth=2, label="5-year rolling mean")
+ax.axvline(1982, color="#333333", linestyle=":", linewidth=1.2, alpha=0.7)
+ax.axvline(1999, color="#333333", linestyle=":", linewidth=1.2, alpha=0.7)
+ax.text(1982.5, ax.get_ylim()[1] * 0.92, "1982", fontsize=7, color="#333333", ha="left")
+ax.text(1999.5, ax.get_ylim()[1] * 0.92, "1999", fontsize=7, color="#333333", ha="left")
 ax.set_xlabel("Year")
 ax.set_ylabel("Deaths")
-ax.set_title("Annual Fire-Related Deaths in Iceland (1968–2025)")
-ax.legend()
+ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+ax.legend(loc="upper right", framealpha=0.9)
 ax.set_xlim(1967, 2026)
-fig.tight_layout()
-fig.savefig(os.path.join(OUT, "fig1_annual_deaths.png"), dpi=300)
+fig.savefig(os.path.join(OUT, "fig1_annual_deaths.png"))
 plt.close()
 print("  Saved fig1_annual_deaths.png")
 
@@ -161,12 +186,14 @@ print(f"  Heating season (Oct–Mar): {len(heating)}/{len(all_incidents)} incide
       f"{heating['deaths'].sum()}/{all_incidents['deaths'].sum()} deaths "
       f"({heating['deaths'].sum()/all_incidents['deaths'].sum()*100:.0f}%)")
 
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(7, 3.5))
 months = range(1, 13)
 month_labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 bar_width = 0.35
 x = np.arange(12)
+ax.axvspan(9 - 0.5, 11 + 0.5, alpha=0.12, color="#F5DEB3", label="Heating season (Oct\u2013Mar)")
+ax.axvspan(-0.5, 2 + 0.5, alpha=0.12, color="#F5DEB3")
 ax.bar(x - bar_width/2, [monthly_deaths.get(m, 0) for m in months],
        bar_width, color="#C0392B", alpha=0.8, label="Deaths")
 ax.bar(x + bar_width/2, [monthly_incidents.get(m, 0) for m in months],
@@ -174,12 +201,9 @@ ax.bar(x + bar_width/2, [monthly_incidents.get(m, 0) for m in months],
 ax.set_xticks(x)
 ax.set_xticklabels(month_labels)
 ax.set_ylabel("Count")
-ax.set_title("Monthly Distribution of Fatal Fire Incidents")
-ax.axvspan(9 - 0.5, 11 + 0.5, alpha=0.08, color="orange", label="Heating season (Oct–Mar)")
-ax.axvspan(-0.5, 2 + 0.5, alpha=0.08, color="orange")
-ax.legend()
-fig.tight_layout()
-fig.savefig(os.path.join(OUT, "fig2_monthly_seasonality.png"), dpi=300)
+ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+ax.legend(loc="upper right", framealpha=0.9)
+fig.savefig(os.path.join(OUT, "fig2_monthly_seasonality.png"))
 plt.close()
 print("  Saved fig2_monthly_seasonality.png")
 
@@ -192,20 +216,26 @@ for label, lo, hi in cy_bands:
     sub = structure[(structure["construction_year"] >= lo) & (structure["construction_year"] <= hi)]
     bands_data.append({"Band": label, "Incidents": len(sub), "Deaths": sub["deaths"].sum()})
 
-fig, ax = plt.subplots(figsize=(8, 5))
+fig, ax = plt.subplots(figsize=(7, 3.5))
 x = np.arange(len(bands_data))
 bar_width = 0.35
 ax.bar(x - bar_width/2, [d["Deaths"] for d in bands_data],
        bar_width, color="#C0392B", alpha=0.8, label="Deaths")
 ax.bar(x + bar_width/2, [d["Incidents"] for d in bands_data],
        bar_width, color="#4682B4", alpha=0.8, label="Incidents")
+# Post-1998 zero annotation
+ax.annotate("Post-1998:\n0 incidents\n0 deaths",
+            xy=(len(bands_data) - 0.5, 0), xytext=(len(bands_data) + 0.1, 10),
+            fontsize=8, ha="center", color="#333333",
+            arrowprops=dict(arrowstyle="->", color="#333333", lw=1.0),
+            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#999999", alpha=0.9))
 ax.set_xticks(x)
 ax.set_xticklabels([d["Band"] for d in bands_data], rotation=45, ha="right")
 ax.set_ylabel("Count")
-ax.set_title("Fatal Structure Fires by Building Construction Year")
-ax.legend()
-fig.tight_layout()
-fig.savefig(os.path.join(OUT, "fig3_construction_year.png"), dpi=300)
+ax.yaxis.set_major_locator(plt.MaxNLocator(integer=True))
+ax.legend(loc="upper right", framealpha=0.9)
+ax.set_xlim(-0.6, len(bands_data) + 0.8)
+fig.savefig(os.path.join(OUT, "fig3_construction_year.png"))
 plt.close()
 print("  Saved fig3_construction_year.png")
 
