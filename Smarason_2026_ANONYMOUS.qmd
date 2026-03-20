@@ -62,7 +62,7 @@ The scale of the original challenge is illustrated by the 1968 fire prevention b
 
 ## Data Sources and Registry Construction
 
-The Gjöll registry was compiled through systematic review of newspaper archives (notably Tímarit.is), institutional yearbooks (Slökkvilið ríkisins, Brunamálastofnun), government investigation reports, and court records. All 113 fatal fire incidents were verified against at least two independent sources where available [@Smarason2025data; @Timarit]. The following subsections describe the data structure, classification logic, and analytical methods.
+The Gjöll registry was compiled through systematic review of newspaper archives (notably Tímarit.is), institutional yearbooks (Árbók Þjóðvinafélagsins; Árbók Slysavarnafélags Íslands, later Landsbjörg), government investigation reports, and court records. All 113 fatal fire incidents were verified against at least two independent sources where available [@Smarason2025data; @Timarit]. The following subsections describe the data structure, classification logic, and analytical methods.
 
 Two exported tables (CSV) from the Gjöll registry were analyzed: fatal structure fires (*n* = 93 incidents) and other fatal fire-related incidents (*n* = 20 incidents). The export metadata indicates a 2025-09-15 export date [@Smarason2025data]. The unit of analysis is the fatal incident. All fatal fire incidents in the export for 1968–2025 were included; no sampling was performed. We did not perform a formal validation against national cause-of-death registers and cannot quantify completeness of ascertainment. Under-ascertainment is plausible, particularly in earlier decades.
 
