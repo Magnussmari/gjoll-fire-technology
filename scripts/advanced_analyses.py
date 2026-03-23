@@ -60,7 +60,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # ── Paths ─────────────────────────────────────────────────────────────────────
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "data")
-OUT  = os.path.join(BASE, "generated")
+OUT  = os.path.join(BASE, "output", "generated")
 os.makedirs(OUT, exist_ok=True)
 
 # ── Load data ─────────────────────────────────────────────────────────────────

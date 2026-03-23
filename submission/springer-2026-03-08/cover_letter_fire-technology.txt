@@ -1,0 +1,22 @@
+Dear Editor-in-Chief,
+
+Please consider our manuscript, "Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Age and Fire Safety Regulation," for publication in Fire Technology.
+
+This study presents the first national incident-level fatal fire registry spanning a multi-decade regulatory period. The Gjöll registry documents all 113 fatal fire incidents (145 deaths) in Iceland across 58 years (1968–2025), enabling direct assessment of long-term mortality trends, construction-year stratification, person-years exposure approximation, and interrupted time series analysis at the 1999 regulatory breakpoint. The central empirical finding is that no fatal structure fires were recorded in buildings constructed after 1998, across approximately 2 million person-years of modeled exposure in post-1998 dwellings.
+
+The manuscript combines quantitative fire epidemiology with institutional analysis, examining whether Iceland's documented safety gains are sustainable in light of repeated organizational transfers, enforcement lapses, and emerging risks. This dual perspective — statistical evidence and governance interpretation — is informed by the lead author's operational experience as a firefighter and paramedic, and by the co-author's governance expertise.
+
+We believe the manuscript is a strong fit for Fire Technology because it addresses fire safety outcomes in the built environment, links those outcomes to building characteristics and regulatory context, and contributes a replicable registry methodology for evidence-based fire safety policy evaluation.
+
+The manuscript is original, not under consideration elsewhere, and approved by all authors. Data and reproducibility materials are publicly available (DOI: 10.34881/I5WGJU; www.gjoll.is).
+
+Sincerely,
+
+Magnús Smári Smárason (corresponding author)
+Independent Researcher, affiliated with Háskólinn á Akureyri
+ORCID: 0009-0008-2050-021X
+Email: magnus@smarason.is
+
+Thomas Barry
+Háskólinn á Akureyri / University of Akureyri
+ORCID: 0000-0002-0633-3602

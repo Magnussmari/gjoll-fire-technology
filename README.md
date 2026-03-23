@@ -2,9 +2,9 @@
 
 Reproducibility package for:
 
-> **Fatal Fire Incidents in Iceland, 1968–2025: Long-Term Trends, Building Age, and the Effectiveness of Fire Safety Regulation**
+> **Fatal Fire Incidents in Iceland, 1968-2025: Long-Term Trends, Building Age, and the Effectiveness of Fire Safety Regulation**
 >
-> Magnús Smári Smárason (ORCID: 0009-0008-2050-021X) & Thomas Barry (ORCID: 0000-0002-0633-3602)
+> Magnus Smari Smarason (ORCID: 0009-0008-2050-021X) & Thomas Barry (ORCID: 0000-0002-0633-3602)
 >
 > Target journal: *Fire Technology* (Springer Nature)
 
@@ -51,10 +51,10 @@ You now have a local copy of the entire project: manuscript, data, scripts, and 
 
 ### The manuscript file
 
-The manuscript is a single file:
+The manuscript is:
 
 ```
-Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
+manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
 ```
 
 This is a Quarto Markdown file -- it looks like plain text with some formatting codes. You can read and edit it in any text editor. The actual prose is easy to find: it reads like a normal paper, with sections, paragraphs, and references in `[@AuthorYear]` format.
@@ -74,7 +74,7 @@ This is the easiest option if you just want to write comments without touching a
 #### Option B: Edit directly on GitHub (easy, no local tools needed)
 
 1. Go to the repository on GitHub
-2. Click on `Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd`
+2. Click on `manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd`
 3. Click the pencil icon (Edit this file) in the top right
 4. Make your changes or add comments directly in the text (use `<!-- Tom: your comment here -->` for comments that should not appear in the final paper)
 5. Scroll down, write a brief description of what you changed (e.g., "Suggested rewording of Discussion paragraph 2")
@@ -95,12 +95,12 @@ git pull
 #    (this keeps your changes separate from the main manuscript until they are ready)
 git checkout -b tom-review
 
-# 3. Open the manuscript in your editor and make changes
+# 3. Open the manuscript in your editor
 #    In VS Code:
-code Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
+code manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
 
 # 4. When you are done, save the file, then:
-git add Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
+git add manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd
 git commit -m "Tom: suggested edits to Discussion and Limitations sections"
 
 # 5. Push your branch to GitHub
@@ -138,15 +138,19 @@ interpreted in light of the substantial confounding discussed above." -->
 ```
 gjoll-fire-technology/
 |
-|-- Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd   <-- THE MANUSCRIPT (start here)
-|-- references.bib                                    <-- Bibliography (BibTeX)
-|-- springer-fire-technology.csl                      <-- Citation style
+|-- manuscript/                                          <-- MANUSCRIPT SOURCE
+|   |-- Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd   <-- THE MANUSCRIPT (start here)
+|   +-- references.bib                                   <-- Bibliography (BibTeX)
+|
+|-- springer-fire-technology.csl                         <-- Citation style
 |
 |-- data/                          <-- Raw data exports from Gjoll registry
 |   |-- fire_incidents_deaths_structure.csv    (93 structure fire incidents)
 |   |-- fire_incidents_deaths_other.csv        (20 other fire-related incidents)
 |   |-- population_1jan_MAN00000_1968_2025.csv (population denominators)
 |   +-- export-metadata.json
+|
+|-- research/sources/              <-- Reference PDFs with markdown summaries
 |
 |-- figures/                       <-- Manuscript figures
 |   |-- fig1_annual_deaths.png
@@ -160,14 +164,18 @@ gjoll-fire-technology/
 |   |-- readability.py                 (Flesch-Kincaid analysis)
 |   +-- verify_references.py          (DOI and bibliography verification)
 |
-|-- qualitycontrol/                <-- QC reports
+|-- reports/                       <-- QC reports
 |   |-- readability_report.txt
 |   +-- references_report.txt
 |
-|-- STROBE_checklist_cross_sectional.md   <-- Supplementary File S1
-|-- SUBMISSION_GUIDE.md                   <-- Fire Technology submission instructions
-|-- GITHUB_SETUP.md                       <-- Repo setup notes
-+-- requirements.txt                      <-- Python dependencies
+|-- submission/                    <-- Submission materials
+|   |-- STROBE_checklist_cross_sectional.md   (Supplementary File S1)
+|   +-- SUBMISSION_GUIDE.md                   (Fire Technology submission instructions)
+|
+|-- edits/                         <-- Editorial workflow
+|   +-- edits.md                   (detailed edit log)
+|
++-- _archive/                      <-- Historical versions
 ```
 
 ### Why Git instead of Word track changes?
@@ -222,20 +230,20 @@ The Gjoll registry export is deposited at **GAGNIS - Gagnathjónusta felagsvísi
 All manuscript tables and figures can be regenerated from the data:
 
 ```bash
-pip install -r requirements.txt
+pip install -r scripts/requirements.txt
 python scripts/reproduce_tables_figures.py
 python scripts/advanced_analyses.py
 ```
 
-Output is written to `generated/`.
+Output is written to `output/generated/`.
 
 ## Render the Manuscript
 
-The manuscript source is `Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd` (Quarto). To render:
+The manuscript source is `manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd` (Quarto). To render:
 
 ```bash
-quarto render Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd --to pdf
-quarto render Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd --to docx
+quarto render manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd --to pdf
+quarto render manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd --to docx
 ```
 
 Requirements: [Quarto](https://quarto.org/) with a LaTeX distribution (TeX Live recommended).

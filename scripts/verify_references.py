@@ -74,8 +74,8 @@ def verify_url(url: str, client: httpx.Client) -> tuple[bool, int]:
 
 
 def main():
-    bib_path = sys.argv[1] if len(sys.argv) > 1 else "references.bib"
-    qmd_path = sys.argv[2] if len(sys.argv) > 2 else "manuscript.qmd"
+    bib_path = sys.argv[1] if len(sys.argv) > 1 else "manuscript/references.bib"
+    qmd_path = sys.argv[2] if len(sys.argv) > 2 else "manuscript/Smarason_2026_Fatal_Fire_Incidents_Iceland.qmd"
 
     if not Path(bib_path).exists():
         print(f"Error: {bib_path} not found")
