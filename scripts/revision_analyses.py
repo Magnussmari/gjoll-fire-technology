@@ -248,8 +248,9 @@ def rate_and_bound(deaths, py):
     return rate, ub
 
 scenarios = [
-    ("Primary (recorded CY>=1999)", 0),
-    ("Worst-case (+nursing-home 2014, +Studlar/Fossaleyni)", 2),
+    ("Strict def (building-system-relevant spread)", 0),
+    ("Standard def (any fatal fire in a building: +2014 nursing home)", 1),
+    ("Worst-case (+Studlar/Fossaleyni unregistered extension)", 2),
 ]
 rows = []
 for label, d in scenarios:
