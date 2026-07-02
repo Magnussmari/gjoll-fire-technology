@@ -14,6 +14,35 @@ A detailed record of all manuscript edits, including co-author review integratio
 
 ---
 
+## Reproducing the analysis
+
+This package uses [**uv**](https://docs.astral.sh/uv/) for dependency management. Install uv once (`curl -LsSf https://astral.sh/uv/install.sh | sh`), then run any script with `uv run` — uv resolves the pinned environment (`pyproject.toml` + `uv.lock`) automatically, so there is no manual `pip install` or virtualenv step.
+
+```bash
+# Verify EVERY headline statistic in the manuscript against the deposited CSVs
+uv run python scripts/verify_statistics.py        # add -v to print each computed value
+
+# Regenerate all tables and figures
+uv run python scripts/reproduce_tables_figures.py
+
+# Person-years exposure model, missing-CY sensitivity, and the ITSA figure
+uv run python scripts/advanced_analyses.py
+
+# Peer-review revision analyses (ML negative binomial, quasi-Poisson,
+# structure-only ITSA, incident-level zero-event, worst-case reclassification)
+uv run python scripts/revision_analyses.py
+```
+
+### Living audit: `verify_statistics.py`
+
+`scripts/verify_statistics.py` recomputes **every** number printed in the manuscript and supplement directly from the deposited data (`data/*.csv`) and checks it against the value stated in the paper — counts, the decade table, seasonality, the construction-year cohort, the person-years bound and zero-event probabilities, the worst-case reclassification sensitivity, and the full interrupted-time-series model set. It prints `PASS`/`FAIL` per check and exits non-zero if any value drifts. The current manuscript passes **78/78** checks.
+
+This verifier runs in continuous integration ([`.github/workflows/verify.yml`](.github/workflows/verify.yml)) on every push and pull request, so the reproducibility claim is enforced automatically rather than asserted.
+
+> **ITSA parameterization note.** The interrupted time series uses the standard segmented (Wagner) coding, in which the post-intervention trend term is *years since 1999* and the step coefficient is therefore the level change **at** the 1999 breakpoint. An earlier revision coded the interaction as `time × post1999` with `time` measured from 1968, which makes the step coefficient the between-segment gap at the arbitrary 1968 origin rather than the discontinuity at the intervention; `verify_statistics.py` pins the corrected values (no significant discrete step at 1999; the signal is the pre-existing secular decline).
+
+---
+
 ## For Collaborators: How to Review and Comment
 
 This section explains how to work with this repository as a collaborator. No prior Git experience is assumed. If you get stuck at any point, just message Magnus.

@@ -1,0 +1,30 @@
+name: verify-statistics
+
+# Living audit: recompute every headline statistic in the manuscript from the
+# deposited CSVs on every push / PR and fail if any value drifts.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Verify all manuscript statistics against the deposited data
+        run: uv run python scripts/verify_statistics.py -v
+
+      - name: Reproduce tables, figures, and advanced analyses
+        run: |
+          uv run python scripts/reproduce_tables_figures.py
+          uv run python scripts/advanced_analyses.py
+          uv run python scripts/revision_analyses.py
