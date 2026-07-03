@@ -49,8 +49,8 @@ other     = pd.read_csv(os.path.join(DATA, "fire_incidents_deaths_other.csv"))
 pop       = pd.read_csv(os.path.join(DATA, "population_1jan_MAN00000_1968_2025.csv"))
 
 # Person-years denominators from Analysis 1 (modeled dwelling stock)
-PY_POST1998 = 2_080_213
-PY_PRE1998  = 6_636_536
+PY_POST1998 = 1_856_828   # actual completions (IDN03001), 148k anchor
+PY_PRE1998  = 6_859_921   # actual completions (IDN03001), 148k anchor
 DEATHS_PRE1998 = 38          # structure-fire deaths 1999-2025, recorded CY <= 1998
 
 def hr(title):

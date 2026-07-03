@@ -35,8 +35,11 @@ pop       = pd.read_csv(os.path.join(DATA, "population_1jan_MAN00000_1968_2025.c
 pop_year  = pop.set_index("year")["population_1jan"]
 last_pop  = pop_year.iloc[-1]
 
-# Modeled dwelling-stock denominators (reproduced by advanced_analyses.py Analysis 1)
-PY_PRE1998, PY_POST1998 = 6_636_536, 2_080_213
+# PRIMARY denominators: built from ACTUAL dwelling completions (Statistics Iceland
+# IDN03001, 1970-2021) anchored to the documented ~2021 stock of 148,000 dwellings
+# (see denominator_from_completions.py). The earlier stepped model gave 6.64M/2.08M;
+# the actual series gives the values below (the model was ~12% anti-conservative).
+PY_PRE1998, PY_POST1998 = 6_859_921, 1_856_828
 
 RESULTS = []
 def check(name, got, want, tol=0.0, kind="≈"):
@@ -158,21 +161,21 @@ check("Deaths in those incidents = 38", int(inc32.deaths.sum()), 38)
 
 
 # ══════════════════════════════════════════════════════════════════════════
-section("6. Person-years bound and zero-event inference")
+section("6. Person-years bound and zero-event inference (actual-completions denominator)")
 rate_pre = 38 / PY_PRE1998 * 1e5
-check("Pre-1998 rate = 0.57 per 100k", rate_pre, 0.5726, tol=0.002)
+check("Pre-1998 rate = 0.55 per 100k", rate_pre, 0.5539, tol=0.003)
 ub0 = 3.0 / PY_POST1998 * 1e5
-check("Post-1998 one-sided 95% upper bound = 0.14", ub0, 0.1442, tol=0.002)
+check("Post-1998 one-sided 95% upper bound = 0.16", ub0, 0.1616, tol=0.003)
 expected_dth = rate_pre/1e5 * PY_POST1998
-check("Expected post-1998 deaths under equality ≈ 11.9", expected_dth, 11.9, tol=0.1)
-check("P(0 deaths) ≈ 7e-6", math.exp(-expected_dth), 7e-6, tol=2e-6)
+check("Expected post-1998 deaths under equality ≈ 10.3", expected_dth, 10.3, tol=0.2)
+check("P(0 deaths) ≈ 3e-5", math.exp(-expected_dth), 3.4e-5, tol=1.5e-5)
 # incident level
 inc_rate_pre = 32 / PY_PRE1998
 expected_inc = inc_rate_pre * PY_POST1998
-check("Expected post-1998 incidents ≈ 10.0", expected_inc, 10.0, tol=0.2)
-check("P(0 incidents) ≈ 4e-5", math.exp(-expected_inc), 4.4e-5, tol=1e-5)
+check("Expected post-1998 incidents ≈ 8.7", expected_inc, 8.7, tol=0.3)
+check("P(0 incidents) ≈ 1.7e-4", math.exp(-expected_inc), 1.7e-4, tol=0.8e-4)
 # halved-denominator stress test
-check("Halved-denominator upper bound = 0.29", 3.0/(PY_POST1998/2)*1e5, 0.2884, tol=0.003)
+check("Halved-denominator upper bound = 0.32", 3.0/(PY_POST1998/2)*1e5, 0.323, tol=0.004)
 
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -180,19 +183,19 @@ section("7. Definition-robust post-1998 cohort (three fire-classification conven
 def one_sided_ub(k, py):   # one-sided 95% exact-Poisson upper bound (rule-of-3 family)
     return stats.chi2.ppf(0.95, 2*(k+1))/2 / py * 1e5
 # strict (0), standard/any-building-fire (1: 2014 nursing home CY2001), worst-case (2)
-check("Strict (0 deaths) upper bound = 0.14", one_sided_ub(0, PY_POST1998), 0.1442, tol=0.002)
+check("Strict (0 deaths) upper bound = 0.16", one_sided_ub(0, PY_POST1998), 0.1613, tol=0.003)
 std_rate = 1 / PY_POST1998 * 1e5
-check("Standard (1 death) rate = 0.048", std_rate, 0.0481, tol=0.001)
-check("Standard upper bound = 0.23", one_sided_ub(1, PY_POST1998), 0.228, tol=0.004)
-check("Standard ~12x below pre-1998", rate_pre/std_rate, 12.0, tol=0.5)
+check("Standard (1 death) rate = 0.054", std_rate, 0.0539, tol=0.001)
+check("Standard upper bound = 0.26", one_sided_ub(1, PY_POST1998), 0.2555, tol=0.004)
+check("Standard ~10x below pre-1998", rate_pre/std_rate, 10.3, tol=0.5)
 wc_rate = 2 / PY_POST1998 * 1e5
-check("Worst-case (2 deaths) rate = 0.096", wc_rate, 0.0961, tol=0.001)
-check("Worst-case upper bound = 0.30", one_sided_ub(2, PY_POST1998), 0.3027, tol=0.004)
-check("Worst-case ~6x below pre-1998", rate_pre/wc_rate, 6.0, tol=0.2)
-# fold factors (GPT-5.5 precision point): strict UPPER BOUND is ~4x below the
-# pre-1998 POINT estimate, not 12x; 12x applies to the standard POINT estimate only
-check("Strict bound ~4x below pre-1998 point", rate_pre/one_sided_ub(0, PY_POST1998), 4.0, tol=0.2)
-check("Standard point ~12x below pre-1998 point", rate_pre/std_rate, 12.0, tol=0.5)
+check("Worst-case (2 deaths) rate = 0.11", wc_rate, 0.1077, tol=0.002)
+check("Worst-case upper bound = 0.34", one_sided_ub(2, PY_POST1998), 0.3391, tol=0.004)
+check("Worst-case ~5x below pre-1998", rate_pre/wc_rate, 5.1, tol=0.3)
+# fold factors: strict UPPER BOUND is ~3.4x below the pre-1998 POINT estimate;
+# the ~10x figure applies to the standard POINT estimate only
+check("Strict bound ~3.4x below pre-1998 point", rate_pre/one_sided_ub(0, PY_POST1998), 3.4, tol=0.2)
+check("Standard point ~10x below pre-1998 point", rate_pre/std_rate, 10.3, tol=0.5)
 # occupancy alignment: 36 of 38 pre-1998-cohort deaths are ordinary dwellings
 win = structure[(structure.year>=1999)&(structure.year<=2025)
                 & structure.construction_year.notna() & (structure.construction_year<=1998)]
@@ -200,19 +203,22 @@ nondwelling = win[(win.is_commercial_residential==True)
                   | win.notes.str.contains("industrial|commercial|Residency", case=False, na=False)]
 check("Pre-1998-cohort ordinary-dwelling deaths = 36", int(win.deaths.sum()-nondwelling.deaths.sum()), 36)
 check("Pre-1998-cohort converted-commercial deaths = 2", int(nondwelling.deaths.sum()), 2)
-check("Dwelling-only pre-1998 rate = 0.54", 36/PY_PRE1998*1e5, 0.5424, tol=0.002)
+check("Dwelling-only pre-1998 rate = 0.52", 36/PY_PRE1998*1e5, 0.5248, tol=0.003)
 # pre-1998 exact-Poisson 95% CI on 38 deaths
 ci_lo = stats.chi2.ppf(0.025, 2*38)/2 / PY_PRE1998*1e5
 ci_hi = stats.chi2.ppf(0.975, 2*(38+1))/2 / PY_PRE1998*1e5
-check("Pre-1998 95% CI lower = 0.41", ci_lo, 0.405, tol=0.01)
-check("Pre-1998 95% CI upper = 0.79", ci_hi, 0.786, tol=0.01)
+check("Pre-1998 95% CI lower = 0.39", ci_lo, 0.392, tol=0.01)
+check("Pre-1998 95% CI upper = 0.76", ci_hi, 0.760, tol=0.01)
 # joint sensitivity: halved denominator x classification (the one crossing scenario)
-check("Joint: halved denom + 2 deaths bound = 0.61 (reaches pre-1998 point)",
-      one_sided_ub(2, PY_POST1998/2), 0.605, tol=0.01)
-check("Joint: halved denom + 1 death bound = 0.46 (still below)",
-      one_sided_ub(1, PY_POST1998/2), 0.456, tol=0.01)
-# robustness: every UB below pre-1998 point EXCEPT the compounded extreme
-check("All modeled-denominator bounds < pre-1998 point 0.573",
+check("Joint: halved denom + 2 deaths bound = 0.68 (exceeds pre-1998 point)",
+      one_sided_ub(2, PY_POST1998/2), 0.678, tol=0.01)
+check("Joint: halved denom + 1 death bound = 0.51 (still below)",
+      one_sided_ub(1, PY_POST1998/2), 0.511, tol=0.01)
+# actual-completions denominator provenance and modeled cross-check
+comp_csv = pd.read_csv(os.path.join(DATA, "dwelling_completions_IDN03001_1970_2021.csv"))
+check("Actual completions 1999-2021 total = 46390",
+      int(comp_csv[(comp_csv.year>=1999)&(comp_csv.year<=2021)].completed_dwellings.sum()), 46390)
+check("All modeled-denominator bounds < pre-1998 point 0.554",
       int(all(one_sided_ub(k, PY_POST1998) < rate_pre for k in (0,1,2))), 1)
 
 
