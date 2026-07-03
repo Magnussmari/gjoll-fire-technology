@@ -253,6 +253,17 @@ else:
 
 
 # ══════════════════════════════════════════════════════════════════════════
+section("7d. Building age at fire (M2)")
+_k = structure[structure.construction_year.notna()].copy()
+_k["age"] = _k.year - _k.construction_year
+_w = _k[(_k.year>=1996)&(_k.year<=2025)]
+_young = _w[_w.age < 27]
+check("1996-2025 fatal fires in buildings <27yr old = 4 incidents", len(_young), 4)
+check("...deaths in those = 6", int(_young.deaths.sum()), 6)
+check("youngest building with fatal structure fire = age 14", int(_w.age.min()), 14)
+
+
+# ══════════════════════════════════════════════════════════════════════════
 section("8. ITSA — corrected segmented parameterization")
 comb = annual(alld); mc = itsa(comb)
 def irr(m,n): return math.exp(m.params[n])
