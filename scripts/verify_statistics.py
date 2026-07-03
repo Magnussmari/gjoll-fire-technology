@@ -223,6 +223,36 @@ check("All modeled-denominator bounds < pre-1998 point 0.554",
 
 
 # ══════════════════════════════════════════════════════════════════════════
+section("7b. Exact rate-ratio inference (headline) — every 95% CI excludes 1")
+def rr_ci(a, T1, b, T2):
+    rr = (a/T1)/(b/T2)
+    lo = 0.0 if a == 0 else stats.beta.ppf(0.025, a, b+1)
+    hi = stats.beta.ppf(0.975, a+1, b)
+    to = lambda pi: (pi/(1-pi))*(T2/T1) if pi < 1 else float("inf")
+    return rr, to(lo), to(hi)
+for lab, a, exp_hi in [("strict", 0, 0.377), ("standard", 1, 0.575), ("worst", 2, 0.752)]:
+    rr, lo, hi = rr_ci(a, PY_POST1998, 38, PY_PRE1998)
+    check(f"Death-level RR {lab} upper 95% CI < 1 (= {exp_hi})", hi, exp_hi, tol=0.02)
+    check(f"Death-level RR {lab} CI excludes 1", int(hi < 1.0), 1)
+# incident level (pre b=32)
+for lab, a, exp_hi in [("strict", 0, 0.451), ("standard", 1, 0.691), ("worst", 2, 0.905)]:
+    rr, lo, hi = rr_ci(a, PY_POST1998, 32, PY_PRE1998)
+    check(f"Incident-level RR {lab} upper 95% CI < 1 (= {exp_hi})", hi, exp_hi, tol=0.03)
+
+
+# ══════════════════════════════════════════════════════════════════════════
+section("7c. Blinded second-coding reliability (if run)")
+bcsv = os.path.join(os.path.dirname(DATA), "output", "generated", "blinded_second_coding.csv")
+if os.path.exists(bcsv):
+    bc = pd.read_csv(bcsv)
+    check("Blinded coders n = 45 incidents", int(bc["n"].iloc[0]), 45)
+    check("Cohen's kappa >= 0.9 for all coders", int((bc["cohen_kappa"] >= 0.9).all()), 1)
+    check("Raw agreement >= 0.95 for all coders", int((bc["raw_agreement"] >= 0.95).all()), 1)
+else:
+    print("  [skip] run scripts/blinded_second_coding.py to generate reliability stats")
+
+
+# ══════════════════════════════════════════════════════════════════════════
 section("8. ITSA — corrected segmented parameterization")
 comb = annual(alld); mc = itsa(comb)
 def irr(m,n): return math.exp(m.params[n])

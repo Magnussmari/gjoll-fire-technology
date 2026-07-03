@@ -485,14 +485,30 @@ if primary_model is not None:
 
     observed_rate = annual_deaths["deaths"] / annual_deaths["population_1jan"] * 100_000
 
+    # Structure-fire deaths fit (peer-review M5: show structure-only in the figure)
+    struct_annual = (
+        structure.groupby("year")["deaths"].sum()
+        .reindex(range(1968, 2026), fill_value=0).reset_index()
+    )
+    struct_annual.columns = ["year", "deaths"]
+    struct_annual = struct_annual.merge(annual_deaths[["year", "population_1jan"]], on="year")
+    struct_annual["time"] = struct_annual["year"] - 1968
+    struct_annual["post1999"] = (struct_annual["year"] >= INTERVENTION_YEAR_MAIN).astype(int)
+    struct_annual["time_since_1999"] = (struct_annual["year"] - INTERVENTION_YEAR_MAIN).clip(lower=0)
+    struct_annual["log_pop"] = np.log(struct_annual["population_1jan"])
+    struct_fit = smf.glm("deaths ~ time + post1999 + time_since_1999", struct_annual,
+                         family=sm.families.Poisson(), offset=struct_annual["log_pop"]).fit()
+
     fig, axes = plt.subplots(2, 1, figsize=(7, 7))
 
     # Panel (a): Raw counts + fitted
     ax = axes[0]
     ax.bar(annual_deaths["year"], annual_deaths["deaths"],
-           color="#4682B4", alpha=0.55, label="Observed deaths (annual)")
+           color="#4682B4", alpha=0.55, label="Observed deaths (all, annual)")
     ax.plot(annual_deaths["year"], primary_model.fittedvalues,
-            color="#C0392B", linewidth=2, label=f"Fitted: {primary_label}")
+            color="#C0392B", linewidth=2, label=f"Fitted (all): {primary_label}")
+    ax.plot(struct_annual["year"], struct_fit.fittedvalues,
+            color="#7D3C98", linewidth=2, linestyle="-.", label="Fitted (structure-fire deaths)")
     if cf_rate is not None:
         ax.plot(annual_deaths["year"][annual_deaths["year"] >= INTERVENTION_YEAR_MAIN],
                 (cf_rate * annual_deaths["population_1jan"] / 100_000)[
