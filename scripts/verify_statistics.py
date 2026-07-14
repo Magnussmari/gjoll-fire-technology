@@ -212,8 +212,29 @@ check("Pre-1998 95% CI upper = 0.76", ci_hi, 0.760, tol=0.01)
 # joint sensitivity: halved denominator x classification (the one crossing scenario)
 check("Joint: halved denom + 2 deaths bound = 0.68 (exceeds pre-1998 point)",
       one_sided_ub(2, PY_POST1998/2), 0.678, tol=0.01)
-check("Joint: halved denom + 1 death bound = 0.51 (still below)",
+check("Joint: halved denom + 1 death bound = 0.51",
       one_sided_ub(1, PY_POST1998/2), 0.511, tol=0.01)
+# COHERENT reallocation: halving post moves ~0.93M PY to pre (density-gradient logic)
+PY_PRE_REALLOC = PY_PRE1998 + PY_POST1998/2
+rate_pre_realloc = 38 / PY_PRE_REALLOC * 1e5
+check("Reallocated pre-1998 PY = 7.79M", PY_PRE_REALLOC/1e6, 7.788, tol=0.01)
+check("Reallocated pre-1998 point estimate = 0.49", rate_pre_realloc, 0.488, tol=0.005)
+check("Reallocated pre-1998 95% CI lower = 0.35",
+      stats.chi2.ppf(0.025, 2*38)/2 / PY_PRE_REALLOC*1e5, 0.345, tol=0.01)
+check("Reallocated pre-1998 95% CI upper = 0.67",
+      stats.chi2.ppf(0.975, 2*39)/2 / PY_PRE_REALLOC*1e5, 0.670, tol=0.01)
+# under coherent reallocation the halved 1-death and 2-death bounds EXCEED reallocated pre point
+check("Coherent: halved 0-death bound 0.32 < reallocated pre 0.49",
+      int(one_sided_ub(0, PY_POST1998/2) < rate_pre_realloc), 1)
+check("Coherent: halved 1-death bound 0.51 > reallocated pre 0.49",
+      int(one_sided_ub(1, PY_POST1998/2) > rate_pre_realloc), 1)
+check("Coherent: halved 2-death bound 0.68 > reallocated pre 0.49",
+      int(one_sided_ub(2, PY_POST1998/2) > rate_pre_realloc), 1)
+# but point estimates remain 2-5x apart even under reallocation
+check("Coherent: reallocated pre / halved-post 1-death point ~4.5x",
+      rate_pre_realloc / (1/(PY_POST1998/2)*1e5), 4.5, tol=0.3)
+check("Coherent: reallocated pre / halved-post 2-death point ~2.3x",
+      rate_pre_realloc / (2/(PY_POST1998/2)*1e5), 2.3, tol=0.3)
 # actual-completions denominator provenance and modeled cross-check
 comp_csv = pd.read_csv(os.path.join(DATA, "dwelling_completions_IDN03001_1970_2021.csv"))
 check("Actual completions 1999-2021 total = 46390",

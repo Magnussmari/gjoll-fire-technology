@@ -172,19 +172,19 @@ The dwelling-stock model is approximate and may overestimate post-1998 exposure 
 
 **Occupancy alignment of numerator and denominator.** The denominator is modeled *dwelling* person-years, so we checked the occupancy of the numerator. Of the 38 pre-1998-cohort deaths (1999--2025, recorded construction year $\leq$ 1998), 36 occurred in ordinary dwellings and 2 in converted commercial-to-residential premises (Funahöfði and Stangarhyl, both 2023); restricting to ordinary dwellings gives 0.52 per 100,000, essentially unchanged from 0.55. The two post-1998 borderline cases are an institutional occupancy (the 2014 nursing home) and an unauthorized unregistered extension (Stuðlar/Fossaleyni), neither an ordinary dwelling. A strictly dwelling-restricted comparison therefore records 36 pre-1998 dwelling deaths against zero post-1998 dwelling deaths, so the occupancy mismatch does not manufacture the contrast.
 
-**Joint denominator × classification sensitivity.** @tbl-joint crosses the three classification counts (0, 1, 2 post-1998 deaths) with the modeled and a halved post-1998 denominator, comparing each one-sided 95% upper bound with the pre-1998 point estimate (0.55) and the lower limit of its confidence interval (0.39). The contrast is qualitatively robust throughout except in the single compounded extreme of a halved denominator *and* the two-death worst case, where the upper bound (0.68) exceeds the pre-1998 point estimate (0.55); the corresponding point estimate (0.22) is still about three-fold below.
+**Joint denominator × classification sensitivity.** @tbl-joint crosses the three classification counts (0, 1, 2 post-1998 deaths) with the modeled and a halved post-1998 denominator, comparing each one-sided 95% upper bound with the pre-1998 rate. The density-gradient bias described above reallocates population between cohorts rather than removing it, so halving the post-1998 denominator must be paired with a coherent increase in the pre-1998 denominator: the approximately 0.93 million person-years subtracted from the post-1998 stock accrue to the pre-1998 stock, raising it to approximately 7.79 million and lowering the pre-1998 point estimate to 0.49 per 100,000 person-years (95% CI 0.35--0.67). Against this coherent reference, the halved-denominator upper bound remains below the pre-1998 point estimate only in the strict zero-death case (0.32 versus 0.49); in the one-death (0.51) and two-death (0.68) cells it exceeds the reallocated pre-1998 point estimate, so the upper-bound-below-point criterion is not met once the denominator perturbation is applied coherently to both cohorts. In these compounded scenarios the contrast rests on the point estimates, which remain 2- to 5-fold apart (post-1998 point 0.11 and 0.22 against the reallocated pre-1998 0.49). We therefore do not claim that statistical significance survives an adversarial halving of the denominator; we claim only that the point-estimate separation is preserved throughout, and that at the modeled (primary) denominator every one-sided upper bound lies below the pre-1998 rate under all three classification conventions.
 
 ```{=latex}
 \begin{table}[htbp]
 \centering
-\caption{Joint sensitivity: post-1998 one-sided 95\% upper bound (per 100,000 person-years) crossing classification (deaths) with the modeled vs.\ halved denominator. Pre-1998 point estimate 0.55 (95\% CI 0.39--0.76).\label{tbl-joint}}
+\caption{Joint sensitivity: post-1998 one-sided 95\% upper bound (per 100,000 person-years) crossing classification (deaths) with the modeled vs.\ halved denominator. The modeled column is compared with the pre-1998 point estimate 0.55 (95\% CI 0.39--0.76); the halved column is compared with the \emph{coherently reallocated} pre-1998 point estimate 0.49 (95\% CI 0.35--0.67), since person-years removed from the post-1998 stock accrue to the pre-1998 stock. Bold bounds exceed the applicable pre-1998 point estimate.\label{tbl-joint}}
 \begin{tabular}{@{}l S[table-format=1.3] S[table-format=1.3]@{}}
 \toprule
-{Post-1998 deaths} & {Observed-compl.\ denom.\ (1.86M)} & {Halved (0.93M)} \\
+{Post-1998 deaths} & {Observed-compl.\ denom.\ (1.86M)} & {Halved + reallocated (0.93M)} \\
 \midrule
 0 (strict)     & 0.161 & 0.323 \\
-1 (standard)   & 0.256 & 0.511 \\
-2 (worst case) & 0.339 & 0.678 \\
+1 (standard)   & 0.256 & \bfseries 0.511 \\
+2 (worst case) & 0.339 & \bfseries 0.678 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -192,13 +192,13 @@ The dwelling-stock model is approximate and may overestimate post-1998 exposure 
 
 ::: {.content-hidden when-format="pdf"}
 
-| Post-1998 deaths | Observed-compl. denom. (1.86M) | Halved (0.93M) |
+| Post-1998 deaths | Observed-compl. denom. (1.86M) | Halved + reallocated (0.93M) |
 |:--|--:|--:|
 | 0 (strict) | 0.161 | 0.323 |
-| 1 (standard) | 0.256 | 0.511 |
-| 2 (worst case) | 0.339 | 0.678 |
+| 1 (standard) | 0.256 | **0.511** |
+| 2 (worst case) | 0.339 | **0.678** |
 
-: Joint sensitivity: post-1998 one-sided 95% upper bound crossing classification with modeled vs. halved denominator. Pre-1998 point estimate 0.55 (95% CI 0.39--0.76). {#tbl-joint}
+: Joint sensitivity: post-1998 one-sided 95% upper bound crossing classification with modeled vs. halved denominator. Modeled column compared with pre-1998 point 0.55 (95% CI 0.39--0.76); halved column with the coherently reallocated pre-1998 point 0.49 (95% CI 0.35--0.67). Bold bounds exceed the applicable pre-1998 point estimate. {#tbl-joint}
 
 :::
 
