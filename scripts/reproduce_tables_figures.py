@@ -223,12 +223,15 @@ ax.bar(x - bar_width/2, [d["Deaths"] for d in bands_data],
        bar_width, color="#C0392B", alpha=0.8, label="Deaths")
 ax.bar(x + bar_width/2, [d["Incidents"] for d in bands_data],
        bar_width, color="#4682B4", alpha=0.8, label="Incidents")
-# Post-1998 zero annotation
-ax.annotate("Post-1998:\n0 incidents\n0 deaths",
-            xy=(len(bands_data) - 0.5, 0), xytext=(len(bands_data) + 0.1, 10),
-            fontsize=8, ha="center", color="#333333",
-            arrowprops=dict(arrowstyle="->", color="#333333", lw=1.0),
-            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#999999", alpha=0.9))
+# Shade the post-1998 (recorded CY >= 1999) region to make the empty space visible
+ax.axvspan(len(bands_data) - 0.5, len(bands_data) + 0.8, color="#2E8B57", alpha=0.08, zorder=0)
+ax.axvline(len(bands_data) - 0.5, color="#2E8B57", ls="--", lw=1.0, zorder=1)
+# Post-1998 annotation (definition-accurate)
+ax.annotate("CY ≥ 1999:\n0 structure fires\n(strict def.; 1 under\nstandard convention)",
+            xy=(len(bands_data) - 0.5, 0), xytext=(len(bands_data) + 0.15, 9),
+            fontsize=7.5, ha="center", color="#1B5E20",
+            arrowprops=dict(arrowstyle="->", color="#2E8B57", lw=1.0),
+            bbox=dict(boxstyle="round,pad=0.3", facecolor="white", edgecolor="#2E8B57", alpha=0.9))
 ax.set_xticks(x)
 ax.set_xticklabels([d["Band"] for d in bands_data], rotation=45, ha="right")
 ax.set_ylabel("Count")

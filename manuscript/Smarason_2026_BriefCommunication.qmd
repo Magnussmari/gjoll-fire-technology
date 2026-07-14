@@ -1,0 +1,211 @@
+---
+title: "Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Construction Period and Fire Mortality"
+author:
+  - name: Magnús Smári Smárason
+    orcid: 0009-0008-2050-021X
+    affiliations:
+      - name: University of Akureyri (Háskólinn á Akureyri)
+        country: Iceland
+    email: magnus@smarason.is
+    url: https://www.gjoll.is
+    corresponding: true
+  - name: Thomas Barry
+    orcid: 0000-0002-0633-3602
+    affiliations:
+      - name: University of Akureyri (Háskólinn á Akureyri)
+        country: Iceland
+abstract: |
+  This observational study presents a 58-year national registry of all fatal fire incidents in Iceland (1968--2025). The Gjöll registry contains 113 fatal incidents and 145 deaths, of which 93 incidents (116 deaths) are structure fires. Decade-aggregated fire mortality peaked in the 1970s (21.9 deaths per million per year) and fell by approximately 80% to 4--7 per million from the 1990s onward. Fatal fires concentrate in older building stock. Among incidents from 1996 onward, when construction-year data are complete, the fatal-fire rate in buildings of recorded construction year 1999 or later is significantly lower than the pre-1998 dwelling rate of 0.55 per 100,000 person-years (95% CI 0.39--0.76; person-years from observed dwelling completions). Reported as exact post/pre Poisson rate ratios, the reduction holds under every convention for classifying a fatal fire in a building: 0.10 (95% CI 0.002--0.58) under the standard convention (one post-1998 fatality, a 2014 nursing-home death), 0 (0--0.38) under a stricter definition (none), and 0.19 (0.02--0.75) in an adversarial worst case (two) --- every interval excluding 1. Interrupted time series analysis shows a consistent pre-1999 decline (incidence rate ratio [IRR] = 0.93/year, *p* < 0.001) and no significant discrete change at 1999; the decline flattens rather than stepping down. The findings are compatible with a safety advantage in newer, code-era buildings but do not identify the independent effect of Iceland's 1998 building regulation, since construction period bundles building age, materials, occupancy, and concurrent secular change.
+keywords:
+  - fire fatalities
+  - fire safety regulation
+  - building codes
+  - building age
+  - fire statistics
+  - Iceland
+date: 2026-07-03
+bibliography: references.bib
+csl: ../springer-fire-technology.csl
+link-citations: true
+number-sections: true
+format:
+  pdf:
+    documentclass: article
+    classoption:
+      - 12pt
+      - a4paper
+    geometry:
+      - margin=2.5cm
+    fontfamily: times
+    linestretch: 1.5
+    keep-tex: true
+    fig-pos: "htbp"
+    tbl-cap-location: top
+    fig-cap-location: bottom
+    include-in-header:
+      text: |
+        \usepackage{booktabs}
+        \usepackage{siunitx}
+        \sisetup{group-separator={,}, group-minimum-digits=4}
+  docx:
+    number-sections: true
+    tbl-cap-location: top
+    fig-cap-location: bottom
+---
+
+
+# Introduction {#sec-introduction}
+
+Effective fire safety regulation depends on reliable, long-term data. Yet national fire fatality statistics are typically published as aggregate counts without incident-level traceability, which limits their value for trend analysis and policy evaluation [@EFSA2018; @Holborn2003]. This is particularly true for small states, where annual counts are low and vary widely from year to year. National fire-mortality trends have been analysed from cause-of-death registers in the Nordic region --- for example, Sweden's 1952--2013 series [@Jonsson2016] --- and the fragmented state of European fire statistics has itself been the subject of study [@Manes2023]. Yet these analyses draw on cause-of-death coding or aggregated national returns; we are not aware of a published national registry that combines complete *incident-level* coverage across nearly six decades with per-incident source traceability spanning multiple regulatory eras. Existing aggregate statistics also contain documented errors. Icelandic official records reported zero fire deaths in 2009 despite a confirmed fatal fire at Kljáströnd in Eyjafjörður that year [@Smarason2025practitioner].
+
+This paper uses Iceland as a case study of how fatal fire risk is distributed across building construction periods, and asks how large and how robust the difference between older and newer (code-era) building stock is. We are careful to separate what the design can and cannot deliver: it can *describe* the concentration of fatal fires by construction period; it can *suggest* mechanisms; but it cannot *identify* the independent causal effect of any single regulation, because construction period bundles building age, materials, electrical systems, occupancy, renovation history, and calendar-period secular change. Iceland is well suited to the descriptive task. Its small population (approximately 200,000 in 1968, growing to 388,000 in 2025) allows every fatal fire incident over nearly six decades to be compiled, a completeness rarely achievable in larger states; its centralized framework applies uniformly nationwide; and its building stock is among the youngest in Europe, with a mean construction year of approximately 1992 [@HMS2024buildingAge]. The 1998 building regulation (below) provides a salient construction-period marker against which to describe the cohort contrast, not a treatment whose effect this design estimates.
+
+Iceland's fire safety framework rests on two distinct legal instruments. Fire prevention and fire services are governed by primary legislation: a succession of parliamentary fire prevention acts (Lög nr. 55/1969, which established the first national fire authority; nr. 74/1982; nr. 41/1992; and the current nr. 75/2000). Each act is a consolidated statute that superseded its predecessor [@Iceland1969; @Iceland1982; @Iceland1992; @Iceland2000]. Construction fire safety requirements, by contrast, are set by secondary legislation: a building regulation (byggingarreglugerð) issued by the responsible minister under the Planning and Building Act, Skipulags- og byggingarlög nr. 73/1997 [@Iceland1997]. The construction-period marker examined in this study is that building regulation, Byggingarreglugerð nr. 441/1998, effective for buildings of construction year 1999 or later. It introduced mandatory smoke detectors and approved portable fire extinguishers in all new dwelling units, alongside the passive requirements of the building regulation (compartmentation, protected egress, and reaction-to-fire requirements on linings), marking the transition to modern prescriptive residential fire safety requirements [@Iceland1998].
+
+To realize this analytical potential, we created a comprehensive national registry. The Gjöll registry (www.gjoll.is) is the first national incident-level fatal fire registry for Iceland. It was compiled through systematic review of newspaper archives, institutional yearbooks, and official government reports, and source references are documented for each record [@Smarason2025data; @Timarit]. We use it to (i) describe long-term trends in fatal fire incidents, (ii) compare fatality distributions by building construction year, and (iii) characterize the time-series behaviour of fire mortality around the 1999 regulatory milestone using interrupted time series analysis as a descriptive device rather than a causal test.
+
+# Data and Methods {#sec-methods}
+
+The Gjöll registry was compiled through systematic review of newspaper archives (notably Tímarit.is), institutional yearbooks (Árbók Þjóðvinafélagsins; Árbók Slysavarnafélags Íslands, later Landsbjörg), government investigation reports, and court records. All 113 fatal fire incidents were verified against at least two independent sources where available [@Smarason2025data; @Timarit]. Two exported tables from the registry were analyzed: fatal structure fires (*n* = 93 incidents) and other fatal fire-related incidents (*n* = 20 incidents). The unit of analysis is the fatal incident; all fatal fire incidents for 1968--2025 were included, with no sampling. We did not formally validate the registry against national cause-of-death registers, so we cannot quantify completeness of ascertainment. Under-ascertainment is plausible, particularly in earlier decades. The 1999 threshold (effective year of Byggingarreglugerð nr. 441/1998) serves as the measurable proxy for the broader modernization of fire safety regulation enacted between 1994 and 2000. The study design cannot causally disentangle this regulatory bundle from concurrent technological, socioeconomic, and behavioral confounders.
+
+Incidents were classified into two groups. Fatal structure fires (93 incidents, 116 deaths) are incidents in which the fire originated in or spread through the building structure, so that building-integrated fire safety features (egress, compartmentation, detection, suppression) were relevant to the fatality outcome. Other fire-related deaths involve ships, vehicles, and other non-building settings (20 incidents, 29 deaths). This relevance-based rule is deliberately narrower than the standard international convention (the US National Fire Protection Association [NFPA], the US Fire Administration [USFA], and the Swedish Civil Contingencies Agency [MSB] count any fatal fire inside a building as a structure fire), and it is adopted here because the paper's question concerns whether building-level fire protection was engaged. We flag the resulting circularity risk explicitly: a fatality in a newer building whose protection performed as designed can be routed to "other," which could keep the structure-fire cohort artificially clean. To guard against this, the two cases that fall near the boundary in a manner relevant to the post-1998 cohort (a 2014 death in a nursing home constructed in 2001, classified "other" because the death arose from a localized bedding ignition rather than structural fire spread; and the 2024 Stuðlar/Fossaleyni case) are both counted as post-1998 structure-fire deaths in a worst-case sensitivity analysis ([Section 3](#sec-results)), so that no headline conclusion depends on this classification rule. The original classification was performed by the lead author against the predefined rule and was not blinded to construction year; its reproducibility was subsequently validated by an independent blinded re-code (below), and the residual reliance on a single primary coder for the full registry is disclosed as a limitation that the worst-case sensitivity further bounds. Buildings are classified by recorded construction year in the national property registry (the completion year recorded by Registers Iceland, which may lag design and permitting): the pre-1998 cohort is construction year $\leq$ 1998 and the post-1998 cohort is $\geq$ 1999; we use "pre-1998" and "post-1998" as shorthand for these throughout. Because 1999--2001 completions may have been designed under earlier rules, the earliest post-1998 cohort years are conservatively contaminated toward the pre-1998 regime. Construction year is missing for 48 of 93 structure-fire incidents; all missing cases predate 1996 and therefore cannot affect the post-1998 finding ([Section 3](#sec-results)).
+
+Annual population on 1 January was obtained from Statistics Iceland (table MAN00000) for 1968--2025 [@StatisticsIceland2025], and crude annualized deaths per million population are reported by decade. No census-based housing-stock denominator stratified by construction period is available. Person-years of exposure in pre-1998 versus post-1998 dwellings for 1999--2025 were therefore derived from the observed annual dwelling-completions series (Statistics Iceland table IDN03001, completed dwellings 1970--2021, extrapolated to 2025 from the 2019--2021 mean), anchored to the documented \~2021 dwelling stock of approximately 148,000 units (Registers Iceland) and allocated to population by the post-1998 stock fraction [@HMS2024buildingAge; @HMS2025completions]. An earlier stepped completion-rate model gave similar but slightly more generous post-1998 exposure (2.08 versus 1.86 million person-years, i.e. mildly anti-conservative). The full derivation, the residual biases, and sensitivity tests (halved denominator; anchor varied 140,000--155,000) are provided in the Supplementary Material.
+
+For the interrupted time series analysis (ITSA), because the 1998 measure is a dwelling-construction regulation, we took the ITSA on **structure-fire** outcomes (deaths and, separately, incidents) as the primary analysis, and the combined structure-plus-non-structure series as a secondary descriptive comparison only; non-structure deaths (ship, vehicle, and explosion fatalities, concentrated before 1990) are subject to unrelated safety regimes and would otherwise load an early unrelated decline onto the pre-intervention baseline. We used a Poisson generalized linear model with log-link and the natural logarithm of annual population as an offset [@Wagner2002; @Bernal2017]. The model used the standard segmented parameterization, coding the post-intervention trend as years since 1999 (zero before 1999) so that the step coefficient is the level change at the 1999 breakpoint, alongside the secular trend and slope-change terms. Because building regulations affect fire mortality through gradual stock turnover rather than instantaneously, the level-change term cannot represent a causal effect of the 1998 regulation (the post-1998 stock share was near zero in 1999) and is interpreted purely descriptively. Overdispersion was assessed by the Pearson chi-squared dispersion ratio. As robustness checks we fitted a negative binomial model with the dispersion parameter estimated by maximum likelihood and a quasi-Poisson model with standard errors scaled by the square root of the Pearson dispersion; residual autocorrelation was assessed by the Durbin--Watson statistic. A secondary model with an additional 1982 intervention was compared by Akaike's Information Criterion (full specifications and results in Supplementary Material). Analyses were performed in Python 3 using statsmodels [@Seabold2010]. Reporting follows the STROBE guidelines, with the RECORD extension for studies using routinely collected data and the caveats appropriate to an ecological registry design [@VonElm2007]; a completed checklist accompanies the submission.
+
+The lead author served as a firefighter and paramedic and held elected leadership of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna). He also served at the institution responsible for fire safety oversight (Húsnæðis- og mannvirkjastofnun, HMS). This experience informs interpretation, but did not drive the classification: to test for construction-year-related bias, all 45 fatal incidents in the complete-data 1996--2025 window (a distinct set from the 45 structure fires with recorded construction year) were independently re-coded by two large language models (Anthropic Claude and OpenAI GPT) blinded to construction year, each applying the predefined rule to the fire-mechanism description alone, as an automated reproducibility check. Agreement with the original coding was 97.8% for each (44/45; Cohen's $\kappa$ = 0.93), the single discrepancy being the 2010 Grundartangi industrial fire, whose reclassification would if anything raise the pre-1998 count. This indicates the predefined rule can be applied consistently from the incident description alone (a check on rule reproducibility, not a substitute for independent human double-coding, which remains the definitive validation and is outstanding).
+
+# Results {#sec-results}
+
+Across 1968--2025 (58 calendar years), the Gjöll registry documents 113 fatal incidents resulting in 145 deaths (mean 1.28 deaths per incident); most incidents involve a single fatality (93/113, 82%). Structure fires account for 93 incidents and 116 deaths (80% of deaths); non-structure incidents contribute 29 deaths across 20 incidents, prominently ship fires (15 deaths across seven incidents), concentrated in the earlier decades of the study period.
+
+Decade aggregation shows the highest burden in the 1970s (35 incidents, 47 deaths), followed by a sustained lower level from the 1990s onward ([Table 1](#tbl-periods); [Figure 1](#fig-annual)). Crude annualized deaths per million population peak in the 1970s (21.9) and fall by approximately 80% to the range of 4--7 from the 1990s onward. Eight calendar years record zero deaths (1984, 1987, 1992, 2000, 2003, 2007, 2011, 2015). The apparent uptick in 2020--2025 reflects a six-year observation window and rare-event variability. The exact Poisson 95% confidence interval for the 2020--2025 crude rate (approximately 3.8--11.1 deaths per million per year) overlaps that of the 2010s (approximately 2.6--7.6). The period nonetheless coincides with repeated organizational restructuring of the responsible fire safety authorities and warrants continued monitoring. Fatal incidents concentrate in the October--March period: October--March accounts for 66 of 113 incidents (58%) and 84 of 145 deaths (58%). A binary comparison of October--March versus April--September incidence (against the 50.4% of days falling in the October--March window) is directionally consistent but falls short of conventional significance ($\chi^{2}$ = 3.2, df = 1, *p* = 0.07 for incidents; details in Supplementary Material).
+
+```{=latex}
+\begin{table}[htbp]
+\centering
+\caption{Period totals and crude mortality rates for fatal fire incidents in Iceland.\label{tbl-periods}}
+\begin{tabular}{@{}l S[table-format=2.0] S[table-format=2.0] S[table-format=6.0, group-separator={,}] S[table-format=2.1]@{}}
+\toprule
+{Period} & {Incidents (\textit{n})} & {Deaths (\textit{n})} & {Mean pop.\ (1 Jan)} & {Deaths/million/yr} \\
+\midrule
+1968--1969\textsuperscript{a} & 6  & 13 & 201488 & 32.3 \\
+1970--1979                    & 35 & 47 & 214495 & 21.9 \\
+1980--1989                    & 19 & 24 & 238886 & 10.1 \\
+1990--1999                    & 13 & 14 & 264973 &  5.3 \\
+2000--2009                    & 14 & 17 & 296399 &  5.7 \\
+2010--2019                    & 14 & 15 & 325140 &  4.6 \\
+2020--2025                    & 12 & 15 & 370941 &  6.7 \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\noindent\footnotesize\textsuperscript{a}The 1968--1969 bin covers only 2 years and rests on 13 deaths across 6 incidents; its rate (32.3) is unstable and is not used as a baseline for the decline claim, which is stated from the 1970s peak. The 2020--2025 bin likewise covers only 6 years. Mean population is a crude denominator based on annual 1 January counts (Source: Statistics Iceland, table MAN00000) and does not account for changes in the age structure of the population.
+\end{table}
+```
+
+::: {.content-hidden when-format="pdf"}
+
+| Period | Incidents (*n*) | Deaths (*n*) | Mean pop. (1 Jan) | Deaths/million/yr |
+|:-------|----------------:|-------------:|------------------:|------------------:|
+| 1968--1969^a^ | 6 | 13 | 201,488 | 32.3 |
+| 1970--1979 | 35 | 47 | 214,495 | 21.9 |
+| 1980--1989 | 19 | 24 | 238,886 | 10.1 |
+| 1990--1999 | 13 | 14 | 264,973 | 5.3 |
+| 2000--2009 | 14 | 17 | 296,399 | 5.7 |
+| 2010--2019 | 14 | 15 | 325,140 | 4.6 |
+| 2020--2025 | 12 | 15 | 370,941 | 6.7 |
+
+: Period totals and crude mortality rates for fatal fire incidents in Iceland. Source: Statistics Iceland (table MAN00000). ^a^The 1968--1969 bin covers only 2 years (13 deaths, 6 incidents); its rate (32.3) is unstable and is not the baseline for the decline claim. The 2020--2025 bin covers only 6 years. {#tbl-periods}
+
+:::
+
+![Annual fire-related deaths in Iceland (1968--2025) from the Gjöll registry. The solid line is a centered 5-year rolling mean, illustrating the long-term decline despite substantial year-to-year variability.](figures/fig1_annual_deaths.png){#fig-annual}
+
+
+
+Construction year is recorded for 45 of 93 structure-fire incidents (48%). Missingness is concentrated in earlier decades. Among structure-fire incidents from 1996 onward, construction year is complete (0 missing). Among incidents with known construction year, no observed fatal structure-fire incidents occurred in buildings constructed after 1998 ([Figure 2](#fig-construction)). In the 1996--2025 subset, the mean construction year of buildings involved in fatal structure fires is 1957, whereas the mean construction year of the Icelandic building stock overall is 1992 [@HMS2024buildingAge]. All 48 incidents with missing construction year occurred between 1970 and 1995, and a building that burned before 1999 cannot have been constructed after 1998. The missing data are therefore logically irrelevant to the post-1998 finding.
+
+![Fatal structure-fire incidents and deaths by building construction-year band, showing concentration of fatalities in older building stock. Under the study's strict structure-fire definition, all 45 fatal structure-fire incidents with a recorded construction year occurred in buildings predating the 1999 threshold and none in buildings of recorded construction year 1999 or later; under the standard "any fatal fire in a building" convention one post-1998 fatality exists (a 2014 nursing-home death; see text). The pattern coincides temporally with the residential fire safety provisions of Byggingarreglugerð nr. 441/1998 but does not on its own establish a causal effect of the regulation.](figures/fig3_structure_deaths_by_construction_year.png){#fig-construction}
+
+
+Using the observed-completions dwelling person-years as an approximate exposure measure, the 1999--2025 period yields approximately 6.86 million pre-1998 and 1.86 million post-1998 person-years. The pre-1998 cohort records 38 fatal structure-fire deaths (construction year complete for this window; rate 0.55 per 100,000 person-years, 95% CI 0.39--0.76), of which 36 were in ordinary dwellings and 2 in converted commercial premises (restricting to dwellings gives 0.52, essentially unchanged). Because the post-1998 count is small, we report the comparison as an exact Poisson rate ratio (post-1998 versus pre-1998) with an exact conditional 95% confidence interval, which is the appropriate inferential statement ([Table 2](#tbl-cohort)). Under the standard international convention (any fatal fire inside a building), the post-1998 cohort contains one fatality, a 2014 nursing-home death in a building constructed in 2001: rate ratio 0.10 (95% CI 0.002--0.58). Under the stricter building-system-relevance definition, that case is routed to "other" and the cohort records zero deaths (rate ratio 0, 95% CI 0--0.38). A deliberately adversarial worst case additionally counting the 2024 Stuðlar/Fossaleyni fatality (registered construction year 1996, unregistered 2004 extension) gives two deaths (rate ratio 0.19, 95% CI 0.02--0.75). **In every convention the 95% confidence interval for the rate ratio excludes 1**, so the post-1998 fatal-fire rate is significantly lower than the pre-1998 rate even under the worst case; incident-level rate ratios are similar (upper limits 0.45, 0.69, and 0.91). Applied symmetrically, the standard convention adds in-building "other" deaths to the comparison, but the only such death in a post-1998 building is the 2014 nursing-home case already counted (the other in-building "other" deaths are pre-1998 or non-residential, and no post-1998-window in-building fatality has an unrecorded construction year; §S2). The two adjudicated post-1998 borderline cases are institutional or unauthorized occupancies, so a strictly dwelling-restricted comparison records zero post-1998 against 36 pre-1998 dwelling deaths.
+
+```{=latex}
+\begin{table}[htbp]
+\centering
+\caption{Post-1998 versus pre-1998 fatal-fire rate under three conventions for classifying a fatal fire in a building. Pre-1998 reference: 38 deaths, 0.55 per 100,000 person-years (95\% CI 0.39--0.76). Rate ratio is post/pre with an exact conditional-Poisson 95\% CI; every CI excludes 1.\label{tbl-cohort}}
+\begin{tabular}{@{}l S[table-format=1.0] S[table-format=1.3] l@{}}
+\toprule
+{Convention} & {Post deaths} & {Post rate/100k} & {Rate ratio (95\% CI)} \\
+\midrule
+Standard (any fatal fire in a building)     & 1 & 0.054 & 0.10 (0.002--0.58) \\
+Strict (building-system-relevant spread)    & 0 & 0.000 & 0 (0--0.38) \\
+Worst case (+ unregistered 2004 extension)  & 2 & 0.108 & 0.19 (0.02--0.75) \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
+
+::: {.content-hidden when-format="pdf"}
+
+| Convention | Post deaths | Post rate/100k | Rate ratio (95% CI) |
+|:--|--:|--:|:--|
+| Standard (any fatal fire in a building) | 1 | 0.054 | 0.10 (0.002--0.58) |
+| Strict (building-system-relevant spread) | 0 | 0.000 | 0 (0--0.38) |
+| Worst case (+ unregistered 2004 extension) | 2 | 0.108 | 0.19 (0.02--0.75) |
+
+: Post-1998 versus pre-1998 fatal-fire rate under three conventions. Pre-1998 reference 0.55 per 100,000 (95% CI 0.39--0.76); rate ratio is post/pre with an exact conditional-Poisson 95% CI, every CI excluding 1. {#tbl-cohort}
+
+:::
+
+
+The finding is robust to the modeled exposure. Halving the post-1998 person-years leaves the standard-convention rate ratio significant, and the contrast reaches non-significance only in a compounded extreme (a halved denominator combined with the two-death worst case); the principal residual denominator bias runs the other way and is anti-conservative for our claim, since older stock is more often subdivided into higher-occupancy units (joint sensitivity matrix and derivation in Supplementary Material). One further recent case, a fatal residential fire at Hjarðarhagi, Reykjavík (May 2025, 2 deaths, construction year 1967, under criminal investigation for suspected arson), lies in the pre-1998 cohort and is consistent with the finding.
+
+We treat the segmented Poisson model as a descriptive device, taking structure-fire outcomes (deaths and incidents) as primary because the 1998 measure is a dwelling regulation; the combined structure-plus-non-structure series (whose non-structure deaths are early and unrelated) is a secondary comparison. In this specification the consistent feature is a pre-1999 decline: IRR per year = 0.948 (95% CI 0.924--0.973, *p* < 0.001) for structure deaths, 0.959 (0.932--0.987, *p* = 0.004) for structure incidents, and 0.932 (0.910--0.955, *p* < 0.001) in the combined series. Using the standard parameterization (post-intervention trend coded as years since 1999, so the step coefficient is the discontinuity at the breakpoint), there is no statistically significant level change at 1999 under any specification (structure deaths IRR = 0.91, *p* = 0.83; structure incidents 0.84, *p* = 0.71; combined 1.29, 95% CI 0.58--2.86, *p* = 0.54), and this non-significance is stable across maximum-likelihood negative binomial and quasi-Poisson checks (Supplementary Material). The post-1999 net trend (IRR $\approx$ 1.01/year) is approximately flat, so the decline levels off rather than reversing, and adding a 1982 breakpoint to the combined series does not improve fit (ΔAIC = +3.4). Durbin--Watson (2.95) did not indicate positive residual autocorrelation, so the trend is unlikely to be driven by the usual positive-autocorrelation problem, though the diagnostic is only approximate for Poisson residuals. In short, this exploratory analysis shows a pre-existing decline and no evidence of a discrete 1999 step, consistent with the cohort contrast being a property of the building stock rather than a datable intervention.
+
+# Discussion {#sec-discussion}
+
+The Gjöll registry documents an 80% decline in fire mortality rates, from 21.9 deaths per million in the 1970s to 4.6 per million in the 2010s. This decline occurred despite substantial population aging over the period; because fire-fatality risk rises steeply with age, an aging population would, all else equal, push crude mortality upward, so the observed reduction is if anything conservative. It also documents a structural separation between building cohorts: the fatal-fire rate in buildings of recorded construction year 1999 or later is several-fold lower than in pre-1998 dwellings, with the post-1998 upper confidence bound below the pre-1998 point estimate under every classification of the one borderline post-1998 case ([Table 2](#tbl-cohort)). This is a description of where fatal fire risk now concentrates by construction period; it is compatible with, but does not identify, a safety benefit of code-era construction, since construction period is a proxy for a bundle of correlated features and concurrent secular change.
+
+The decline cannot be attributed to a single regulatory instrument. The 1998 building regulation is better understood through the lens of regulatory lock-in and institutional path dependency: rather than causing the decline, it plausibly codified and helped consolidate a broader safety transition that unfolded across the 1990s, although the data cannot establish that it played any independent causal role. The share of Iceland's space heating supplied by geothermal district heating rose from roughly 45% of homes in 1970 to close to 90% by the end of the study period, removing a major category of ignition sources from homes [@Ragnarsson2010]. Daily smoking prevalence declined from 34.2% in 1989 to 11.5% by 2015 [@Landlaeknir2014], and smoking materials are among the leading ignition sources in fatal dwelling fires internationally [@Ahrens2021; @Doyle2019]. Emergency medical and prehospital services also developed substantially over the same period, with Iceland becoming the first Nordic country to nationally establish emergency medicine as a specialty [@Baldursson2018]. The regulation then arrived when building stock renewal was at its most rapid, so that a growing share of dwellings embodies modern standards: mandatory smoke detection, portable fire extinguishers, compartmentation, and improved construction materials [@Iceland1998; @Ahrens2021; @Gilbert2021]. In this sense, buildings embody regulatory regimes, allowing institutional change to be observed through cohort comparisons of the existing stock. The ITSA is consistent with this interpretation. Mortality was already falling before 1999 (IRR = 0.93/year, *p* < 0.001), no significant discrete change occurs at the 1999 breakpoint, and the specific contribution of the 1998 regulation cannot be isolated from the concurrent improvements. This caution mirrors a recognised difficulty in the field: changes in fire-statistics trends are hard to attribute to specific fire-safety measures without comprehensive underlying data [@Manes2023], and studies that do estimate a regulatory effect on fire outcomes do so with explicit effect sizes, confidence intervals, and enumerated confounders [@Butry2017]. On the harmonized residential-fire basis reported by the MSB, Iceland's 2010--2019 rate is the lowest among the Nordic countries (approximately 5.5 deaths per million, versus 8.8--12.6 for Norway, Sweden, Denmark, and Finland); this residential-fire basis is defined differently from the all-fatal-fire rate in Table 1 and is contextual rather than central to the cohort analysis [@Smarason2025practitioner; @MSB2023; @SSB2024].
+
+This study is an observational, registry-based cohort description: it documents the association between recorded construction period and fatal-fire outcomes, and it does not, and cannot, estimate the independent causal effect of Byggingarreglugerð nr. 441/1998 net of the concurrent technological, behavioural, and demographic changes. The cohort comparison is accordingly interpreted as compatible with, but not proof of, a safety advantage of newer, code-era construction. Post-1998 buildings have had less time to accumulate age-related risk factors, and occupants of newer housing differ systematically from those in older stock [@Holborn2003; @Doyle2019; @Marshall1998]. Building age is not, however, the whole story: within the 1996--2025 window four fatal structure fires (six deaths) occurred in buildings under 27 years old at the time of fire (the youngest 14 years old), all of pre-1998 construction, so young pre-code buildings were not fatality-free and the post-1998 zero is not merely a consequence of youth. Aggregate associations cannot establish individual-level causal effects [@Loney2014]. Smoke alarm operability, a stronger predictor of survival than building age [@Gilbert2021], cannot be inferred from construction-year data.
+
+The residual burden now concentrates among populations least served by the regulatory apparatus (older housing, unauthorized commercial-to-residential conversions, and arson affecting vulnerable people), and enforcement can nullify code protections even in newer stock, as in the 2024 Stuðlar case where an unauthorized extension operated for 20 years outside the framework [@HMS2026Studlar]. Sustaining the documented gains therefore depends on institutional capacity, not legislation alone (extended analysis in Supplementary Material).
+
+Iceland's small population, centralized governance, young and predominantly concrete building stock, and near-universal geothermal heating limit direct generalization. Specific rates may not transfer to jurisdictions that rely on combustible-fuel heating or timber-framed housing. The methodological approach, a complete national incident-level registry linked to building characteristics and regulatory milestones, is transferable. The construction-year threshold separating regulated from unregulated cohorts is relevant to other high-income countries with prescriptive fire safety frameworks. Three practical directions follow: (1) targeted retrofit and inspection of pre-1998 housing stock, where fatalities concentrate (mean construction year 1957); (2) sustained enforcement capacity and institutional continuity, since regulation without inspection is insufficient; and (3) socioeconomically targeted interventions for populations structurally excluded from prescriptive-code protections.
+
+# Limitations {#sec-limitations}
+
+Six limitations are most material (an extended discussion is provided in the Supplementary Material). First, the registry is small by epidemiological standards (145 deaths across 58 years), and decade-level estimates are sensitive to individual high-casualty incidents. Second, the registry covers fatal incidents only, and completeness of ascertainment cannot be quantified; under-ascertainment is plausible in earlier decades. Third, the post-1998 denominator is built from the observed national dwelling-completions series anchored to the recorded dwelling stock rather than a construction-year-stratified census of occupied dwellings, so the person-years remain an approximation. Fourth, and most consequentially for a fire-mortality study, the analysis is not age-standardized and lacks a cause-of-death breakdown (for example burns versus smoke inhalation), because Iceland's official fire records --- unlike the Nordic cause-of-death registers that permit age-adjusted fire-mortality analysis [@Jonsson2016] --- do not capture victim age or fatality mechanism at the incident level. This absence is not merely a limitation of the present study but is itself a finding about the fragmentation of Icelandic fire-data governance: the same gap that produced documented errors in the official statistics (the 2009 zero-deaths record) and that the Gjöll registry was created to begin to close. Linking future registry records to the national cause-of-death and population-age registers is the clear next step. Fifth, construction year is a proxy for a bundle of correlated features (materials, electrical systems, safety equipment, occupant demographics) rather than a direct causal mechanism. Sixth, the decline coincided with concurrent secular trends (smoking, heating technology, emergency medical services, sociodemographic change) that the interrupted time series cannot separate from regulatory effects.
+
+# Conclusions {#sec-conclusions}
+
+Iceland's fire mortality declined by approximately 80% over the study period, from 21.9 deaths per million in the 1970s to 4.6 per million in the 2010s. This decline unfolded within a broader safety transition (geothermal heating, falling smoking prevalence, improved prehospital care) alongside which the 1998 building regulation is one salient construction-period marker; the design does not identify its independent effect. Across 58 years of registry data, the fatal-fire rate in buildings of recorded construction year 1999 or later is several-fold lower than in pre-1998 dwellings (0.55 per 100,000 person-years, 95% CI 0.39--0.76), and the finding is robust to fire classification: under the standard "any fatal fire in a building" convention one post-1998 fatality (≈0.05 per 100,000, \~12-fold below the point estimate), zero under a stricter definition, and two in an adversarial worst case (≈0.10), with the post-1998 upper bound below the pre-1998 point estimate throughout. The remaining burden concentrates in older housing and among vulnerable populations, supporting targeted retrofit, sustained enforcement capacity, and socioeconomically targeted prevention. The Gjöll registry is publicly deposited as updatable research infrastructure [@Smarason2025data], with browseable access at www.gjoll.is. Future research should pursue individual-level data linking building characteristics, occupant demographics, and fire safety equipment status to enable causal inference beyond the aggregate associations documented here.
+
+# Acknowledgments {.unnumbered}
+
+The authors acknowledge the use of Claude Code (Anthropic) for assistance with Python script development for the statistical analysis and an automated blinded coding-reproducibility check. All code, model specifications, and outputs were reviewed and verified by the lead author against the deposited data.
+
+# Funding {.unnumbered}
+
+This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
+
+# Compliance with Ethical Standards {.unnumbered}
+
+**Conflict of Interest:** M.S.S. is a former employee of the Housing and Construction Authority (Húsnæðis- og mannvirkjastofnun, HMS), the regulatory body examined in this study, and a former elected leader of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna). This professional background is disclosed in the Data and Methods section; M.S.S. holds no current financial or employment relationship with HMS or LSS. T.B. declares no competing interests.
+
+**Ethics approval:** Under Icelandic law (Act on Scientific Research in the Health Sector No. 44/2014), a study of deceased persons based on a registry compiled from already-public sources (newspaper archives, official reports, and court records) does not involve identifiable living human participants and did not require review or approval by the National Bioethics Committee (Vísindasiðanefnd); no ethics approval was therefore sought.
+
+**Informed consent:** Not applicable. The study analyzes records of deceased persons compiled from public sources; no living human participants were involved and no individual consent was required or obtainable.
+
+**Author Contributions:** MSS conceived the study, compiled the Gjöll registry, performed the statistical analysis, and wrote the manuscript. TB contributed governance context and reviewed and revised the manuscript. Both authors approved the final version.
+
+**Data Availability:** The analyzed data tables are deposited at DATICE (GAGNÍS -- Gagnaþjónusta félagsvísinda), University of Iceland (DOI: 10.34881/I5WGJU) and are available through the public Gjöll interface at <https://www.gjoll.is>. Reproducibility scripts (Python) and generated outputs, including a verification script that recomputes every reported statistic, are openly available at <https://github.com/Magnussmari/gjoll-fire-technology>.
+
+# References {.unnumbered}
+
+::: {#refs}
+:::
