@@ -1,0 +1,37 @@
+name: verify
+
+# Reproducibility gate: every push and PR re-runs the statistics audit that
+# recomputes every number reported in the manuscript from the deposited CSVs.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify-statistics:
+    name: recompute every reported statistic
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Recompute all manuscript statistics from deposited data
+        run: python scripts/verify_statistics.py
+
+      - name: Verify reference DOIs resolve (non-blocking; network-dependent)
+        continue-on-error: true
+        run: python scripts/verify_references.py

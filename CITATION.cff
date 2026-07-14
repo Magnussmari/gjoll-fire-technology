@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this registry, analysis, or reproducibility package, please cite the dataset and (when published) the article."
+title: "Gjöll fatal-fire registry and reproducibility package: Fatal Fire Incidents in Iceland, 1968-2025"
+abstract: >-
+  A complete national incident-level registry of all fatal fire incidents in
+  Iceland (1968-2025; 113 incidents, 145 deaths) with per-incident source
+  traceability, and the full analysis and verification code reproducing every
+  statistic reported in the accompanying manuscript on building construction
+  period and fire mortality.
+type: software
+authors:
+  - family-names: Smárason
+    given-names: Magnús Smári
+    orcid: "https://orcid.org/0009-0008-2050-021X"
+    affiliation: "University of Akureyri (Háskólinn á Akureyri)"
+  - family-names: Barry
+    given-names: Thomas
+    orcid: "https://orcid.org/0000-0002-0633-3602"
+    affiliation: "University of Akureyri (Háskólinn á Akureyri)"
+license: MIT
+repository-code: "https://github.com/Magnussmari/gjoll-fire-technology"
+url: "https://www.gjoll.is"
+keywords:
+  - fire fatalities
+  - fire safety regulation
+  - building codes
+  - building age
+  - fire statistics
+  - Iceland
+  - national registry
+identifiers:
+  - type: doi
+    value: 10.34881/I5WGJU
+    description: "Deposited Gjöll registry dataset (DATICE / GAGNÍS, University of Iceland)"
+preferred-citation:
+  type: dataset
+  title: "Gjöll: A National Registry of Fatal Fire Incidents in Iceland, 1968-2025"
+  authors:
+    - family-names: Smárason
+      given-names: Magnús Smári
+      orcid: "https://orcid.org/0009-0008-2050-021X"
+    - family-names: Barry
+      given-names: Thomas
+      orcid: "https://orcid.org/0000-0002-0633-3602"
+  doi: 10.34881/I5WGJU
+  year: 2026
+  publisher:
+    name: "DATICE (GAGNÍS -- Gagnaþjónusta félagsvísinda), University of Iceland"
