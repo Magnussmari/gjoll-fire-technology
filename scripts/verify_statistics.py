@@ -249,6 +249,17 @@ check("Non-arson pre-1998 deaths = 33", int(win.deaths.sum()-_arson.deaths.sum()
 check("Non-arson pre-1998 rate = 0.48", (int(win.deaths.sum()-_arson.deaths.sum()))/PY_PRE1998*1e5, 0.481, tol=0.005)
 check("Non-arson pre-1998 rate above worst-case bound 0.34",
       int((int(win.deaths.sum()-_arson.deaths.sum()))/PY_PRE1998*1e5 > one_sided_ub(2, PY_POST1998)), 1)
+# dose-model omission: post-1998 stock share is near-collinear with calendar time (r ~ 0.98)
+import datetime as _dt
+_tot=_om=0
+for _y in range(1968,2026):
+    _d=_dt.date(_y,1,1); _e=_dt.date(_y,12,31)
+    while _d<=_e:
+        _tot+=1
+        if _d.month in (10,11,12,1,2,3): _om+=1
+        _d+=_dt.timedelta(days=1)
+# (heating-season share computes to 49.9%; manuscript's 50.4% flagged for author check)
+check("Heating-season Oct-Mar day share = 49.9%", _om/_tot*100, 49.90, tol=0.1)
 
 
 # ══════════════════════════════════════════════════════════════════════════
