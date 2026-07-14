@@ -1,0 +1,29 @@
+[project]
+name = "gjoll-fire-technology"
+version = "1.0.0"
+description = "Reproducibility package for 'Fatal Fire Incidents in Iceland, 1968-2025: A National Registry Study of Building Age and Fire Safety Regulation' (Fire Technology, Springer Nature)."
+authors = [
+    { name = "Magnús Smári Smárason", email = "magnus@smarason.is" },
+    { name = "Thomas Barry" },
+]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-4.0" }
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "statsmodels>=0.14",
+    "matplotlib>=3.7",
+]
+
+# Data: DOI 10.34881/I5WGJU | https://www.gjoll.is
+
+[project.scripts]
+verify-statistics = "scripts.verify_statistics:main"
+
+[dependency-groups]
+dev = []
+
+[tool.uv]
+package = false

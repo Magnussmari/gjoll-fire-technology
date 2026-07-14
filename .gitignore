@@ -6,3 +6,12 @@ __pycache__/
 *.docx
 *.tex
 manuscript_revised*.docx
+
+# secrets / credentials (never commit)
+.env
+.env.*
+*.key
+*.pem
+*_secret*
+*credentials*
+.mcp.json
