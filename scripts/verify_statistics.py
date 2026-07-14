@@ -241,6 +241,14 @@ check("Actual completions 1999-2021 total = 46390",
       int(comp_csv[(comp_csv.year>=1999)&(comp_csv.year<=2021)].completed_dwellings.sum()), 46390)
 check("All modeled-denominator bounds < pre-1998 point 0.554",
       int(all(one_sided_ub(k, PY_POST1998) < rate_pre for k in (0,1,2))), 1)
+# intentional-fire sensitivity: exclude confirmed-arson pre-1998-cohort deaths
+_blob = (win.notes.fillna('') + ' ' + win.incident_type.fillna('')).str.lower()
+_arson = win[_blob.str.contains('arson|íkveik|ikveik|criminal', regex=True)]
+check("Confirmed-arson pre-1998-cohort deaths = 5", int(_arson.deaths.sum()), 5)
+check("Non-arson pre-1998 deaths = 33", int(win.deaths.sum()-_arson.deaths.sum()), 33)
+check("Non-arson pre-1998 rate = 0.48", (int(win.deaths.sum()-_arson.deaths.sum()))/PY_PRE1998*1e5, 0.481, tol=0.005)
+check("Non-arson pre-1998 rate above worst-case bound 0.34",
+      int((int(win.deaths.sum()-_arson.deaths.sum()))/PY_PRE1998*1e5 > one_sided_ub(2, PY_POST1998)), 1)
 
 
 # ══════════════════════════════════════════════════════════════════════════
