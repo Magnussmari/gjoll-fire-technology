@@ -336,7 +336,7 @@ INTERVENTION_YEAR_2    = 1982
 
 annual_deaths["time"]            = annual_deaths["year"] - 1968          # secular trend
 annual_deaths["post1999"]        = (annual_deaths["year"] >= INTERVENTION_YEAR_MAIN).astype(int)
-annual_deaths["time_post1999"]   = annual_deaths["time"] * annual_deaths["post1999"]
+annual_deaths["time_since_1999"]  = (annual_deaths["year"] - 1999).clip(lower=0)  # correct segmented coding
 annual_deaths["post1982"]        = (annual_deaths["year"] >= INTERVENTION_YEAR_2).astype(int)
 annual_deaths["time_post1982"]   = annual_deaths["time"] * annual_deaths["post1982"]
 annual_deaths["log_pop"]         = np.log(annual_deaths["population_1jan"])
@@ -350,7 +350,7 @@ print()
 print("--- Model A: Poisson GLM, single intervention at 1999 ---")
 try:
     model_a = smf.glm(
-        "deaths ~ time + post1999 + time_post1999",
+        "deaths ~ time + post1999 + time_since_1999",
         data=annual_deaths,
         family=sm.families.Poisson(),
         offset=annual_deaths["log_pop"],
@@ -377,7 +377,7 @@ try:
     irr_ci_a = np.exp(ci_a)
 
     print("Incidence Rate Ratios (IRR) with 95% CI:")
-    for name in ["time", "post1999", "time_post1999"]:
+    for name in ["time", "post1999", "time_since_1999"]:
         irr_val = irr_a[name]
         lo      = irr_ci_a.loc[name, 0]
         hi      = irr_ci_a.loc[name, 1]
@@ -398,7 +398,7 @@ print()
 print("--- Model B: Negative Binomial GLM, single intervention at 1999 ---")
 try:
     model_b = smf.glm(
-        "deaths ~ time + post1999 + time_post1999",
+        "deaths ~ time + post1999 + time_since_1999",
         data=annual_deaths,
         family=sm.families.NegativeBinomial(),
         offset=annual_deaths["log_pop"],
@@ -413,7 +413,7 @@ try:
     irr_ci_b = np.exp(ci_b)
 
     print("Incidence Rate Ratios (IRR) with 95% CI:")
-    for name in ["time", "post1999", "time_post1999"]:
+    for name in ["time", "post1999", "time_since_1999"]:
         if name in irr_b.index:
             irr_val = irr_b[name]
             lo      = irr_ci_b.loc[name, 0]
@@ -434,7 +434,7 @@ print()
 print("--- Model C: Poisson GLM, two interventions (1982 and 1999) ---")
 try:
     model_c = smf.glm(
-        "deaths ~ time + post1982 + time_post1982 + post1999 + time_post1999",
+        "deaths ~ time + post1982 + time_post1982 + post1999 + time_since_1999",
         data=annual_deaths,
         family=sm.families.Poisson(),
         offset=annual_deaths["log_pop"],
@@ -458,9 +458,12 @@ except Exception as e:
 print()
 print("--- Generating ITSA figure ---")
 
-# Select the primary model for display (prefer NegBin if available)
-primary_model = model_b if model_b is not None else model_a
-primary_label = "Negative Binomial GLM" if model_b is not None else "Poisson GLM"
+# Select the primary model for display. Per Fire Technology peer review (M4),
+# the Poisson is the preferred model (dispersion ~1.0). The GLM-family NB here
+# uses a FIXED alpha=1.0 and is not the ML refit reported in revision_analyses.py,
+# so the displayed figure uses the Poisson fit to avoid showing a disfavored model.
+primary_model = model_a if model_a is not None else model_b
+primary_label = "Poisson GLM" if model_a is not None else "Negative Binomial GLM"
 
 if primary_model is not None:
     # Fitted values (observed trend)
@@ -468,10 +471,10 @@ if primary_model is not None:
     annual_deaths["fitted_rate"] = fitted_rate
 
     # Counterfactual: what would have happened without 1999 intervention
-    # Set post1999 = 0 and time_post1999 = 0 for counterfactual prediction
+    # Set post1999 = 0 and time_since_1999 = 0 for counterfactual prediction
     cf_data = annual_deaths.copy()
     cf_data["post1999"]      = 0
-    cf_data["time_post1999"] = 0
+    cf_data["time_since_1999"] = 0
     # Also zero out post1982 and time_post1982 for counterfactual from 1982 only
     # For the single-intervention models use primary_model
     try:
@@ -482,14 +485,30 @@ if primary_model is not None:
 
     observed_rate = annual_deaths["deaths"] / annual_deaths["population_1jan"] * 100_000
 
+    # Structure-fire deaths fit (peer-review M5: show structure-only in the figure)
+    struct_annual = (
+        structure.groupby("year")["deaths"].sum()
+        .reindex(range(1968, 2026), fill_value=0).reset_index()
+    )
+    struct_annual.columns = ["year", "deaths"]
+    struct_annual = struct_annual.merge(annual_deaths[["year", "population_1jan"]], on="year")
+    struct_annual["time"] = struct_annual["year"] - 1968
+    struct_annual["post1999"] = (struct_annual["year"] >= INTERVENTION_YEAR_MAIN).astype(int)
+    struct_annual["time_since_1999"] = (struct_annual["year"] - INTERVENTION_YEAR_MAIN).clip(lower=0)
+    struct_annual["log_pop"] = np.log(struct_annual["population_1jan"])
+    struct_fit = smf.glm("deaths ~ time + post1999 + time_since_1999", struct_annual,
+                         family=sm.families.Poisson(), offset=struct_annual["log_pop"]).fit()
+
     fig, axes = plt.subplots(2, 1, figsize=(7, 7))
 
     # Panel (a): Raw counts + fitted
     ax = axes[0]
     ax.bar(annual_deaths["year"], annual_deaths["deaths"],
-           color="#4682B4", alpha=0.55, label="Observed deaths (annual)")
+           color="#4682B4", alpha=0.55, label="Observed deaths (all, annual)")
     ax.plot(annual_deaths["year"], primary_model.fittedvalues,
-            color="#C0392B", linewidth=2, label=f"Fitted: {primary_label}")
+            color="#C0392B", linewidth=2, label=f"Fitted (all): {primary_label}")
+    ax.plot(struct_annual["year"], struct_fit.fittedvalues,
+            color="#7D3C98", linewidth=2, linestyle="-.", label="Fitted (structure-fire deaths)")
     if cf_rate is not None:
         ax.plot(annual_deaths["year"][annual_deaths["year"] >= INTERVENTION_YEAR_MAIN],
                 (cf_rate * annual_deaths["population_1jan"] / 100_000)[
@@ -548,7 +567,7 @@ if primary_model is not None:
 
     slope_pre  = params.get("time", float("nan"))
     level_1999 = params.get("post1999", float("nan"))
-    slope_chg  = params.get("time_post1999", float("nan"))
+    slope_chg  = params.get("time_since_1999", float("nan"))
 
     print(f"  Pre-1999 trend (time coefficient):")
     print(f"    beta = {slope_pre:.4f}  IRR/year = {np.exp(slope_pre):.4f}  p = {pvals.get('time', float('nan')):.4f}")
@@ -557,9 +576,9 @@ if primary_model is not None:
           f"95%CI [{np.exp(ci.loc['post1999',0] if 'post1999' in ci.index else float('nan')):.4f}, "
           f"{np.exp(ci.loc['post1999',1] if 'post1999' in ci.index else float('nan')):.4f}]  "
           f"p = {pvals.get('post1999', float('nan')):.4f}")
-    print(f"  Slope change after 1999 (time_post1999 coefficient):")
+    print(f"  Slope change after 1999 (time_since_1999 coefficient):")
     print(f"    beta = {slope_chg:.4f}  IRR/year = {np.exp(slope_chg):.4f}  "
-          f"p = {pvals.get('time_post1999', float('nan')):.4f}")
+          f"p = {pvals.get('time_since_1999', float('nan')):.4f}")
 
 # ==============================================================================
 # FINAL SUMMARY
