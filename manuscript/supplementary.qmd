@@ -179,7 +179,7 @@ The dwelling-stock model is approximate and may overestimate post-1998 exposure 
 ```{=latex}
 \begin{table}[htbp]
 \centering
-\caption{Joint sensitivity: post-1998 one-sided 95\% upper bound (per 100,000 person-years) crossing classification (deaths) with the modeled vs.\ halved denominator. The modeled column is compared with the pre-1998 point estimate 0.55 (95\% CI 0.39--0.76); the halved column is compared with the \emph{coherently reallocated} pre-1998 point estimate 0.49 (95\% CI 0.35--0.67), since person-years removed from the post-1998 stock accrue to the pre-1998 stock. Bold bounds exceed the applicable pre-1998 point estimate.\label{tbl-joint}}
+\caption{Joint sensitivity: post-1998 one-sided 95\% upper bound (per 100,000 person-years) crossing classification (deaths) with the modeled and halved denominators. Modeled column compared with the pre-1998 point estimate 0.55 (95\% CI 0.39--0.76); halved column with the coherently reallocated pre-1998 point 0.49 (95\% CI 0.35--0.67), since person-years removed from the post-1998 stock accrue to the pre-1998 stock. Bold bounds exceed the applicable pre-1998 point estimate.\label{tbl-joint}}
 \begin{tabular}{@{}l S[table-format=1.3] S[table-format=1.3]@{}}
 \toprule
 {Post-1998 deaths} & {Observed-compl.\ denom.\ (1.86M)} & {Halved + reallocated (0.93M)} \\

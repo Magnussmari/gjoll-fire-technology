@@ -32,6 +32,9 @@ jobs:
       - name: Recompute all manuscript statistics from deposited data
         run: python scripts/verify_statistics.py
 
+      - name: Verify the anonymized manuscript is in sync with the named source
+        run: python scripts/anonymize.py --check
+
       - name: Verify reference DOIs resolve (non-blocking; network-dependent)
         continue-on-error: true
         run: python scripts/verify_references.py
