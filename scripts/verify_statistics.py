@@ -135,10 +135,10 @@ check("Oct-Mar incidents = 66", inc_heat, 66)
 check("Oct-Mar deaths = 84", dth_heat, 84)
 check("Oct-Mar incident share = 58%", 100*inc_heat/len(allm), 58, tol=0.7)
 # binary chi-square vs 50.4% expected
-exp_p = 0.504
+exp_p = 0.499  # exact Oct-Mar day share 10571/21185; matches manuscript chi2=3.27
 chi2_inc = (inc_heat - len(allm)*exp_p)**2/(len(allm)*exp_p) + \
            ((len(allm)-inc_heat) - len(allm)*(1-exp_p))**2/(len(allm)*(1-exp_p))
-check("Seasonality chi-square (incidents) ≈ 3.2", chi2_inc, 3.2, tol=0.5)
+check("Seasonality chi-square (incidents) ≈ 3.27", chi2_inc, 3.27, tol=0.1)
 
 
 # ══════════════════════════════════════════════════════════════════════════
