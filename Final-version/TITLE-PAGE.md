@@ -21,7 +21,7 @@ MSS conceived the study, compiled the Gjöll registry, performed the statistical
 
 ## Competing interests (full disclosure)
 
-M.S.S. is a former employee of the Housing and Construction Authority (Húsnæðis- og mannvirkjastofnun, HMS) — the regulatory body examined in this study — and a former elected leader of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna, LSS). This professional background informs interpretation but did not drive data inclusion or classification, as evidenced by the blinded coding-reproducibility check reported in the manuscript. M.S.S. holds no current financial or employment relationship with HMS or LSS. T.B. declares no competing interests.
+M.S.S. is a former employee of the Housing and Construction Authority (Húsnæðis- og mannvirkjastofnun, HMS), the regulatory body examined in this study, and a former chair of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna, LSS). This professional background informs interpretation but did not drive data inclusion or classification, as evidenced by the blinded coding-reproducibility check reported in the manuscript. M.S.S. holds no current financial or employment relationship with HMS or LSS. T.B. declares no competing interests.
 
 ## Funding
 

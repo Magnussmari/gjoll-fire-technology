@@ -19,10 +19,11 @@ NAMED_SUPP = M / "supplementary.qmd"
 ANON_SUPP  = M / "supplementary_ANON.qmd"
 
 # --- the blinded replacements (exactly as the established ANON renders them) ---
-BIO_NAMED = ("The lead author served as a firefighter and paramedic and held elected "
-    "leadership of the national firefighter and paramedic union (Landssamband "
-    "slökkviliðs- og sjúkraflutningamanna). He also served at the institution "
-    "responsible for fire safety oversight (Húsnæðis- og mannvirkjastofnun, HMS). "
+BIO_NAMED = ("The lead author served as a firefighter and paramedic and was formerly "
+    "chair of the national firefighter and paramedic union (Landssamband "
+    "slökkviliðs- og sjúkraflutningamanna, LSS). He was also formerly employed at the "
+    "institution responsible for fire safety oversight (the Housing and Construction "
+    "Authority, Húsnæðis- og mannvirkjastofnun, HMS). "
     "This experience informs interpretation, but did not drive the classification:")
 BIO_ANON = ("One author has prior professional experience in fire and rescue services "
     "and, previously, in the national fire-safety oversight body examined in this "
