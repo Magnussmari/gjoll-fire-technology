@@ -55,10 +55,7 @@ scripts/        analysis + verification
                   denominator_from_completions.py · advanced_analyses.py · revision_analyses.py
 figures/        publication figures (PNG)
 output/         generated tables/figures (regenerable; gitignored)
-research/       source PDFs + paired reading notes + STROBE checklist
-reports/        peer-review records (incl. the multi-model blind review) + STATUS.md
 Final-version/  submission package (double-anonymous manuscript, title page, supplement, cover letter)
-_archive/       superseded material (full-length manuscript, earlier submission attempt)
 ```
 
 ## Key finding
