@@ -1,7 +1,7 @@
 ---
 title: "Supplementary Material for: Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Construction Period and Fire Mortality"
 date: 2026-07-02
-bibliography: references.bib
+bibliography: references_ANON.bib
 csl: ../springer-fire-technology.csl
 link-citations: true
 number-sections: true
@@ -266,7 +266,7 @@ The data presented in this study document declining fire mortality during a peri
 
 **Unauthorized residential use and arson.** Recent fatalities at Funahöfði and Stangarhyl (both 2023) involved buildings designed for commercial use but occupied as dwellings, lacking residential fire safety provisions. Three confirmed or suspected arson incidents account for seven deaths: Kirkjuvegur, Selfoss (2018, 2 deaths) [@Haestirettur2020Selfoss]; Bræðraborgarstígur, Reykjavík (2020, 3 deaths, 1906 building) [@HMS2020; @Landsrettur2022Braedraborgarstigur]; Hjarðarhagi, Reykjavík (2025, 2 deaths). All occurred in older buildings involving interpersonal conflict or housing precarity among vulnerable populations, a combination that prescriptive codes alone cannot address.
 
-**Data quality as institutional indicator.** The Gjöll registry was compiled because existing official statistics lacked incident-level traceability and contained documented errors (e.g., 2009 recorded as zero fire deaths despite a confirmed fatality at Kljáströnd) [@Smarason2025practitioner]. The registry approach, with source references for each incident and a public-facing research interface (www.gjoll.is), supports auditable trend analysis and reproducible research [@Smarason2025data].
+**Data quality as institutional indicator.** The Gjöll registry was compiled because existing official statistics lacked incident-level traceability and contained documented errors (e.g., 2009 recorded as zero fire deaths despite a confirmed fatality at Kljáströnd) [@Smarason2025practitioner]. The registry approach, with source references for each incident and a public-facing research interface, supports auditable trend analysis and reproducible research [@Smarason2025data].
 
 All three patterns, institutional erosion, unauthorized use, and arson, disproportionately affect vulnerable populations. The remaining fatal fire burden is now concentrated among those least served by the regulatory apparatus: individuals in older housing, unauthorized conversions, and marginalized circumstances. The benefits of Iceland's fire safety progress accrue primarily to those living in compliant, regulated housing; those with the fewest resources face the greatest residual risk [@Smarason2025practitioner]. The transition from writing new building codes to enforcing existing ones and addressing the socioeconomic determinants of fire risk represents the next frontier of fire safety policy.
 
