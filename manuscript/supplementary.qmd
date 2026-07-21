@@ -291,7 +291,7 @@ First, **small sample size and rare-event instability**. The registry contains 1
 
 Second, **fatal incidents only**. Trends in non-fatal fire incidence and property damage cannot be assessed. This limits evaluation of whether regulation reduces fire *occurrence* versus fire *lethality*.
 
-Third, **incomplete ascertainment**. Completeness cannot be quantified. Under-ascertainment is plausible, particularly in earlier decades when archival sources may be incomplete.
+Third, **incomplete ascertainment**. Annual death counts were cross-checked against the official national fatal-fire tallies (fire authority, 1968--2018); the two diverge in several of the earliest years, so completeness before the mid-1990s cannot be fully quantified and under-ascertainment is plausible in those years when archival sources may be incomplete. For the 1996--2025 window on which the post-1998 finding depends, every incident carries both a media and an official-investigation source, and completeness is expected to be near-total.
 
 Fourth, **missing construction-year data**. Construction year is missing for 48 of 93 structure-fire incidents (52%). All missing cases are concentrated in pre-1996 incidents. The sensitivity analysis demonstrates that all 48 occurred between 1970 and 1995. It is logically impossible for any to represent post-1998 buildings.
 
