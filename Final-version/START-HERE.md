@@ -85,7 +85,7 @@ The analyzed data tables are deposited at DATICE (GAGNÍS – Gagnaþjónusta f�
 
 **Acknowledgments / AI-use** (paste — Springer requires AI use disclosed; ours is also in Methods):
 ```
-The authors acknowledge the use of large language models (Anthropic Claude, OpenAI GPT) for Python analysis-script development (all outputs verified by the lead author against the deposited data) and for an automated, construction-year-blinded coding-reproducibility check of the classification (reported in Data and Methods). The models are not authors.
+The authors acknowledge the use of Claude Code (Anthropic) for Python analysis-script development, and of two large language models (Anthropic Claude Sonnet 5 and OpenAI GPT-5.5) for an automated, construction-year-blinded coding-reproducibility check of the classification (reported in Data and Methods). The models are not authors; all outputs were verified by the lead author against the deposited data.
 ```
 
 ### ☐ 7 — Suggested reviewers (optional)

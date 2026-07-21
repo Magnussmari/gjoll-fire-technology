@@ -3,7 +3,7 @@
 verify_statistics.py — end-to-end verification of EVERY headline statistic in
 
   "Fatal Fire Incidents in Iceland, 1968-2025:
-   A National Registry Study of Building Age and Fire Safety Regulation"
+   A National Registry Study of Building Construction Period and Fire Mortality"
 
 Each claim printed in the manuscript / supplement is recomputed here directly
 from the deposited CSVs and checked against the value stated in the paper.

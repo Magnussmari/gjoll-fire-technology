@@ -189,7 +189,7 @@ Iceland's fire mortality declined by approximately 80% over the study period, fr
 
 # Acknowledgments {.unnumbered}
 
-The authors acknowledge the use of Claude Code (Anthropic) for assistance with Python script development for the statistical analysis and an automated blinded coding-reproducibility check. All code, model specifications, and outputs were reviewed and verified against the deposited data.
+The authors acknowledge the use of Claude Code (Anthropic) for assistance with Python script development for the statistical analysis, and of two large language models (Anthropic Claude Sonnet 5 and OpenAI GPT-5.5) for the automated, construction-year-blinded coding-reproducibility check reported in Data and Methods. The models are not authors. All code, model specifications, and outputs were reviewed and verified against the deposited data.
 
 # Funding {.unnumbered}
 
