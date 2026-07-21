@@ -1,87 +1,122 @@
-# START HERE — submit the fire paper to *Fire Technology*
+# START HERE — submit the fire paper to *Fire Technology* (SNAPP)
 
-You're basically done. Both authors have signed off (Tom approved by email on 2026-07-20:
-*"I think you should submit it"*). This is just the upload. Take it one step at a time —
-each step below is a single action. ~30 minutes, and you can stop and resume anywhere.
+You're ready. Both authors signed off (Tom, 2026-07-20). This guide matches the **current**
+Springer Nature SNAPP double-anonymous flow (verified against Springer's guidelines 2026-07-21).
+
+> **What changed vs. the old guide:** Fire Technology moved to the new SNAPP system. It is
+> **double-anonymous**, and it now collects the title-page information — authors, ORCIDs,
+> affiliations, competing interests, funding, ethics, data availability, author contributions,
+> AI-use — **in the submission interface (Authors tab + Declarations tab), NOT as an uploaded
+> Title Page file.** So you upload only 2–3 anonymized files and *type/paste* the rest into
+> SNAPP. `TITLE-PAGE.docx` is now just your **reference sheet** for those fields — do not upload it.
 
 ---
 
-## What's in this folder (only what you need)
+## Files you UPLOAD (all already anonymized, metadata clean)
 
-| # | File | What you do with it |
-|---|------|---------------------|
-| 📄 | **Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx** | Upload as **the manuscript** |
-| 📎 | **Fatal-Fire-Iceland_supplementary_ANON.docx** | Upload as **Supplementary** |
-| 🪪 | **TITLE-PAGE.docx** | Upload as **Title Page** (separate) |
-| ✉️ | **cover-letter-fire-technology.md** | **Paste** its text into the cover-letter box |
+| Role in SNAPP | File |
+|---|---|
+| **Manuscript** (Word, figures embedded) | `Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx` |
+| **Supplementary / ESM** | `Fatal-Fire-Iceland_supplementary_ANON.docx` |
+| **Cover letter** | `cover-letter-fire-technology.md` (paste the text, or upload as PDF) |
 
-The two `.pdf` files are just for you to eyeball before uploading. Everything else lives in
-`_working/` — you do **not** need it. (The named, non-anonymous versions are in there too, kept
-out of the way so you can't upload the wrong one by accident.)
-
-> This journal is **double-anonymous**: your name goes ONLY on the Title Page, never in the
-> manuscript. That's why the file you upload is the `ANONYMIZED` one.
+**Do NOT upload:** the `TITLE-PAGE.docx` or the `_NAMED` files. Everything in `_working/` is
+reference only. The anonymized files are verified clean: no author names, no `gjoll.is`/DOI/GitHub
+links, self-citations masked, and document-property metadata blank.
 
 ---
 
 ## The steps
 
-### ☐ Step 1 — Open the submission site
-Go to **https://submission.springernature.com/new-submission/10694/3**
-Log in with your **ORCID `0009-0008-2050-021X`** and your **UNAK email `magnus@smarason.is`**
-(that pairing is what gets the ~€2,590 fee waived later — it does not hold up submission).
-Click **Submit New Manuscript**.
+### ☐ 1 — Open SNAPP & log in
+From the journal page, click **Submit manuscript** → SNAPP:
+`https://submission.springernature.com/new-submission/10694`
+Log in / register with your **ORCID `0009-0008-2050-021X`** and your **UNAK email
+`magnus@smarason.is`** (this pairing links the article to Iceland's Springer read-&-publish
+agreement → APC waiver, confirmed at acceptance, not now).
 
-### ☐ Step 2 — Article type
-Choose **Research**.
+### ☐ 2 — Article type
+Choose **Research**. (Fire Technology's types are Research / Case Study / Database. "Research" is the original-research type; no word limit.)
 
-### ☐ Step 3 — Title (paste this)
+### ☐ 3 — Upload files
+Upload the **manuscript** (`…ANONYMIZED_manuscript.docx`, figures embedded) and the
+**supplementary** (`…supplementary_ANON.docx`). Add the **cover letter** (paste text or PDF).
+SNAPP auto-compiles a PDF for review.
+
+### ☐ 4 — Confirm auto-extracted fields
+SNAPP reads the title, abstract, and keywords from the file. Confirm:
+- **Title:** `Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Construction Period and Fire Mortality`
+- **Abstract:** 240 words (within the 150–250 limit) — already in the manuscript.
+- **Keywords:** fire fatalities; fire safety regulation; building codes; building age; fire statistics; Iceland
+
+### ☐ 5 — Authors tab (type these in)
+- **Author 1 (corresponding):** Magnús Smári Smárason — University of Akureyri (Háskólinn á Akureyri), Iceland — ORCID `0009-0008-2050-021X` — magnus@smarason.is
+- **Author 2:** Thomas Barry — University of Akureyri (Háskólinn á Akureyri), Iceland — ORCID `0000-0002-0633-3602`
+- Mark **Magnús** as corresponding author.
+
+### ☐ 6 — Declarations tab (paste each statement)
+
+**Competing interests** (paste):
 ```
-Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Construction Period and Fire Mortality
+M.S.S. is a former employee of the Housing and Construction Authority (Húsnæðis- og mannvirkjastofnun, HMS), the regulatory body examined in this study, and a former chair of the national firefighter and paramedic union (Landssamband slökkviliðs- og sjúkraflutningamanna, LSS). This professional background informs interpretation but did not drive data inclusion or classification, as evidenced by the blinded coding-reproducibility check reported in the manuscript. M.S.S. holds no current financial or employment relationship with HMS or LSS. T.B. declares no competing interests.
 ```
 
-### ☐ Step 4 — Abstract (paste this — 236 words, within the 150–250 limit)
+**Funding** (paste):
 ```
-This observational study presents a 58-year national registry of all fatal fire incidents in Iceland (1968–2025). The Gjöll registry contains 113 fatal incidents and 145 deaths, of which 93 incidents (116 deaths) are structure fires. Decade-aggregated fire mortality peaked in the 1970s (21.9 deaths per million per year) and fell by approximately 80% to 4–7 per million from the 1990s onward. Fatal fires concentrate in older building stock. Among incidents from 1996 onward, when construction-year data are complete, the fatal-fire rate in buildings of recorded construction year 1999 or later is significantly lower than the pre-1998 dwelling rate of 0.55 per 100,000 person-years (95% CI 0.39–0.76; person-years from observed dwelling completions). Reported as exact post/pre Poisson rate ratios, the reduction holds under every convention for classifying a fatal fire in a building: 0.10 (95% CI 0.002–0.58) under the standard convention (one post-1998 fatality, a 2014 nursing-home death), 0 (0–0.38) under a stricter definition (none), and 0.19 (0.02–0.75) in an adversarial worst case (two) — every interval excluding 1. Interrupted time series analysis shows a consistent pre-1999 decline (incidence rate ratio [IRR] = 0.93/year, p < 0.001) and no significant discrete change at 1999; the decline flattens rather than stepping down. The findings are compatible with a safety advantage in newer, code-era buildings but do not identify the independent effect of Iceland's 1998 building regulation, since construction period bundles building age, materials, occupancy, and concurrent secular change.
-```
-
-### ☐ Step 5 — Keywords
-```
-fire fatalities; fire safety regulation; building codes; building age; fire statistics; Iceland
+This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 ```
 
-### ☐ Step 6 — Authors
-- **Magnús Smári Smárason** — corresponding — University of Akureyri (Háskólinn á Akureyri), Iceland — ORCID `0009-0008-2050-021X` — magnus@smarason.is
-- **Thomas Barry** — University of Akureyri, Iceland — ORCID `0000-0002-0633-3602`
+**Ethics approval** (paste):
+```
+Under Icelandic law (Act on Scientific Research in the Health Sector No. 44/2014), a study of deceased persons based on a registry compiled from already-public sources (newspaper archives, official reports, and court records) does not involve identifiable living human participants and did not require review or approval by the National Bioethics Committee (Vísindasiðanefnd); no ethics approval was therefore sought.
+```
 
-### ☐ Step 7 — Declarations (tick-boxes; the full wording is already in the files)
-- **Competing interests:** Yes, disclosed — corresponding author is a former employee of HMS (the body whose regulation is examined) and former chair of LSS. Tom: none.
-- **Funding:** none.
-- **Ethics approval:** not required (registry of deceased persons from public sources).
-- **Data availability:** Yes — DOI 10.34881/I5WGJU + www.gjoll.is + GitHub.
-- **AI use:** disclosed — Claude Code used for analysis scripts and an automated coding-reproducibility check.
+**Consent to participate / publish:** Not applicable (records of deceased persons from public sources; no living participants).
 
-### ☐ Step 8 — (Optional) Suggested reviewers
-2–3 fire-safety-engineering or injury-epidemiology researchers, not at UNAK, no recent
-co-authorship with you. Leave blank if you'd rather not — it's optional.
+**Author contributions** (paste):
+```
+MSS conceived the study, compiled the Gjöll registry, performed the statistical analysis, and wrote the manuscript. TB contributed governance context and reviewed and revised the manuscript. Both authors approved the final version.
+```
 
-### ☐ Step 9 — Upload the files, in this order
-1. **Cover letter** — open `cover-letter-fire-technology.md`, copy the text, paste into the cover-letter box.
-2. **Manuscript** — `Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx`
-3. **Supplementary** — `Fatal-Fire-Iceland_supplementary_ANON.docx`
-4. **Title Page** — `TITLE-PAGE.docx` (as its own "Title Page" item)
+**Data availability** (paste):
+```
+The analyzed data tables are deposited at DATICE (GAGNÍS – Gagnaþjónusta félagsvísinda), University of Iceland (DOI: 10.34881/I5WGJU) and are available through the public Gjöll interface at https://www.gjoll.is. Reproducibility scripts (Python), including a verification script that recomputes every reported statistic, are openly available at https://github.com/Magnussmari/gjoll-fire-technology.
+```
 
-### ☐ Step 10 — Last look before Submit
-- The PDF the site builds previews cleanly — **Figure 1 (study-design pipeline), Fig 2, Fig 3, and both tables show up.**
-- The manuscript you attached is the **ANONYMIZED** one (no author names in it).
-- Authors, ORCIDs, and the corresponding-author flag are right.
+**Acknowledgments / AI-use** (paste — Springer requires AI use disclosed; ours is also in Methods):
+```
+The authors acknowledge the use of large language models (Anthropic Claude, OpenAI GPT) for Python analysis-script development (all outputs verified by the lead author against the deposited data) and for an automated, construction-year-blinded coding-reproducibility check of the classification (reported in Data and Methods). The models are not authors.
+```
 
-### ☐ Step 11 — Submit
-Click submit. You'll get a manuscript number by email in a few minutes. **You're done.**
+### ☐ 7 — Suggested reviewers (optional)
+2–3 fire-safety-engineering or injury-epidemiology researchers, not at UNAK, no recent co-authorship. Leave blank if unsure.
+
+### ☐ 8 — Review & Submit
+Check the auto-built PDF: **Figure 1 (study-design pipeline), Fig 2, Fig 3, and both tables render.**
+(Skip the optional Research Square preprint unless you want it.) Then **Submit** → manuscript number by email in minutes.
 
 ---
 
-## If a reviewer comes back later
-Expect **Minor Revision, no rejection** (that's where the internal 5-model blind panel landed).
-`../reports/MORNING-REPORT-2026-07-03.md` pre-maps the likely reviewer points to where the paper
-already answers them, so the response letter will be quick. Nothing to do now — rest.
+## Before you click Submit — checklist
+- [ ] You uploaded the **ANONYMIZED** manuscript (no author names in it) — not the `_NAMED` file.
+- [ ] All declarations entered in the **interface** (step 6), not relying on a title-page file.
+- [ ] Article type = **Research**; corresponding author = Magnús with ORCID + UNAK email.
+- [ ] PDF preview: figures + tables render.
+
+## One nuance worth knowing (low-risk)
+SNAPP's strict rule is that the *manuscript* should carry **no** competing-interest/ethics/funding
+statements (they live in the interface). Our anonymized manuscript still has a short **blinded**
+"Compliance with Ethical Standards" note — it's generic and non-identifying, so it's low risk. If
+the technical-check editor asks you to remove it, say the word and I'll regenerate a
+declaration-free manuscript in ~2 minutes.
+
+## After
+First decision: weeks to a couple of months. Two independent reviewers (Fable + Kimi) and a 5-model
+blind panel all landed on **publishable / minor revision**. `../reports/…` no longer ships publicly,
+but the internal `_private/repo-internal/reports/MORNING-REPORT-2026-07-03.md` pre-maps likely
+reviewer points to where the paper already answers them — fast response letter.
+
+---
+*Guide upgraded 2026-07-21 against Springer Nature's current SNAPP double-anonymous guidelines
+(Sources: Springer Nature SNAPP "How to submit" + "Double-anonymous peer review"; Springer Nature AI
+editorial policy). The pre-SNAPP walkthrough is archived in `_working/SUBMISSION-GUIDE.md`.*
