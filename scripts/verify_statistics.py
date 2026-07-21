@@ -281,15 +281,23 @@ for lab, a, exp_hi in [("strict", 0, 0.451), ("standard", 1, 0.691), ("worst", 2
 
 
 # ══════════════════════════════════════════════════════════════════════════
-section("7c. Blinded second-coding reliability (if run)")
-bcsv = os.path.join(os.path.dirname(DATA), "output", "generated", "blinded_second_coding.csv")
-if os.path.exists(bcsv):
-    bc = pd.read_csv(bcsv)
-    check("Blinded coders n = 45 incidents", int(bc["n"].iloc[0]), 45)
-    check("Cohen's kappa >= 0.9 for all coders", int((bc["cohen_kappa"] >= 0.9).all()), 1)
-    check("Raw agreement >= 0.95 for all coders", int((bc["raw_agreement"] >= 0.95).all()), 1)
+section("7c. Blinded second-coding reliability (deposited codings, recomputed)")
+bcodings = os.path.join(DATA, "blinded_recode_codings_1996_2025.csv")
+if os.path.exists(bcodings):
+    bc = pd.read_csv(bcodings)
+    def _kappa(a, b):
+        a, b = list(a), list(b); n = len(a); cats = ["structure", "other"]
+        po = sum(x == y for x, y in zip(a, b)) / n
+        pe = sum((a.count(c) / n) * (b.count(c) / n) for c in cats)
+        return po, ((po - pe) / (1 - pe) if pe < 1 else 1.0)
+    check("Blinded codings n = 45 incidents", len(bc), 45)
+    check("Blinded set = 35 structure + 10 other", int((bc.orig_coding == "structure").sum())*100 + int((bc.orig_coding == "other").sum()), 3510)
+    for coln in ["claude_sonnet5", "openai_gpt55"]:
+        po, k = _kappa(bc["orig_coding"], bc[coln])
+        check(f"Recomputed Cohen's kappa ({coln}) = 0.933", round(k, 3), 0.933, tol=0.001)
+        check(f"Recomputed raw agreement ({coln}) = 0.978", round(po, 3), 0.978, tol=0.001)
 else:
-    print("  [skip] run scripts/blinded_second_coding.py to generate reliability stats")
+    print("  [skip] deposited blinded codings not found")
 
 
 # ══════════════════════════════════════════════════════════════════════════

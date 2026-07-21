@@ -105,9 +105,13 @@ def cohen_kappa(a, b):
 CODERS = [("Sonnet 5", "anthropic", "claude-sonnet-5"),
           ("GPT-5.5", "openrouter", "openai/gpt-5.5")]
 rows = []
+per_incident = {"id": [r["id"] for r in records], "year": [r["year"] for r in records],
+                "municipality": [r["municipality"] for r in records], "orig_coding": list(orig)}
+col_name = {"Sonnet 5": "claude_sonnet5", "GPT-5.5": "openai_gpt55"}
 for name, prov, slug in CODERS:
     try:
         coded = code_with(name, prov, slug)
+        per_incident[col_name.get(name, name)] = coded
         po, k = cohen_kappa(orig, coded)
         disagreements = [(records[i]["year"], records[i]["municipality"], orig[i], coded[i])
                          for i in range(len(orig)) if orig[i] != coded[i]]
@@ -120,4 +124,9 @@ for name, prov, slug in CODERS:
     except Exception as e:
         print(f"[{name}] FAILED: {type(e).__name__}: {e}")
 pd.DataFrame(rows).to_csv(OUT / "blinded_second_coding.csv", index=False)
+# deposit the per-incident codings so the kappa is reproducible offline
+# (verify_statistics.py recomputes it from this table; no API keys needed)
+if len(per_incident) > 4:
+    pd.DataFrame(per_incident).to_csv(DATA / "blinded_recode_codings_1996_2025.csv", index=False)
+    print(f"Deposited -> {DATA / 'blinded_recode_codings_1996_2025.csv'}")
 print(f"\nSaved -> {OUT / 'blinded_second_coding.csv'}")

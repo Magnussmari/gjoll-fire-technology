@@ -1,0 +1,10 @@
+Per-incident codings for the blinded second-coding reproducibility check (Data & Methods).
+Two frontier LLMs (Claude Sonnet 5, OpenAI GPT-5.5) independently re-coded all 45 fatal
+incidents of the complete-data 1996-2025 window (35 structure + 10 other) as structure vs
+other, blinded to construction year, using only the predefined fire-mechanism rule.
+Both reproduced the predefined-rule coding on 44/45 incidents; the sole disagreement for
+each was the 2010 Grundartangi industrial fire (original "other"; both models "structure").
+Columns: id, year, municipality, orig_coding (human/predefined), claude_sonnet5, openai_gpt55.
+Recompute: raw agreement = 44/45 = 97.8%; Cohen's kappa = 0.933 per model. This lets the
+kappa be verified offline without re-querying the models. (The live coder is
+scripts/blinded_second_coding.py, which also writes this table on each run.)
