@@ -103,12 +103,12 @@ Check the auto-built PDF: **Figure 1 (study-design pipeline), Fig 2, Fig 3, and 
 - [ ] Article type = **Research**; corresponding author = Magnús with ORCID + UNAK email.
 - [ ] PDF preview: figures + tables render.
 
-## One nuance worth knowing (low-risk)
-SNAPP's strict rule is that the *manuscript* should carry **no** competing-interest/ethics/funding
-statements (they live in the interface). Our anonymized manuscript still has a short **blinded**
-"Compliance with Ethical Standards" note — it's generic and non-identifying, so it's low risk. If
-the technical-check editor asks you to remove it, say the word and I'll regenerate a
-declaration-free manuscript in ~2 minutes.
+## Compliance note (handled)
+SNAPP's strict rule is that the *manuscript* must carry **no** competing-interest / ethics /
+funding / acknowledgment / contribution statements — they live in the interface. The anonymized
+manuscript is now **fully declaration-free** (it ends straight at References); all statements are
+in step 6 above. Verified: 0 declaration blocks, 0 identity leaks, blank document-property
+metadata, self-citations masked.
 
 ## After
 First decision: weeks to a couple of months. Two independent reviewers (Fable + Kimi) and a 5-model

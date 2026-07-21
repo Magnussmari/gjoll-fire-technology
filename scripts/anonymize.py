@@ -35,16 +35,14 @@ BIO_NAMED = ("The lead author served as a firefighter and paramedic and was form
     "This experience informs interpretation, but did not drive the classification:")
 BIO_ANON = ("One author has prior professional experience in fire and rescue services "
     "and, previously, in the national fire-safety oversight body examined in this "
-    "study; this potential conflict of interest is disclosed in full on the title "
-    "page. This experience informs interpretation but did not drive the classification:")
+    "study; this potential conflict of interest is disclosed in full via the "
+    "submission system. This experience informs interpretation but did not drive the classification:")
 
-TAIL_ANON = """# Compliance with Ethical Standards {.unnumbered}
-
-**Competing interests:** One author has a prior professional association with the regulatory body examined in this study. In accordance with the journal's double-anonymous policy, the full disclosure --- together with author identities, affiliations, funding, author contributions, acknowledgments, and data-availability identifiers --- is provided on the separate Title Page.
-
-**Data availability:** The registry data and the reproducibility code (including a script that recomputes every reported statistic) are publicly deposited; the access identifiers that would reveal author identity are listed on the Title Page and are openly available.
-
-# References {.unnumbered}"""
+# Strict SNAPP double-anonymous: the manuscript must carry NO acknowledgements,
+# competing-interest, ethics, funding, contribution, or data-availability statements
+# — all are entered in the submission-system interface. So the anon tail collapses
+# straight to References.
+TAIL_ANON = """# References {.unnumbered}"""
 
 # markers that must NEVER appear in an anonymized file (author identity)
 LEAK_MARKERS = [
