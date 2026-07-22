@@ -17,7 +17,6 @@ Everything is done and verified. This is the whole task. (Full detail if you wan
 
 ## Two things to eyeball first (30 seconds each)
 
-- Open the two `hms.is` reference links once in a browser (they block bots, so they weren't auto-checkable — but load fine for a human).
 - Skim the abstract once. It's the front door. It reads well; just confirm it's the you-approved version.
 
 ## If a reviewer later asks for the human double-code
