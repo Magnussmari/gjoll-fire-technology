@@ -35,11 +35,11 @@ BIO_NAMED = ("The lead author served as a firefighter and paramedic and was form
     "slökkviliðs- og sjúkraflutningamanna, LSS). He was also formerly employed at the "
     "institution responsible for fire safety oversight (the Housing and Construction "
     "Authority, Húsnæðis- og mannvirkjastofnun, HMS). "
-    "This experience informs interpretation, but did not drive the classification:")
+    "This experience informs interpretation but did not drive the classification.")
 BIO_ANON = ("One author has prior professional experience in fire and rescue services "
     "and, previously, in the national fire-safety oversight body examined in this "
     "study; this potential conflict of interest is disclosed in full via the "
-    "submission system. This experience informs interpretation but did not drive the classification:")
+    "submission system. This experience informs interpretation but did not drive the classification.")
 
 # Strict SNAPP double-anonymous: the manuscript must carry NO acknowledgements,
 # competing-interest, ethics, funding, contribution, or data-availability statements
