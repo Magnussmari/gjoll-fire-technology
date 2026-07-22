@@ -75,7 +75,7 @@ Under Icelandic law (Act on Scientific Research in the Health Sector No. 44/2014
 
 **Author contributions** (paste):
 ```
-MSS conceived the study, compiled the Gjöll registry, performed the statistical analysis, and wrote the manuscript. TB contributed governance context and reviewed and revised the manuscript. Both authors approved the final version.
+Contributions are reported using the CRediT taxonomy. M.S.S.: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Software, Visualization, Writing – original draft, and Writing – review and editing. T.B.: Conceptualization (governance and regulatory framing) and Writing – review and editing. Both authors read and approved the final manuscript.
 ```
 
 **Data availability** (paste):
