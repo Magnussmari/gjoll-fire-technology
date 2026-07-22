@@ -46,7 +46,7 @@ SNAPP auto-compiles a PDF for review.
 ### ☐ 4 — Confirm auto-extracted fields
 SNAPP reads the title, abstract, and keywords from the file. Confirm:
 - **Title:** `Fatal Fire Incidents in Iceland, 1968–2025: A National Registry Study of Building Construction Period and Fire Mortality`
-- **Abstract:** 240 words (within the 150–250 limit) — already in the manuscript.
+- **Abstract:** 225 words (within the 150–250 limit) — already in the manuscript.
 - **Keywords:** fire fatalities; fire safety regulation; building codes; building age; fire statistics; Iceland
 
 ### ☐ 5 — Authors tab (type these in)
