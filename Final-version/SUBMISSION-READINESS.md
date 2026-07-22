@@ -2,9 +2,21 @@
 
 *Verified 2026-07-22. Companion to `START-HERE.md` (the step-by-step submission walkthrough).*
 
-## Verdict: READY TO SUBMIT — S-tier knockout pass complete
+## Verdict: READY TO SUBMIT — reviewer-ringer pass complete
 
-All gates pass as of commit `4e50865` (see `MISSION-S-TIER-KNOCKOUT.md`, all 10 ISC green):
+**Final pass (2026-07-22): put through Fable 5 + Kimi K3 peer review and hardened.** Neither
+model found a deal-breaker; both landed on minor-to-major revision. All their actionable
+findings were applied, plus the one substantive addition below.
+
+**The completeness check is now PERFORMED, not promised.** The registry's annual fire-death
+counts were reconciled against the official ICD-10 X00–X09 cause-of-death series (Statistics
+Iceland MAN05302, pulled live): the registry documents **50 fire deaths (1996–2024) against
+36 in the official series** — it is the *more complete* record (it captures intentional and
+non-building fire deaths coded outside X00–X09, and the documented 2009 omission). Reproduced
+by `scripts/reconcile_icd10.py`; year-by-year table deposited. This converts the paper's
+weakest plank into demonstrated evidence for its thesis.
+
+All gates pass as of the final-pass commits (see `MISSION-S-TIER-KNOCKOUT.md`, all 10 ISC green):
 
 | Gate | Result |
 |---|---|

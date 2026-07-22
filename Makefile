@@ -24,6 +24,7 @@ analyses:          ## Re-run the full analysis pipeline (denominator, ITSA, sens
 	$(PYTHON) scripts/denominator_from_completions.py
 	$(PYTHON) scripts/advanced_analyses.py
 	$(PYTHON) scripts/revision_analyses.py
+	$(PYTHON) scripts/reconcile_icd10.py
 
 manuscript:        ## Render the manuscript + supplement to PDF (requires Quarto + LaTeX)
 	quarto render manuscript/Smarason_2026_BriefCommunication.qmd --to pdf
