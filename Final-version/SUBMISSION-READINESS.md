@@ -2,38 +2,50 @@
 
 *Verified 2026-07-22. Companion to `START-HERE.md` (the step-by-step submission walkthrough).*
 
-## Verdict: READY TO SUBMIT
+## Verdict: READY TO SUBMIT — S-tier knockout pass complete
 
-All gates pass as of commit `013eb5a`:
+All gates pass as of commit `4e50865` (see `MISSION-S-TIER-KNOCKOUT.md`, all 10 ISC green):
 
 | Gate | Result |
 |---|---|
 | Statistics vs. deposited data (`verify_statistics.py`) | 125/125 checks pass |
 | Anonymization sync (`anonymize.py --check`) | In sync (named → ANON derivation) |
 | Identity-leak scan (ANON docx body + document properties) | 0 hits |
+| First-person in body (named + anon) | 0 (impersonal scientific voice) |
+| Author role clarity | CRediT statement (named); correctly absent from anon |
+| Longest Methods sentence | 63-word structured list (pathological 99w/89w run-ons removed) |
+| Causal-consistency razor | Clean (no sentence claims what the paper disclaims) |
+| AI/reproducibility disclosure | Frozen deposited snapshot; κ recomputable offline |
+| STROBE/RECORD checklist | Completed, mapped, rendered to PDF for upload |
 | Abstract length | 225 words (limit 150–250) |
-| Reference DOIs (15) | All resolve; fields match Crossref/DataCite; no retractions or corrections |
-| Reference URLs (28) | All reachable (hms.is rate-limits bots but loads in a browser) |
-| PDF typography | Reference list ragged-right, DOIs unbroken; tables clean; proper-noun casing fixed |
+| Reference DOIs (16) | All resolve; fields match Crossref/DataCite; no retractions |
+| Reference URLs (27) | All reachable (hms.is rate-limits bots but loads in a browser) |
+| PDF typography | Ragged-right refs, DOIs unbroken, tables clean, casing fixed |
+
+Manuscript: **23 pp** (named) / **22 pp** (anon) after the sentence splits + CRediT.
 
 ## Files to upload (from this folder)
 
-1. **Manuscript:** `Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx` (21-page PDF twin for checking)
+1. **Manuscript:** `Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx` (23/22-page PDF twin for checking)
 2. **Supplementary/ESM:** `Fatal-Fire-Iceland_supplementary_ANON.docx`
 3. **Cover letter:** `cover-letter-fire-technology.md` (paste text)
+4. **Reporting checklist:** `Fatal-Fire-Iceland_STROBE-RECORD-checklist.pdf` (Related Manuscript file)
+5. *(optional)* suggested reviewers — see `suggested-reviewers.md` (SNAPP step 7)
 
 Do NOT upload `TITLE-PAGE.docx` or anything in `_working/` — declarations are typed into
 the SNAPP interface (see `START-HERE.md` step 6).
 
 ## Changes applied in this final polish round (2026-07-22)
 
-- Reference list set ragged-right; DOIs no longer break mid-string (commit `3eea008`)
+- Reference list set ragged-right; DOIs no longer break mid-string (`3eea008`)
 - Anonymized author-mask rendering bug fixed (was "review] [Author name withheld…") (`3eea008`)
-- Proper nouns brace-protected against CSL sentence-casing (sweden→Sweden, íslandi→Íslandi, …) (`ad8f3c5`)
-- Abstract now cites the primary structure-fire ITSA slope (0.95/year, was 0.93 combined) (`013eb5a`)
-- RECORD statement now cited (Benchimol et al. 2015) alongside STROBE (`013eb5a`)
-- 1970 geothermal share aligned to Ragnarsson 2010: 43% (was 45%) (`013eb5a`)
-- Spelling unified to American; spaced em-dash constructions removed; approximation glyphs unified (`013eb5a`)
+- Proper nouns brace-protected against CSL sentence-casing (`ad8f3c5`)
+- Abstract cites the primary structure-fire ITSA slope (0.95/year); RECORD cited; geothermal 43%; American spelling; em-dashes removed (`013eb5a`)
+- First-person → impersonal scientific voice, whole body (`0c20d42`)
+- Role clarity: CRediT Author Contributions, M.S.S. 9 roles / T.B. 2 (`aad58fa`)
+- Long Methods run-ons split (99w/89w → readable); AI disclosure hardened to frozen-snapshot reproducibility (temperature-0 deliberately not claimed — only one call set it) (`0c9cccf`)
+- Completed STROBE/RECORD checklist created + rendered; cover-letter checklist claim reconciled + blinded-recode differentiator added; suggested reviewers drafted (`4e50865`)
+- **Anonymity: Gjöll ratified as-is** — policy bar met (no identity handed over; DOI/URL/GitHub/self-cites masked); the name is load-bearing and determined de-anonymization is unavoidable regardless.
 
 ## Reference verification (43 entries)
 

@@ -19,6 +19,7 @@ Springer Nature SNAPP double-anonymous flow (verified against Springer's guideli
 | **Manuscript** (Word, figures embedded) | `Fatal-Fire-Iceland_ANONYMIZED_manuscript.docx` |
 | **Supplementary / ESM** | `Fatal-Fire-Iceland_supplementary_ANON.docx` |
 | **Cover letter** | `cover-letter-fire-technology.md` (paste the text, or upload as PDF) |
+| **Reporting checklist** | `Fatal-Fire-Iceland_STROBE-RECORD-checklist.pdf` (upload as a Related Manuscript file) |
 
 **Do NOT upload:** the `TITLE-PAGE.docx` or the `_NAMED` files. Everything in `_working/` is
 reference only. The anonymized files are verified clean: no author names, no `gjoll.is`/DOI/GitHub

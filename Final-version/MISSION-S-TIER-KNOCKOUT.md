@@ -2,7 +2,7 @@
 @artifact      Mission: Fire paper → S-tier knockout, submission-ready
 @orchestrator  Magnus Smárason | smarason.is
 @created       2026-07-22
-@status        ACTIVE — execution in progress
+@status        COMPLETE — all ISC green; staged for submission (Gjöll ratified as-is)
 @target        Fire Technology (Springer, SNAPP double-anonymous)
 -->
 
@@ -61,16 +61,16 @@ single craft defect.
 
 | # | Criterion | Test | Status |
 |---|-----------|------|--------|
-| ISC-1 | No body sentence exceeds ~40 words without justified structure | sentence-length script over qmd body; longest ≤ ~40w (tables/lists exempt) | ☐ |
-| ISC-2 | AI-disclosure paragraph asserts all five: model versions archived, prompts archived, **temperature 0 / deterministic**, outputs frozen+deposited, κ recomputable offline | grep the 5 claims present in Methods + Acknowledgments | ☐ |
-| ISC-3 | Causal-consistency razor: no sentence asserts the 1998 regulation's *independent causal effect*; describe/suggest/identify boundary held everywhere | forbidden-construction grep + full human pass | ☐ |
-| ISC-4 | Every figure legend is self-contained (units, source, defined terms) | read all 3 main + supplementary figure legends | ☐ |
-| ISC-5 | Anonymity posture decided + executed: either "Gjöll" name neutralized in ANON build only, or as-is ratified with a one-line rationale | decision recorded here + reflected in anonymize.py | ☐ |
-| ISC-6 | STROBE + RECORD checklist exists, complete, and is in the submission package | file present; every item mapped to a line/section | ☐ |
-| ISC-7 | Cover letter names the reproducibility/verification infrastructure as a differentiator | read cover-letter-fire-technology.md | ☐ |
-| ISC-8 | 2–3 suggested reviewers prepared (SNAPP step 7), no COI/co-authorship | list drafted (optional to submit) | ☐ |
-| ISC-9 | All standing gates green after every edit; SUBMISSION-READINESS refreshed | run full gate sweep; update report | ☐ |
-| ISC-10 | Final rendered PDFs (named + anon) + DOCX shipped to Final-version; 0 leaks | render + leak scan + copy | ☐ |
+| ISC-1 | No body sentence exceeds ~40 words without justified structure | sentence-length script over qmd body; longest ≤ ~40w (tables/lists exempt) | ✅ |
+| ISC-2 | AI-disclosure asserts: model versions archived, prompts archived, raw outputs archived, outputs a **frozen deposited snapshot**, κ recomputable offline. (Temperature-0 claim deliberately DROPPED: only the GPT-5.5 call set it; the Claude call used the API default. Frozen-snapshot framing is true and a stronger guarantee.) | ✅ |
+| ISC-3 | Causal-consistency razor: no sentence asserts the 1998 regulation's *independent causal effect*; describe/suggest/identify boundary held everywhere | forbidden-construction grep + full human pass | ✅ |
+| ISC-4 | Every figure legend is self-contained (units, source, defined terms) | read all 3 main + supplementary figure legends | ✅ |
+| ISC-5 | Anonymity: **ratified as-is** (Gjöll retained). Policy bar met (manuscript hands over no identity; DOI/URL/GitHub/self-cites masked); name is load-bearing to the paper's identity and determined de-anon is unavoidable regardless | ✅ |
+| ISC-6 | STROBE + RECORD checklist exists, complete, and is in the submission package | file present; every item mapped to a line/section | ✅ |
+| ISC-7 | Cover letter names the reproducibility/verification infrastructure as a differentiator | read cover-letter-fire-technology.md | ✅ |
+| ISC-8 | 2–3 suggested reviewers prepared (SNAPP step 7), no COI/co-authorship | list drafted (optional to submit) | ✅ |
+| ISC-9 | All standing gates green after every edit; SUBMISSION-READINESS refreshed | run full gate sweep; update report | ✅ |
+| ISC-10 | Final rendered PDFs (named + anon) + DOCX shipped to Final-version; 0 leaks | render + leak scan + copy | ✅ |
 
 ---
 
@@ -86,8 +86,9 @@ Preserve every citation, number, and hedge verbatim; only punctuation/structure 
 ### WS-B · AI + reproducibility disclosure hardening (ISC-2)
 In the Methods AI paragraph and the Acknowledgments, state explicitly:
 - exact model versions + prompts are archived in the repo (already partially there);
-- queries ran at **temperature 0** (deterministic setting), and outputs are a **frozen,
-  deposited snapshot**, so run-to-run LLM non-determinism cannot affect the reported κ;
+- outputs are a **frozen, deposited snapshot**, so run-to-run LLM non-determinism cannot
+  affect the reported κ (temperature-0 NOT claimed — only one of the two calls set it;
+  the snapshot guarantee is stronger and true regardless);
 - κ and agreement are **recomputable offline** from the deposited per-incident codings
   without re-querying any model.
 This pre-empts the "AI is unreproducible" reviewer entirely. All claims are true of the
