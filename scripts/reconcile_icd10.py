@@ -15,7 +15,7 @@ informative:
     where the official series records a death the registry did not ascertain — the
     residual early-decade under-ascertainment already disclosed as a limitation.
 
-Writes output/generated/icd10_reconciliation_1996_2024.csv.
+Writes data/icd10_reconciliation_1996_2024.csv (tracked/deposited).
 Network required (Statistics Iceland PxWeb).
 """
 import json, urllib.request, csv, pathlib
@@ -67,8 +67,7 @@ def registry_counts():
 def main():
     official = official_counts()
     reg = registry_counts()
-    outdir = ROOT / "output" / "generated"; outdir.mkdir(parents=True, exist_ok=True)
-    out = outdir / "icd10_reconciliation_1996_2024.csv"
+    out = ROOT / "data" / "icd10_reconciliation_1996_2024.csv"
     matches = 0
     with open(out, "w", newline="") as f:
         w = csv.writer(f)
