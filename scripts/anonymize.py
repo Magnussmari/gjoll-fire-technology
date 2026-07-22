@@ -24,7 +24,10 @@ ANON_BIB   = M / "references_ANON.bib"
 # in the double-anonymous build (they would otherwise reveal the author in one
 # glance in the rendered reference list). Named build is untouched.
 SELF_CITE_KEYS = ["Smarason2025data", "Smarason2025practitioner"]
-BIB_AUTHOR_MASK = "{[Author name withheld for double-anonymous review]}"
+# Double-braced so the CSL processor treats the mask as a literal (corporate)
+# name; single braces get parsed as a personal name and inverted around the
+# last word ("review] [Author name withheld ..." in the rendered list).
+BIB_AUTHOR_MASK = "{{[Author name withheld for double-anonymous review]}}"
 
 # --- the blinded replacements (exactly as the established ANON renders them) ---
 BIO_NAMED = ("The lead author served as a firefighter and paramedic and was formerly "

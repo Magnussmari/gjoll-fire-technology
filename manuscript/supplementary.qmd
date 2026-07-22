@@ -37,6 +37,17 @@ format:
         \usepackage{booktabs}
         \usepackage{siunitx}
         \sisetup{group-separator={,}, group-minimum-digits=4}
+        \usepackage{xurl}
+        \usepackage{etoolbox}
+        % Reference list: ragged-right so unbreakable DOIs/URLs cannot stretch
+        % the surrounding lines into rivers of whitespace. Each entry body is
+        % typeset in a \parbox (\CSLRightInline), which resets justification,
+        % so the parbox itself must carry \raggedright.
+        \AtBeginEnvironment{CSLReferences}{\raggedright}
+        \AtBeginDocument{%
+          \renewcommand{\CSLRightInline}[1]{%
+            \parbox[t]{\linewidth - \csllabelwidth}{\strut\raggedright #1\strut}}%
+        }
         \renewcommand{\thesection}{S\arabic{section}}
         \renewcommand{\thefigure}{S\arabic{figure}}
         \renewcommand{\thetable}{S\arabic{table}}
