@@ -20,7 +20,7 @@ Under Icelandic law (Act on Scientific Research in the Health Sector No. 44/2014
 This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
 ## Acknowledgements
-The authors thank the firefighters, paramedics, and fire-prevention officers of Iceland, whose work over more than half a century stands behind every incident recorded here, and the investigators of the fire authority (Brunamálastofnun, later the Housing and Construction Authority) whose reports made this registry possible. This study is dedicated to the memory of those who died in the fires it documents; the registry exists so that their loss informs the safety of others.
+The authors thank the firefighters and paramedics of Iceland, who met these fires in person across more than half a century, and the newspaper archivists and voluntary record-keepers — among them the compilers of Tímarit.is and the yearbooks of Slysavarnafélag Íslands (later Landsbjörg) — who preserved this history incident by incident where centralized official statistics did not. This study is dedicated to the memory of those who died in the fires it documents. The Gjöll registry was built because their record deserved to be kept in full; it exists so that their loss informs the safety of others.
 
 ## AI-use (Acknowledgements addendum, if a field exists; else include in Acknowledgements)
 The authors acknowledge the use of Claude Code (Anthropic) for Python analysis-script development, and of two large language models (Anthropic Claude Sonnet 5 and OpenAI GPT-5.5) for an automated, construction-year-blinded coding-reproducibility check reported in the manuscript. The models are not authors; all outputs were verified by the authors against the deposited data.
