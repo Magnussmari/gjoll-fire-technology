@@ -42,10 +42,10 @@ names are stable across revisions (line numbers are not, so sections are cited).
 | 20 | Interpretation | Yes | Discussion (descriptive-not-causal framing held throughout) |
 | 21 | Generalisability | Yes | Discussion (small-state caveats; transferable method) |
 | 22 | Funding | Yes | Funding statement (none) |
-| **22.1** | **Accessibility of protocol, raw data, and code** | Yes | Data Availability (DATICE DOI 10.34881/I5WGJU; Gjöll interface; public code repo with verification script) |
+| **22.1** | **Accessibility of protocol, raw data, and code** | Yes | Data Availability (identifiers on Title Page / SNAPP Declarations; withheld here for double-anonymous review) |
 
-**RECORD note on data access.** The analyzed registry tables are deposited (DOI
-10.34881/I5WGJU) and browseable at the Gjöll interface; all analysis and a statistic-by-
-statistic verification script are openly available in the reproducibility repository. The
+**RECORD note on data access.** The analyzed registry tables and all analysis code,
+including a statistic-by-statistic verification script, are publicly deposited; access
+identifiers are listed on the Title Page per the journal's double-anonymous policy. The
 blinded second-coding outputs are deposited as a frozen snapshot so the reported agreement
 and Cohen's κ are recomputable offline without re-querying any model.
