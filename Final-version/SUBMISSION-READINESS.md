@@ -1,5 +1,10 @@
 # Submission Readiness — Fire Technology (SNAPP)
 
+> **STATUS 2026-09-29: IN PEER REVIEW.** Submission ID `ca6fbc21-0844-46f8-b59a-e8b2d7ae4b18`, v.1.0
+> (Research, double-anonymous). Technical check → editorial assignment → with editor all done;
+> editor has invited **4 reviewers, 1 accepted**. Editorial Office: jesey.pawlin@springernature.com.
+> Next: wait for decision; no action required from authors until revisions are requested.
+
 *Verified 2026-07-22. Companion to `START-HERE.md` (the step-by-step submission walkthrough).*
 
 ## Verdict: READY TO SUBMIT — reviewer-ringer pass complete
