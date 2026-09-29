@@ -1,31 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 912 536" width="912" height="536" role="img" aria-labelledby="gjoll-pipeline-is-title gjoll-pipeline-is-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1104 536" width="1104" height="536" role="img" aria-labelledby="gjoll-pipeline-is-title gjoll-pipeline-is-desc">
 <title id="gjoll-pipeline-is-title">Gagnaferli Gjallar</title>
-<desc id="gjoll-pipeline-is-desc">Banvæn brunatilvik eru tekin saman úr heimildum í Gjallarskrána, endurkóðuð blint af tveimur mállíkönum sem endurtekningarpróf, stemmd af við opinbera dánarmeinaskrá og greind með ákvörðunarbundnum kóða þar sem hver birt tala er endurreiknuð í CI.</desc>
+<desc id="gjoll-pipeline-is-desc">Banvæn brunatilvik eru tekin saman úr heimildum í Gjallarskrána, borin saman við opinberar tölur um dauðsföll í eldsvoðum 1968–2018, greind, endurkóðuð blint af tveimur mállíkönum sem endurtekningarpróf og stemmd af við opinbera dánarmeinaskrá; hver birt tala er endurreiknuð í CI.</desc>
 <defs>
 <marker id="gjoll-pipeline-is-arr-muted" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6E6659"/></marker>
 <marker id="gjoll-pipeline-is-arr-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#B87333"/></marker>
 </defs>
-<rect width="912" height="536" fill="#F5F0E8"/>
-<rect x="0" y="312" width="912" height="88" fill="#14110D" opacity="0.025"/>
-<line x1="0" y1="48" x2="912" y2="48" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
-<line x1="0" y1="136" x2="912" y2="136" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
-<line x1="0" y1="224" x2="912" y2="224" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
-<line x1="0" y1="312" x2="912" y2="312" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
-<line x1="0" y1="400" x2="912" y2="400" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
-<line x1="0" y1="488" x2="912" y2="488" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<rect width="1104" height="536" fill="#F5F0E8"/>
+<rect x="0" y="312" width="1104" height="88" fill="#14110D" opacity="0.025"/>
+<line x1="0" y1="48" x2="1104" y2="48" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<line x1="0" y1="136" x2="1104" y2="136" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<line x1="0" y1="224" x2="1104" y2="224" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<line x1="0" y1="312" x2="1104" y2="312" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<line x1="0" y1="400" x2="1104" y2="400" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
+<line x1="0" y1="488" x2="1104" y2="488" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
 <line x1="120" y1="48" x2="120" y2="488" stroke="#14110D" stroke-opacity="0.12" stroke-width="0.8"/>
 <rect x="200" y="8" width="32" height="16" rx="8" fill="#14110D" opacity="0.10"/>
 <text x="216" y="20" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="#14110D" text-anchor="middle">01</text>
 <text x="216" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">SÖFNUN</text>
 <rect x="392" y="8" width="32" height="16" rx="8" fill="#14110D" opacity="0.10"/>
 <text x="408" y="20" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="#14110D" text-anchor="middle">02</text>
-<text x="408" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">ENDURKÓÐUN</text>
+<text x="408" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">SAMANBURÐUR</text>
 <rect x="584" y="8" width="32" height="16" rx="8" fill="#14110D" opacity="0.10"/>
 <text x="600" y="20" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="#14110D" text-anchor="middle">03</text>
-<text x="600" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">AFSTEMMING</text>
+<text x="600" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">GREINING</text>
 <rect x="776" y="8" width="32" height="16" rx="8" fill="#14110D" opacity="0.10"/>
 <text x="792" y="20" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="#14110D" text-anchor="middle">04</text>
-<text x="792" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">GREINING</text>
+<text x="792" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">ENDURKÓÐUN</text>
+<rect x="968" y="8" width="32" height="16" rx="8" fill="#14110D" opacity="0.10"/>
+<text x="984" y="20" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="700" fill="#14110D" text-anchor="middle">05</text>
+<text x="984" y="40" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">AFSTEMMING</text>
 <text x="60" y="90" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">YTRI</text>
 <text x="60" y="102" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">HEIMILDIR</text>
 <text x="60" y="178" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">GJALLAR-</text>
@@ -36,22 +39,21 @@
 <text x="60" y="366" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">LÍKÖN</text>
 <text x="60" y="448" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.12em">SANNPRÓFUN</text>
 <path d="M216,124 L216,148" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<path d="M296,188 L400,188 Q408,188 408,196 L408,324" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<rect x="414" y="259" width="48" height="12" rx="2" fill="#F5F0E8"/>
-<text x="418" y="268" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#6E6659" text-anchor="start" letter-spacing="0.06em">LÝSINGAR</text>
-<path d="M296,172 L568,172 Q576,172 576,180 L576,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<rect x="469.5" y="151" width="53" height="12" rx="2" fill="#F5F0E8"/>
-<text x="496" y="160" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.06em">VARÐVEITT</text>
-<path d="M600,124 L600,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<path d="M680,268 L712,268" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<path d="M792,124 L792,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<path d="M408,388 L408,412" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<path d="M792,300 L792,412" fill="none" stroke="#B87333" stroke-width="1.2" marker-end="url(#gjoll-pipeline-is-arr-accent)"/>
-<rect x="798" y="351" width="53" height="12" rx="2" fill="#F5F0E8"/>
-<text x="802" y="360" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#B87333" text-anchor="start" letter-spacing="0.06em">HVER TALA</text>
-<path d="M488,444 L712,444" fill="none" stroke="#6E6659" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<rect x="561.0" y="423" width="78" height="12" rx="2" fill="#F5F0E8"/>
-<text x="600" y="432" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.06em">κ ENDURREIKNAÐ</text>
+<path d="M408,124 L408,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<path d="M296,180 L376,180 Q384,180 384,188 L384,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<rect x="321.0" y="159" width="38" height="12" rx="2" fill="#F5F0E8"/>
+<text x="340" y="168" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.06em">SKRÁIN</text>
+<path d="M488,268 L520,268" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<path d="M600,300 L600,348 Q600,356 608,356 L712,356" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<rect x="640.0" y="335" width="48" height="12" rx="2" fill="#F5F0E8"/>
+<text x="664" y="344" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#6E6659" text-anchor="middle" letter-spacing="0.06em">LÝSINGAR</text>
+<path d="M680,268 L904,268" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<path d="M984,124 L984,236" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<path d="M792,388 L792,412" fill="none" stroke="#6E6659" stroke-width="1" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
+<path d="M984,300 L984,412" fill="none" stroke="#B87333" stroke-width="1.2" marker-end="url(#gjoll-pipeline-is-arr-accent)"/>
+<rect x="990" y="351" width="53" height="12" rx="2" fill="#F5F0E8"/>
+<text x="994" y="360" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="600" fill="#B87333" text-anchor="start" letter-spacing="0.06em">HVER TALA</text>
+<path d="M872,444 L904,444" fill="none" stroke="#6E6659" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
 <rect x="136" y="60" width="160" height="64" rx="6" fill="#F5F0E8"/>
 <rect x="136" y="60" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
 <text x="216" y="84" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Söfn og skýrslur</text>
@@ -62,46 +64,51 @@
 <text x="216" y="172" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#B87333" text-anchor="middle">Gjallarskráin</text>
 <text x="216" y="188" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">113 tilvik · 145 látnir</text>
 <text x="216" y="202" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">1968–2025 · ≥2 heimildir</text>
-<rect x="328" y="324" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="328" y="324" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="408" y="348" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Blind endurkóðun</text>
-<text x="408" y="364" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">2 líkön · 45 tilvik</text>
-<text x="408" y="378" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">byggingarár falið</text>
-<rect x="328" y="412" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="328" y="412" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="408" y="436" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Samræmi</text>
-<text x="408" y="452" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">44/45 · κ = 0,93</text>
-<text x="408" y="466" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">fryst og varðveitt</text>
-<rect x="520" y="60" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="520" y="60" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="600" y="84" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Dánarmeinaskrá</text>
-<text x="600" y="100" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">ICD-10 X00–X09</text>
-<text x="600" y="114" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">Hagstofa Íslands</text>
+<rect x="328" y="60" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="328" y="60" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="408" y="84" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Opinberar tölur</text>
+<text x="408" y="100" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">HMS 2020 · 1968–2018</text>
+<text x="408" y="114" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">lesið af stöplariti</text>
+<rect x="328" y="236" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="328" y="236" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="408" y="260" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Samanburður</text>
+<text x="408" y="276" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">144 á móti 129</text>
+<text x="408" y="290" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">33/51 ár eins</text>
 <rect x="520" y="236" width="160" height="64" rx="6" fill="#F5F0E8"/>
 <rect x="520" y="236" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="600" y="260" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Heimtur</text>
-<text x="600" y="276" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">50 á móti 36 látnum</text>
-<text x="600" y="290" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">1996–2024 · á móti opinberri</text>
-<rect x="712" y="60" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="712" y="60" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="792" y="84" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Nefnarar</text>
-<text x="792" y="100" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">MAN00000 · IDN03001</text>
-<text x="792" y="114" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">mannfjöldi · íbúðir</text>
-<rect x="712" y="236" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="712" y="236" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
-<text x="792" y="260" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Greining</text>
-<text x="792" y="276" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">tíðni · árgangar · ITSA</text>
-<text x="792" y="290" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">Python · statsmodels</text>
+<text x="600" y="260" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Greining</text>
+<text x="600" y="276" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">tíðni · árgangar · ITSA</text>
+<text x="600" y="290" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">með mannfjölda, íbúðum</text>
+<rect x="712" y="324" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="712" y="324" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="792" y="348" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Blind endurkóðun</text>
+<text x="792" y="364" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">2 líkön · 45 tilvik</text>
+<text x="792" y="378" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">byggingarár falið</text>
 <rect x="712" y="412" width="160" height="64" rx="6" fill="#F5F0E8"/>
-<rect x="712" y="412" width="160" height="64" rx="6" fill="#B87333" fill-opacity="0.08" stroke="#B87333" stroke-width="1.2"/>
-<text x="792" y="436" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#B87333" text-anchor="middle">Sannprófun í CI</text>
-<text x="792" y="452" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">125/125 próf</text>
-<text x="792" y="466" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">við hverja breytingu</text>
+<rect x="712" y="412" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="792" y="436" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Samræmi</text>
+<text x="792" y="452" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">44/45 · κ = 0,93</text>
+<text x="792" y="466" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">fryst og varðveitt</text>
+<rect x="904" y="60" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="904" y="60" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="984" y="84" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Dánarmeinaskrá</text>
+<text x="984" y="100" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">ICD-10 X00–X09</text>
+<text x="984" y="114" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">Hagstofa Íslands</text>
+<rect x="904" y="236" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="904" y="236" width="160" height="64" rx="6" fill="#FFFFFF" fill-opacity="0.55" stroke="#14110D" stroke-opacity="0.35" stroke-width="1"/>
+<text x="984" y="260" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#14110D" text-anchor="middle">Heimtur</text>
+<text x="984" y="276" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">50 á móti 36 látnum</text>
+<text x="984" y="290" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">1996–2024 · á móti opinberri</text>
+<rect x="904" y="412" width="160" height="64" rx="6" fill="#F5F0E8"/>
+<rect x="904" y="412" width="160" height="64" rx="6" fill="#B87333" fill-opacity="0.08" stroke="#B87333" stroke-width="1.2"/>
+<text x="984" y="436" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="12" font-weight="600" fill="#B87333" text-anchor="middle">Sannprófun í CI</text>
+<text x="984" y="452" font-family="'SF Mono', SFMono-Regular, ui-monospace, Menlo, monospace" font-size="8" font-weight="400" fill="#6E6659" text-anchor="middle">125/125 próf</text>
+<text x="984" y="466" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#8A7D68" text-anchor="middle">við hverja breytingu</text>
 <text x="108" y="516" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="700" fill="#6E6659" text-anchor="end" letter-spacing="0.12em">FLÆÐI</text>
 <line x1="132" y1="513" x2="160" y2="513" stroke="#6E6659" stroke-width="1.2" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
 <text x="168" y="516" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#6E6659" text-anchor="start">Gögn afhent</text>
 <line x1="246" y1="513" x2="274" y2="513" stroke="#B87333" stroke-width="1.2" marker-end="url(#gjoll-pipeline-is-arr-accent)"/>
 <text x="282" y="516" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#6E6659" text-anchor="start">Endurreiknað í CI</text>
 <line x1="388" y1="513" x2="416" y2="513" stroke="#6E6659" stroke-width="1.2" stroke-dasharray="5,4" marker-end="url(#gjoll-pipeline-is-arr-muted)"/>
-<text x="424" y="516" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#6E6659" text-anchor="start">Niðurstaða prófs flutt áfram</text>
+<text x="424" y="516" font-family="Archivo, 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" fill="#6E6659" text-anchor="start">κ flutt úr Samræmi í CI</text>
 </svg>

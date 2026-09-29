@@ -32,6 +32,12 @@ www.gjoll.is also renders. `make pipeline` redraws it; CI runs
 `data/` and fails if the record or the drawing has drifted. The language-model lane holds
 one node: no model produced a reported value, only a blinded check of the classification.
 
+The official 1968–2018 fire-death series (HMS working-group report, 2020) is published only as a
+bar chart. `scripts/digitize_hms2020_chart.py` reads it off the pixel grid (every reading must land
+within 0.1 of a whole number; the largest is 0.03) into
+`data/hms2020_official_fire_deaths_1968_2018.csv`, and `scripts/reconcile_hms2020.py` sets it beside
+the registry year by year in `data/hms_reconciliation_1968_2018.csv`.
+
 ## Reproduce in one command
 
 ```bash

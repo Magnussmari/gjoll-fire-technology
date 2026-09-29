@@ -22,6 +22,17 @@ at the start (the registry) and one at the end (the CI gate). This is a web and
 repository surface, so the house skin applies; the journal figure
 (figures/fig_study_design.png) keeps the journal's own spec and is untouched.
 
+Steps run in the order the work was done, taken from the record rather than
+from the manuscript's prose: the registry was compiled and cross-checked against
+the official tallies (2025), analysed (March 2026), re-coded blind (14 July) and
+reconciled against ICD-10 (22 July). A first version ordered them for layout
+and left the official cross-check out; that is why the order is stated here.
+
+Ten nodes, one over the skill's budget of nine. Deliberate: the two official
+comparisons are separate steps done a year apart against different sources, and
+merging them would hide exactly that. Folding the denominators into the
+analysis node is what kept it at ten.
+
 The AI lane holds exactly one node. That is the argument, drawn: no model
 produced any reported value. The models re-applied the classification rule
 blind to construction year, and their output only ever reaches a gate.
@@ -68,12 +79,12 @@ LANE_NAMES = {
 }
 UI = {
     "en": {"flow": "FLOW", "hand": "Data hand-off", "ci": "Recomputed in CI",
-           "chk": "Check result carried forward",
-           "descr": "DESCRIPTIONS", "dep": "DEPOSITED", "every": "EVERY NUMBER",
+           "chk": "κ carried from Agreement into CI",
+           "descr": "DESCRIPTIONS", "reg": "REGISTRY", "every": "EVERY NUMBER",
            "kappa": "κ RECOMPUTED"},
     "is": {"flow": "FLÆÐI", "hand": "Gögn afhent", "ci": "Endurreiknað í CI",
-           "chk": "Niðurstaða prófs flutt áfram",
-           "descr": "LÝSINGAR", "dep": "VARÐVEITT", "every": "HVER TALA",
+           "chk": "κ flutt úr Samræmi í CI",
+           "descr": "LÝSINGAR", "reg": "SKRÁIN", "every": "HVER TALA",
            "kappa": "κ ENDURREIKNAÐ"},
 }
 
@@ -92,35 +103,41 @@ def nodes_for(f: dict, lang: str) -> list[dict]:
          "sub": f"{inc} incidents · {dth} deaths" if en else f"{inc} tilvik · {dth} látnir",
          "tool": f"{f['first_year']}–{f['last_year']} · ≥2 sources" if en
                  else f"{f['first_year']}–{f['last_year']} · ≥2 heimildir"},
-        {"lane": "AI", "step": 1,
+        {"lane": "SRC", "step": 1,
+         "title": "Official tallies" if en else "Opinberar tölur",
+         "sub": f"HMS 2020 · {f['hms_window']}",
+         "tool": "digitized from the chart" if en else "lesið af stöplariti"},
+        {"lane": "CODE", "step": 1,
+         "title": "Cross-check" if en else "Samanburður",
+         "sub": f"{f['hms_official_deaths']} vs {f['hms_registry_deaths']} deaths" if en
+                else f"{f['hms_official_deaths']} á móti {f['hms_registry_deaths']}",
+         "tool": f"{f['hms_years_equal']}/{f['hms_years']} years equal" if en
+                 else f"{f['hms_years_equal']}/{f['hms_years']} ár eins"},
+        {"lane": "CODE", "step": 2,
+         "title": "Analysis" if en else "Greining",
+         "sub": "rates · cohorts · ITSA" if en else "tíðni · árgangar · ITSA",
+         "tool": "with population, dwellings" if en else "með mannfjölda, íbúðum"},
+        {"lane": "AI", "step": 3,
          "title": "Blinded re-code" if en else "Blind endurkóðun",
          "sub": f"2 models · {f['recode_incidents']} incidents" if en
                 else f"2 líkön · {f['recode_incidents']} tilvik",
          "tool": "construction year hidden" if en else "byggingarár falið"},
-        {"lane": "GATE", "step": 1,
+        {"lane": "GATE", "step": 3,
          "title": "Agreement" if en else "Samræmi",
          "sub": f"{f['recode_agreement']}/{f['recode_incidents']} · κ = {f['recode_kappa']:.2f}"
                 .replace(".", "." if en else ","),
          "tool": "frozen and deposited" if en else "fryst og varðveitt"},
-        {"lane": "SRC", "step": 2,
+        {"lane": "SRC", "step": 4,
          "title": "Cause-of-death data" if en else "Dánarmeinaskrá",
          "sub": "ICD-10 X00–X09",
          "tool": "Statistics Iceland" if en else "Hagstofa Íslands"},
-        {"lane": "CODE", "step": 2,
+        {"lane": "CODE", "step": 4,
          "title": "Completeness" if en else "Heimtur",
          "sub": f"{f['icd10_registry_deaths']} vs {f['icd10_official_deaths']} deaths" if en
                 else f"{f['icd10_registry_deaths']} á móti {f['icd10_official_deaths']} látnum",
          "tool": f"{f['icd10_window']} · vs official" if en
                  else f"{f['icd10_window']} · á móti opinberri"},
-        {"lane": "SRC", "step": 3,
-         "title": "Denominators" if en else "Nefnarar",
-         "sub": "MAN00000 · IDN03001",
-         "tool": "population · dwellings" if en else "mannfjöldi · íbúðir"},
-        {"lane": "CODE", "step": 3,
-         "title": "Analysis" if en else "Greining",
-         "sub": "rates · cohorts · ITSA" if en else "tíðni · árgangar · ITSA",
-         "tool": "Python · statsmodels"},
-        {"lane": "GATE", "step": 3, "focal": True,
+        {"lane": "GATE", "step": 4, "focal": True,
          "title": "CI verification" if en else "Sannprófun í CI",
          "sub": f"{f['verification_checks']}/{f['verification_checks']} checks" if en
                 else f"{f['verification_checks']}/{f['verification_checks']} próf",
@@ -174,29 +191,32 @@ def h_then_down(x1, y1, x2, y2, r=8) -> str:
     return f"M{x1},{y1} L{x2 - r},{y1} Q{x2},{y1} {x2},{y1 + r} L{x2},{y2}"
 
 
+def down_then_right(x1, y1, x2, y2, r=8) -> str:
+    """Down, one quarter-arc, then right. No diagonals."""
+    return f"M{x1},{y1} L{x1},{y2 - r} Q{x1},{y2} {x1 + r},{y2} L{x2},{y2}"
+
+
 def arrows_for(ui: dict) -> list[dict]:
-    """Routing is fixed by hand and every path is checked against the six
-    connector rules: orthogonal only, no shared attach points, no transit behind
-    a non-endpoint box (every lane cell crossed below is empty)."""
+    """Routing is fixed by hand and checked against the six connector rules:
+    orthogonal only, no shared attach points, no crossings, and no transit
+    behind a box that is not an endpoint (every lane cell crossed is empty)."""
     return [
         {"d": f"M{cx(0)},{bottom('SRC')} L{cx(0)},{top('REG')}", "style": "muted"},
-        # registry → re-code: leaves the registry's right edge low, turns down
-        # through the empty CODE cell of step 2.
-        {"d": h_then_down(right(0), mid("REG") + 8, cx(1), top("AI")), "style": "muted",
-         "label": ui["descr"], "lx": cx(1) + 10, "ly": (top("CODE") + bottom("CODE")) // 2,
-         "anchor": "start"},
-        # registry → completeness: leaves high, runs above the previous arrow's
-        # bend, lands 24px left of the source arrow on the same top edge.
-        {"d": h_then_down(right(0), mid("REG") - 8, cx(2) - 24, top("CODE")), "style": "muted",
-         "label": ui["dep"], "lx": (cx(1) + cx(2) - 24) // 2 + 4, "ly": mid("REG") - 20},
-        {"d": f"M{cx(2)},{bottom('SRC')} L{cx(2)},{top('CODE')}", "style": "muted"},
-        {"d": f"M{right(2)},{mid('CODE')} L{left(3)},{mid('CODE')}", "style": "muted"},
-        {"d": f"M{cx(3)},{bottom('SRC')} L{cx(3)},{top('CODE')}", "style": "muted"},
-        {"d": f"M{cx(1)},{bottom('AI')} L{cx(1)},{top('GATE')}", "style": "muted"},
-        {"d": f"M{cx(3)},{bottom('CODE')} L{cx(3)},{top('GATE')}", "style": "accent",
-         "label": ui["every"], "lx": cx(3) + 10, "ly": mid("AI") + 4, "anchor": "start"},
-        {"d": f"M{right(1)},{mid('GATE')} L{left(3)},{mid('GATE')}", "style": "muted",
-         "dashed": True, "label": ui["kappa"], "lx": cx(2), "ly": mid("GATE") - 12},
+        {"d": f"M{cx(1)},{bottom('SRC')} L{cx(1)},{top('CODE')}", "style": "muted"},
+        # registry → cross-check: stops 24px left of the official series' arrow
+        # on the same top edge, so the two never share a point.
+        {"d": h_then_down(right(0), mid("REG"), cx(1) - 24, top("CODE")), "style": "muted",
+         "label": ui["reg"], "lx": (right(0) + cx(1) - 24) // 2, "ly": mid("REG") - 12},
+        {"d": f"M{right(1)},{mid('CODE')} L{left(2)},{mid('CODE')}", "style": "muted"},
+        {"d": down_then_right(cx(2), bottom("CODE"), left(3), mid("AI")), "style": "muted",
+         "label": ui["descr"], "lx": (cx(2) + left(3)) // 2 + 8, "ly": mid("AI") - 12},
+        {"d": f"M{right(2)},{mid('CODE')} L{left(4)},{mid('CODE')}", "style": "muted"},
+        {"d": f"M{cx(4)},{bottom('SRC')} L{cx(4)},{top('CODE')}", "style": "muted"},
+        {"d": f"M{cx(3)},{bottom('AI')} L{cx(3)},{top('GATE')}", "style": "muted"},
+        {"d": f"M{cx(4)},{bottom('CODE')} L{cx(4)},{top('GATE')}", "style": "accent",
+         "label": ui["every"], "lx": cx(4) + 10, "ly": mid("AI") + 4, "anchor": "start"},
+        {"d": f"M{right(3)},{mid('GATE')} L{left(4)},{mid('GATE')}", "style": "muted",
+         "dashed": True},  # 32px gap: no room for a label; the legend names both ends
     ]
 
 
@@ -209,14 +229,15 @@ def diagram(record: dict, lang: str) -> str:
     slug = f"gjoll-pipeline-{lang}"
     title = ("Gjöll data pipeline" if lang == "en" else "Gagnaferli Gjallar")
     desc = ("Fatal-fire incidents are compiled from archival sources into the Gjöll "
-            "registry, re-coded blind by two language models as a reproducibility check, "
-            "reconciled against official cause-of-death statistics, and analysed by "
-            "deterministic code whose every reported number is recomputed in CI."
+            "registry, cross-checked against the official 1968–2018 fire-death series, "
+            "analysed, re-coded blind by two language models as a reproducibility check, "
+            "and reconciled against official cause-of-death statistics; every reported "
+            "number is recomputed in CI."
             if lang == "en" else
-            "Banvæn brunatilvik eru tekin saman úr heimildum í Gjallarskrána, endurkóðuð "
-            "blint af tveimur mállíkönum sem endurtekningarpróf, stemmd af við opinbera "
-            "dánarmeinaskrá og greind með ákvörðunarbundnum kóða þar sem hver birt tala er "
-            "endurreiknuð í CI.")
+            "Banvæn brunatilvik eru tekin saman úr heimildum í Gjallarskrána, borin saman "
+            "við opinberar tölur um dauðsföll í eldsvoðum 1968–2018, greind, endurkóðuð "
+            "blint af tveimur mállíkönum sem endurtekningarpróf og stemmd af við opinbera "
+            "dánarmeinaskrá; hver birt tala er endurreiknuð í CI.")
 
     o = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" '
          f'height="{H}" role="img" aria-labelledby="{slug}-title {slug}-desc">\n',
@@ -317,6 +338,7 @@ def recompute() -> dict:
     years = [int(r["year"]) for r in s + o]
     icd = rows("icd10_reconciliation_1996_2024.csv")
     rc = rows("blinded_recode_codings_1996_2025.csv")
+    hms = rows("hms_reconciliation_1968_2018.csv")
 
     def kappa(a, b):
         n = len(a)
@@ -334,6 +356,12 @@ def recompute() -> dict:
     if len(agree) != 1 or len(kap) != 1:
         raise SystemExit(f"the two models no longer agree equally: {agree} {kap}")
 
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from reconcile_hms2020 import reconcile
+    fresh = [{k: str(v) for k, v in r.items()} for r in reconcile()]
+    if fresh != hms:
+        raise SystemExit("data/hms_reconciliation_1968_2018.csv is stale: rerun reconcile_hms2020.py")
+
     out = subprocess.run([sys.executable, str(ROOT / "scripts" / "verify_statistics.py")],
                          capture_output=True, text=True, cwd=ROOT)
     m = re.search(r"(\d+)/(\d+) checks passed", out.stdout)
@@ -350,6 +378,11 @@ def recompute() -> dict:
         "icd10_window": f"{icd[0]['year']}–{icd[-1]['year']}",
         "icd10_registry_deaths": sum(int(r["registry_all_fire"]) for r in icd),
         "icd10_official_deaths": sum(int(r["official_X00_X09"]) for r in icd),
+        "hms_window": f"{hms[0]['year']}–{hms[-1]['year']}",
+        "hms_years": len(hms),
+        "hms_official_deaths": sum(int(r["official_total"]) for r in hms),
+        "hms_registry_deaths": sum(int(r["registry_total"]) for r in hms),
+        "hms_years_equal": sum(r["difference_registry_minus_official"] == "0" for r in hms),
         "recode_incidents": len(rc),
         "recode_agreement": agree.pop(),
         "recode_kappa": kap.pop(),
