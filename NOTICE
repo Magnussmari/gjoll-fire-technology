@@ -1,0 +1,11 @@
+NOTE ON DATA LICENSING
+----------------------
+The MIT License above applies to the CODE in this repository (the analysis and
+verification scripts, and the manuscript sources).
+
+The fatal-fire registry DATA files in `data/` are drawn from the Gjöll registry,
+formally deposited at DATICE (GAGNÍS -- Gagnaþjónusta félagsvísinda), University
+of Iceland, DOI 10.34881/I5WGJU, and browseable at https://www.gjoll.is. The
+copies included here are provided for reproducibility. Reuse of the data should
+cite the deposited dataset and follow its terms; attribution (CC-BY style) is
+requested for any reuse of the registry data.
