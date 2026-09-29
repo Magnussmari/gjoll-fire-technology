@@ -22,6 +22,16 @@ that **recomputes every number in the manuscript from the deposited data**.
 - Registry deposited at DATICE, DOI [10.34881/I5WGJU](https://doi.org/10.34881/I5WGJU) · browseable at [gjoll.is](https://www.gjoll.is)
 - Every reported statistic is machine-verified in CI (**122/122 checks**, see [`.github/workflows/verify.yml`](.github/workflows/verify.yml))
 
+## The pipeline
+
+![Gjöll data pipeline: archival sources compiled into the registry, blinded re-code by two language models, completeness reconciled against official cause-of-death statistics, and analysis whose every number is recomputed in CI](figures/pipeline.svg)
+
+Drawn from [`pipeline/pipeline.json`](pipeline/pipeline.json), the single record that
+www.gjoll.is also renders. `make pipeline` redraws it; CI runs
+`build_pipeline_diagram.py --check`, which recomputes every number in the record from
+`data/` and fails if the record or the drawing has drifted. The language-model lane holds
+one node: no model produced a reported value, only a blinded check of the classification.
+
 ## Reproduce in one command
 
 ```bash

@@ -1,0 +1,63 @@
+{
+  "schema": "gjoll-pipeline/v1",
+  "note": "Single source of truth for the Gjöll data pipeline. The diagram in figures/pipeline.svg is drawn from this file by scripts/build_pipeline_diagram.py, and www.gjoll.is renders its pipeline page from this file too. Every number under `figures` is recomputed from the deposited CSVs by `build_pipeline_diagram.py --check`, which runs in CI, so the page, the diagram and the data cannot disagree.",
+  "deposit": {
+    "doi": "10.34881/I5WGJU",
+    "repository": "DATICE (GAGNÍS), University of Iceland",
+    "interface": "https://www.gjoll.is",
+    "code": "https://github.com/Magnussmari/gjoll-fire-technology"
+  },
+  "figures": {
+    "incidents": 113,
+    "structure_incidents": 93,
+    "other_incidents": 20,
+    "deaths": 145,
+    "first_year": 1968,
+    "last_year": 2025,
+    "icd10_window": "1996–2024",
+    "icd10_registry_deaths": 50,
+    "icd10_official_deaths": 36,
+    "recode_incidents": 45,
+    "recode_agreement": 44,
+    "recode_kappa": 0.93,
+    "verification_checks": 125
+  },
+  "steps": [
+    {
+      "id": "S1",
+      "label": {"en": "Compile", "is": "Söfnun"},
+      "title": {"en": "Compile the registry", "is": "Gagnasafnið tekið saman"},
+      "source": {"en": "Newspaper archives (Tímarit.is), yearbooks, investigation reports, court records", "is": "Blaðasöfn (Tímarit.is), árbækur, rannsóknarskýrslur og dómar"},
+      "what": {"en": "Every fatal fire incident 1968–2025 is recorded with its documentary sources, verified against at least two independent sources where available. The registry was finalized on 31 December 2025.", "is": "Hvert banvænt brunatilvik 1968–2025 er skráð með heimildum sínum og staðfest með minnst tveimur óháðum heimildum þar sem þær eru til. Gagnasafninu var lokað 31. desember 2025."},
+      "tool": {"en": "Human curation", "is": "Handvirk skráning"},
+      "gate": {"en": "Deposited at DATICE and published at gjoll.is", "is": "Varðveitt hjá GAGNÍS og birt á gjoll.is"}
+    },
+    {
+      "id": "S2",
+      "label": {"en": "Re-code", "is": "Endurkóðun"},
+      "title": {"en": "Blinded re-code of the classification", "is": "Blind endurkóðun flokkunar"},
+      "source": {"en": "Incident descriptions 1996–2025, construction year withheld", "is": "Lýsingar tilvika 1996–2025, byggingarár falið"},
+      "what": {"en": "Two language models (Claude Sonnet 5, GPT-5.5) apply the predefined classification rule to each fire-mechanism description without seeing the construction year. Their codings are frozen and deposited.", "is": "Tvö mállíkön (Claude Sonnet 5, GPT-5.5) beita fyrirfram skilgreindri flokkunarreglu á lýsingu hvers bruna án þess að sjá byggingarárið. Kóðun þeirra er fryst og varðveitt."},
+      "tool": {"en": "Two language models, as a reproducibility check only", "is": "Tvö mállíkön, eingöngu sem endurtekningarpróf"},
+      "gate": {"en": "Agreement and Cohen's κ recomputed offline from the frozen table", "is": "Samræmi og κ Cohens endurreiknuð án nettengingar úr frystu töflunni"}
+    },
+    {
+      "id": "S3",
+      "label": {"en": "Reconcile", "is": "Afstemming"},
+      "title": {"en": "Completeness against official statistics", "is": "Heimtur bornar saman við opinberar tölur"},
+      "source": {"en": "Statistics Iceland cause-of-death series, ICD-10 X00–X09", "is": "Dánarmeinaskrá Hagstofu Íslands, ICD-10 X00–X09"},
+      "what": {"en": "Annual registry death counts are reconciled year by year against the official cause-of-death series, which requires no individual-level linkage.", "is": "Árlegur fjöldi látinna í skránni er stemmdur af, ár fyrir ár, við opinberu dánarmeinaskrána án tengingar á einstaklingsstigi."},
+      "tool": {"en": "Deterministic script (reconcile_icd10.py)", "is": "Ákvörðunarbundin skrifta (reconcile_icd10.py)"},
+      "gate": {"en": "Year-by-year table deposited", "is": "Tafla ár fyrir ár varðveitt"}
+    },
+    {
+      "id": "S4",
+      "label": {"en": "Analyse", "is": "Greining"},
+      "title": {"en": "Rates, cohorts and time series", "is": "Tíðni, árgangar og tímaraðir"},
+      "source": {"en": "Statistics Iceland population (MAN00000) and completed dwellings (IDN03001)", "is": "Mannfjöldi (MAN00000) og fullgerðar íbúðir (IDN03001) frá Hagstofu Íslands"},
+      "what": {"en": "Rates per million, construction-period cohort rates per person-year, and an interrupted time-series model, all computed from the deposited tables.", "is": "Tíðni á milljón íbúa, tíðni eftir byggingartímabili á mannár og rofin tímaraðagreining, allt reiknað úr varðveittu töflunum."},
+      "tool": {"en": "Deterministic scripts (Python, statsmodels)", "is": "Ákvörðunarbundnar skriftur (Python, statsmodels)"},
+      "gate": {"en": "Every reported statistic recomputed in CI on every push", "is": "Hver birt tala endurreiknuð í CI við hverja breytingu"}
+    }
+  ]
+}

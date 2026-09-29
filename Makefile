@@ -2,7 +2,7 @@
 # Quick start:  make setup && make verify
 PYTHON ?= python3
 PIP ?= $(PYTHON) -m pip
-.PHONY: help setup verify refs reproduce analyses manuscript all clean
+.PHONY: help setup verify pipeline refs reproduce analyses manuscript all clean
 
 help:              ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | \
@@ -13,6 +13,9 @@ setup:             ## Install the Python dependencies
 
 verify:            ## Recompute every reported statistic from the deposited data (the gate)
 	$(PYTHON) scripts/verify_statistics.py
+
+pipeline:          ## Redraw figures/pipeline*.svg from pipeline/pipeline.json (checked against the data)
+	$(PYTHON) scripts/build_pipeline_diagram.py
 
 refs:              ## Check that every reference DOI resolves (needs network)
 	$(PYTHON) scripts/verify_references.py
