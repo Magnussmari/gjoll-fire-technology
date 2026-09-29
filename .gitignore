@@ -18,3 +18,12 @@ manuscript_revised*.docx
 
 # private correspondence + legacy review — never commit
 _private/
+
+# Submission-internal material (reviewer lists, cover letter, SNAPP notes, review prompts).
+# Kept locally only: the Data Availability statement sends reviewers to this repo.
+Final-version/*.md
+!Final-version/STROBE-RECORD-checklist.md
+Final-version/_working/
+manuscript/peer-review-PROMPT-blind.md
+manuscript/_probe*
+manuscript/_supp_probe*
