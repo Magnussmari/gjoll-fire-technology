@@ -20,7 +20,7 @@ that **recomputes every number in the manuscript from the deposited data**.
 
 - **113** fatal incidents · **145** deaths · **1968–2025** (58 years)
 - Registry deposited at DATICE, DOI [10.34881/I5WGJU](https://doi.org/10.34881/I5WGJU) · browseable at [gjoll.is](https://www.gjoll.is)
-- Every reported statistic is machine-verified in CI (**122/122 checks**, see [`.github/workflows/verify.yml`](.github/workflows/verify.yml))
+- Every reported statistic is machine-verified in CI (**125/125 checks**, see [`.github/workflows/verify.yml`](.github/workflows/verify.yml))
 
 ## The pipeline
 
@@ -39,7 +39,7 @@ make setup && make verify
 ```
 
 `make verify` runs [`scripts/verify_statistics.py`](scripts/verify_statistics.py), which
-recomputes all 122 reported figures (rates, exact-Poisson bounds, the coherent joint
+recomputes all 125 reported figures (rates, exact-Poisson bounds, the coherent joint
 denominator sensitivity, the interrupted time series, seasonality, and the cohort
 comparison) directly from the CSVs in `data/` and asserts each against the manuscript.
 `make help` lists every target; `make reproduce` regenerates the tables and figures.
@@ -48,7 +48,7 @@ Without `make`:
 
 ```bash
 pip install -r requirements.txt
-python scripts/verify_statistics.py        # the gate: 122/122
+python scripts/verify_statistics.py        # the gate: 125/125
 python scripts/reproduce_tables_figures.py # regenerate tables + figures
 ```
 

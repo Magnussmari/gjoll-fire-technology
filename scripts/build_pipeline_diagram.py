@@ -369,6 +369,19 @@ def main() -> int:
         return 1
     print(f"  ✓ all {len(actual)} figures in pipeline.json match the deposited data")
 
+    # Public prose drifts where numbers are typed by hand: the README said 122/122
+    # for weeks after the gate grew to 125. Every "N/N" check count it states must
+    # be the count the gate actually runs.
+    import re as _re
+    n = actual["verification_checks"]
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    stated = set(_re.findall(r"(\d+)/(\d+)", readme)) | {(m, m) for m in _re.findall(r"all (\d+) reported figures", readme)}
+    wrong = sorted(f"{a}/{b}" for a, b in stated if a == b and int(a) != n and int(a) > 50)
+    if wrong:
+        print(f"  ✗ README.md states {', '.join(wrong)} checks; the gate runs {n}")
+        return 1
+    print(f"  ✓ README.md check counts match the gate ({n})")
+
     stale = []
     for lang, name in (("en", "pipeline.svg"), ("is", "pipeline.is.svg")):
         svg = diagram(record, lang)
