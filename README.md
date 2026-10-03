@@ -8,12 +8,11 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](requirements.txt)
 
 Magnús Smári Smárason & Thomas Barry · University of Akureyri (Háskólinn á Akureyri)
-Target journal: **Fire Technology** (Springer Nature)
 
 ---
 
 This repository is the complete, reproducible companion to the study. It holds the
-**Gjöll registry** (every fatal fire incident in Iceland over 58 years, compiled
+**Gjöll registry** (every identified fatal fire incident in Iceland over 58 years, compiled
 incident-by-incident from newspaper archives, institutional yearbooks, and official
 reports, each record source-referenced), the analysis code, and a verification script
 that **recomputes every number in the manuscript from the deposited data**.
@@ -84,8 +83,8 @@ discrete step at 1999.
 If you use the registry or this package, please cite the deposited dataset (see
 [`CITATION.cff`](CITATION.cff); GitHub's "Cite this repository" button renders it):
 
-> Smárason, M. S., & Barry, T. (2026). *Gjöll: A National Registry of Fatal Fire Incidents
-> in Iceland, 1968–2025* [Data set]. DATICE (GAGNÍS), University of Iceland.
+> Smárason, M. S. (2026). *Banvæn brunatilvik á Íslandi 1968–2025 (Gjöll)* [Data set].
+> DATICE (GAGNÍS), University of Iceland.
 > https://doi.org/10.34881/I5WGJU
 
 ## License
